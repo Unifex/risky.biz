@@ -1,0 +1,10 @@
+# For Jekyll
+_site/
+.sass-cache/
+.jekyll-metadata
+
+# For ViM (because why would you need any other editor?)
+*~
+
+# Just... no.
+.DS_Store
