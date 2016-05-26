@@ -1,0 +1,27 @@
+title: Risky Business
+description: It's a jungle out there
+author: Patrick Gray
+urls:
+    - text: About
+      url: /about/
+    - text: Contact
+      url: /contact/
+    - text: Sponsorship
+      url: /sponsorship
+url: "https://riskybiz.evolved.net.nz"
+baseurl: ""
+itpcurl: "itpc://riskybiz.evolved.net.nz"
+whitelist:
+  - jekyll-redirect-from
+gems: 
+    - jekyll-paginate
+    - jekyll-redirect-from
+paginate: 20
+per_page: 20
+paginate_path: "/page:num/"
+markdown: kramdown
+twitter_username: riskybusiness
+facebook_username: pages/Risky-Business-Podcast/189463807749879
+github_username: 
+ga_site_id: 
+socialite: yes

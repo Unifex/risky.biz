@@ -1,0 +1,76 @@
+---
+layout: post
+title: "Blog post: Pipes talks TrueCrypt"
+tagline: "Simple EOL? Bath salts? WUT????"
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /WutTruecrypt/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>Instead of let it languish on the social media platform of yesterday, we figured we'd give it a run at Risky Business. Here it is!</p>
+<!--excerpt-above-->
+
+<p><strong>TL;DR </strong> </p>
+<p>The TrueCrypt project's website was updated asserting that the software is no longer considered safe to use and is EoL (End of Life). The reason for this decision is unknown and subject to a large amount of speculation. </p>
+<p>If you're a user of TrueCrypt don't panic. It's simply time to find an alternative encryption solution to stash your data in. </p>
+<p><strong>Introduction</strong> </p>
+<p>First of all\u2014I'm no expert on TrueCrypt\u2014but felt the need to write a post for some friends who are not in information security but are possibly users of the app. </p>
+<p>In a nutshell: TrueCrypt is a bit of software which can be used to encrypt files on disk. "Disk" can be many things including the whole disk (full-disk encryption), portable disks (usb keys and the like) and certain containers on disk (think of it as a portable folder). It also supports many strong encryption features which are considered complex, but wraps it all up with a useful User Interface. </p>
+<p>Before I go into what's just happened I want to briefly touch on TrueCrypts history. </p>
+<p><strong>Some history</strong> </p>
+<p>In February 2004, TrueCrypt 1.0 was released to the world. This initial release supported Windows platforms only (98, ME, 2000 and XP). It allowed users to encrypt data on Windows platforms with a friendly UI. </p>
+<p>At the core of this release was the source code for E4M (Encryption For the Masses). It was released as a Freeware binary with with "source available" (that is to say, not strictly open source). </p>
+<p>E4M was originally developed to enhance the DriveCrypt software being developed by a company called SecurStar. The release of 1.0 quickly attracted legal action from SecurStar's owners with accusations that the software was stolen. As a result, the 1.0 release was promptly updated (1.0a) which removed support for Windows 98 and ME as a result of the E4M driver being pulled. </p>
+<p>A few months later (June 7, 2004), TrueCrypt 2.0 was released. This release included support for AES and was released under an actual Open Source license (GPLv2). This release, was again quickly updated with a new license (again, relating to E4M discussions) but set the basis for the version of TrueCrypt that we know up until today. </p>
+<p>One observation to make about this time in TrueCrypt's history is that between the 1.0 and 2.0 releases, the GPG signature used to verify disturbed binaries and source archives was changed to 0xF0D6B1E0, "The TrueCrypt Foundation". This key has been the official key used to sign all subsequent releases. </p>
+<p>What ensued over the coming years was a number of releases. While there's a lot going on during this time, there's nothing major to consider. </p>
+<p>Primarily these releases included introducing a number of features including plausible deniability (hidden volumes), cross-platform support (to include OSX and Linux), full-disk encryption support, portable mode (also referred to as traveller mode), multi-core processing support and hardware acceleration support. </p>
+<p>The last official release before today was over two years ago (7.1a on the 7th February 2012). It was, by all accounts, simply a bug-fix release. </p>
+<p>As a result of the numerous features and more importantly, user-friendly interface, TrueCrypt rapidly gained popularity. It's peak point of fame was when it was revealed that it's the product of choice for Ed Snowden in sharing the documents with Greenwald and co for his releases. </p>
+<p>It also hasn't been without some controversy. This is worth some quick exploration because previous issues may confuse the current situation.</p>
+<p><strong> A question of integrity</strong> </p>
+<p>While TrueCrypt rapidly gained popularity, a number of debates have raged regarding it's integrity. While the debates have been many, in my mind these can be classified as two core issues. </p>
+<p>The first, is licensing. Throughout the release history of TrueCrypt (from 1.0 through to 7.1a), there has been confusion about the "Open Source" license status of the software. Given the questions around the integrity of the roots of the software (the fact that E4M was stolen) and the number of times the License has changed across releases, a number of projects and developers refused to support the adoption of TrueCrypt as a solution. </p>
+<p>The second debate regards the peer-review process and integrity of authorship. The authors of the software, while not named, have always maintained that the source is available and may be reviewed at any time. But really, this in itself carried with it two core issues:</p>
+<p><strong>Encryption is hard to get right</strong> </p>
+<p>Really hard.  It takes a long time and very specialised knowledge to be able to do a complete and throughout review of such a complex code base. So, how do we know these authors have got it right? While many have looked (for example, to see if keys are cleared from memory at appropriate times etc), there are so many places where code could go wrong (inadvertently or maliciously) and it would be hard for people to notice (for a great example of open software going wrong, look at the OpenSSL Heartbleed bug). </p>
+<p>As a result, up until very recently, TrueCrypt has not undergone what may be considered a very throughout peer review process or independent code audit. While this may not be a big deal for many software products, given the sensitive locations encryption can be used (think life or death in some countries), it is considered critical by many. </p>
+<p>People feel more comfortable storing secrets when they know the identity of the software authors </p>
+<p>There's a kind of "catch 22" to be had when authoring software designed for anonymity. As the author, you're motivation may very well be that you wish to write the software to enhance your privacy and anonymity and as such, do not want the world to know that you have written it. This can be achieved, and anonymously developed software CAN be adopted, it just depends on how it is presented to the world (see BitCoin for example). </p>
+<p>There is of course, lots of other discussion relating to TrueCrypt security. One example, for some time now, people have debated that their lack of TPM support means that the authors do not take security seriously. This is (in my mind at least) a much larger debate and one for another day. </p>
+<p>As a result of the above concerns, a crowd-funded project to conduct an audit of TrueCrypt was initiated in 2013. Details of which are over at istruecryptauditedyet.com. </p>
+<p><strong>The 28th May 2014</strong> </p>
+<p>Sometime on the 28th May 2014 (noticed approximately 8am on the 29th, NZST), the truecrypt.org domain started pointing to a new site instance on truecrypt.sourceforge.net. </p>
+<p>This updated site is pretty crude, and contains the following in big red text:</p>
+<p>WARNING: Using TrueCrypt is not secure as it may contain unfixed security issues</p>
+<p>It goes on to state that the page only exists to support migration from TrueCrypt to other solutions. It also states that since XP is now officially end of life, more native solutions (namely bit locker on Windows) should be adopted. </p>
+<p>The rest of the page is a set of instructions on how to migrate data from TrueCrypt to Bitlocker on Windows, FileValut on OS X and pretty much anything that works on GNU/Linux. </p>
+<p>It also hosts a new release, 7.2. This release provides read-only support for TrueCrypt volumes to assist users in the migration process. </p>
+<p><strong>And that's all we know</strong> </p>
+<p>And that's it. This is all we know. TrueCrypt was supported and considered "secure" on the 27th May 2014 and no longer is true for either of these things as of the 28th May 2014. The 7.2 release is signed with 0xF0D6B1E0 and by all accounts is the last official drop. </p>
+<p>This wouldn't be the internet without a large number of armchair theories getting bantered around and sure enough, there are plenty. </p>
+<p>Many of these are out of this world and many are quite plausible. I do not want to go into intense debate on each of the ones I've seen and heard so far, but figured I'd drop them in here for completeness: </p>
+<p><em><strong>It's just time to put the project to rest</strong></em> </p>
+<p>It's been over 10 years since the initial release of TrueCrypt. Supporting a software packaged used by a large number of people (potentially millions) across three platforms is a hell of an effort. As such it may be that the authors have decided to just call it a day. Retiring software is usually a fairly straight forward process but when encryption is concerned, not so much. In the western world we consider software expendable. Yet when you write encryption software (especially a package as ubiquitous as TrueCrypt) it may be used in jurisdictions by users who lives depend on it. As such, in an ideal world, encryption software is not a thing you wish to leave unmaintained and therefore potentially vulnerable for the future. </p>
+<p><em><strong>An audit has found catastrophic bugs</strong></em> </p>
+<p>We know there's at least one co-ordinated effort to conduct a complete and comprehensive audit of key TrueCrypt parts (see istruecryptauditedyet.com). From history, we can also assert if there is one group looking at TrueCrypt for security holes, there are other groups looking. </p>
+<p>It is possible that an audit of TrueCrypt has unveiled some sort of catastrophic bug in the application. It is also possible that the developers response has been to just "give up and let it go". Maybe as a result of no longer having time to do a quality release. Maybe with the hope that someone else will pick up the project, resolve the issues and give it new life. </p>
+<p><strong>The TrueCrypt team has been compromised</strong> </p>
+<p>People get hacked. All the time. It's a thing that happens. There is no reason why (albeit without significant effort to identify the authors first) this has not happened. As previously mentioned, on the 28th we saw 7.2 of TrueCrypt released. This release is signed with the official key (the aforementioned 0xF0D6B1E0 key). This signing does not mean that the release was signed by the TrueCrypt team, just that it is by their official key. There is always a possibility that this key has been stolen (along with other access, such as to the DNS for truecrypt.org) and used as part of an attack against TrueCrypt and the development team. </p>
+<p><em><strong>Something else altogether</strong></em> </p>
+<p>There are of course, numerous other possibilities. It's a NSA or other IC backflip. It's always been a hoax. The developers did some bath salts and thought it would be a laugh. The list goes on and on. </p>
+<p>The reality is, the possibilities are endless and we just don't know. </p>
+<p><strong>So now what?</strong> </p>
+<p>At this stage, it's pretty safe to assume that TrueCrypt itself is done as a project. Even if this is a hoax, or the result of a key compromise, placing faith back into a product for which many's faith was shaky to begin with is a big ask. The project is likely to be forked (it does after all, release it's source) but there are still a number of questions around licensing. </p>
+<p><strong>So what to do?</strong> </p>
+<p><strong><em>For Windows Users</em></strong></p>
+<p>The TrueCrypt authors recommend migration to Bitlocker which is Microsofts native encryption solution. It has it's limitations but of course, the main concern is Windows is closed source and there is no way of verifying the integrity of Bitlocker solutions. I'm not aware of any independent audits being released regarding Bitlocker (if there is, let me know and I'll add it here). </p>
+<p><em><strong>For OSX Users</strong></em> </p>
+<p>For full-disk encryption use File Vault 2. Do NOT upload the recovery key to iCloud. It is recommended that you use a separate user for the File Vault encryption rather than tying this to your own primary user account. It is also possible to create portable DMG files with encryption using the Disk Utility application. </p>
+<p><strong><em>For Linux Users</em></strong> </p>
+<p>The majority of distributions support booting full-disk encryption leveraging dm-crypt. There is also eCryptfs which supports TPM. </p>
+<p>If you need a easy and quick migration, I think td-play is also worth checking out. Effectively this was a development effort to implement TrueCrypt functions but using dm-crypt as the core. </p>
+<p>You can Tweet at Pipes at <a href="http://twitter.com/pipes">@pipes</a>.</p>

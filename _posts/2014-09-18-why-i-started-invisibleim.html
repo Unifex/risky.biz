@@ -1,0 +1,38 @@
+---
+layout: post
+title: "Why I started invisible.im"
+tagline: "Hack the planeeeeeeet!!"
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /news_and_opinion/patrick-gray/2014-09-18/why-i-started-invisibleim/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>Before we get started, Ricochet *isn't* ready for mass consumption. It's a really great starting point, but it's currently unaudited and we're making some big changes to it in the next couple of months that will render it incompatible with current versions. If you're still curious, you can <a href="http://ricochet.im">download the binaries</a> anyway and have a play with it.</p>
+<!--excerpt-above-->
+
+<p>The biggest change is a reimplementation of the comms protocol Ricochet uses to enable chats. The current protocol is a custom binary thing that <a href="https://twitter.com/jbrooks_" target="new">John Brooks</a> knocked together and a group decision was made to move to something based on a serialisation library like protobuf. John is working on that now under the guidance of HD Moore and The Grugq.</p>
+<p>The new protocol will basically be more resistant to attacks. We want Ricochet to be a secure tool, and we must stress that currently it is unaudited. We're planning a code-scan and an informal audit by the invisible.im team, but that hasn't been done yet. So, you know, use a VM if you're the paranoid type.</p>
+<p>We're also adding a file transfer capability. John's working full time on both of these features, which should ship around mid November.</p>
+<p>After that release we'll look at tightening up the code and shaking out security bugs. The upshot is, from around February next year you'll be able to download a reasonably secure, anonymous chat utility you can use to transfer files. </p>
+<p>You can read the Wired story for the background on Ricochet and how the invisible.im team wound up joining forces with John Brooks. But I wanted to spell out the base motivations behind the invisible.im project here in this post.</p>
+<p>I've been an information security journalist since around 2001, when I started submitting occasional infosec stories to The Age newspaper in Melbourne. I went full time with journalism in 2002, worked in the ZDNet newsroom (with a fantastic team -- James Pearce, Andrew Colley and Iain Ferguson) in 2003 before going full-time freelance.</p>
+<p>I wrote for the Fairfax papers, ZDNet, Wired, Australian Men's Style and a bunch of others, before launching the Risky Business podcast in 2007. It's been my main gig ever since.</p>
+<p>During my time in media I've seen some pretty incredible stuff. I've witnessed the rapid decline of newspapers over the last 10 years as they've succumbed to ad dollars going online. And I've also observed the effect readily accessible metadata has had on journalism.</p>
+<p>Governments used to respect the media. Not because they admired the role of the media as the fourth estate, but because they knew the media could hurt them. With the fragmentation of the media landscape, that power has been substantially diluted. It's now much more common for authorities to investigate trivial (but inconvenient) leaks -- both from the corporate and government sector -- and the Wikileaks/Manning fiasco of 2010 only served to accelerate the trend.</p>
+<p>Every time a source picks up a telephone to call a journalist, there's a record of it. Every time they email, IM, Skype or SMS a journalist, there's a record of it. Authorities can access these metadata records without court issued warrants, and they frequently do. A polite request on a letterhead is all they need.</p>
+<p>They won't be able to access the content of those communications without a warrant, but if I publish a story about a leak from the Attorney General's Department and authorities can see that I spoke to someone from AG the day prior, my source is still burned.</p>
+<p>Make no mistake: There are serious news and public interest stories that are going unreported because of this.</p>
+<p>I founded invisible.im because it solves a need that I've identified in my work -- I need sources to feel confident that they can contact me with public interest information and not be identified by a metadata trail. </p>
+<p>Because Ricochet is serverless, there's simply no third party to request metadata from.</p>
+<p>This project will, of course, also be of great benefit to non-journalists. People in oppressive regimes can use Ricochet to shield themselves from passive state surveillance. We think there's a lot of promise there, and we'd like to translate the software into languages like Farsi so ordinary people can conduct their risky conversations a little bit more safely.</p>
+<p>A lot of people will spend a lot of time asking whether invisible.im is an "NSA-proof" tool. We can't create an "NSA-proof" tool, and we're not claiming Ricochet is, despite the headline on the Wired piece that suggests otherwise.</p>
+<p>What we can do is make sure it requires difficult, time consuming, and targeted effort to identify Ricochet users' associations and intercept their chats. We'll also make retrospective identification of leakers by lesser agencies (state police, for example) more or less impossible. (Well, if they're identified it's not because they used Ricochet.)</p>
+<p>And while Ricochet may not be "NSA-proof", it certainly makes mass surveillance of its users very, very difficult. Remember that story about the GCHQ grabbing everyone's IM contact lists off the wire as they flew past? Yeah, good luck doing that with Ricochet.</p>
+<p>But what about the "tear-rists", I hear you ask?</p>
+<p>Well, we're yet to see evidence that mass surveillance has been responsible for any significant wins in the counter terrorism arena. And running Ricochet on your box isn't going to stop the NSA owning you sideways with 0day if you're a legitimate target. Once you're owned you're owned. If you're running Ricochet, the NSA (or equivalent agency) can still map out your IM contacts. But the nice thing is you have to be a target before they own you and do this to you. Until they access your machine, the only person who has your Ricochet contact list is you. Not your IM provider, not your telco. Just you.</p>
+<p>I hope this post does something to help people understand why I decided to get involved and bring together some of the smartest people I know to tackle this problem. Invisible.im is seeking to solve a real world problem -- too much metadata is accessible to too many corporate entities and government agencies.</p>
+<p>Simple, really.</p>
+<p>You can flame Patrick Gray <a href="http://twitter.com/riskybusiness" target="new">on Twitter.</a></p>

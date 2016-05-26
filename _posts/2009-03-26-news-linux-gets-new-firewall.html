@@ -1,0 +1,26 @@
+---
+layout: post
+title: "NEWS: Linux Gets New Firewall"
+tagline: "Say hello to the new Linux firewall, nftables..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /news_and_opinion/patrick-gray/2009-03-26/news-linux-gets-new-firewall/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p><a href="http://marc.info/?l=linux-netdev&amp;m=123735060618579" target="new">Announced with little fanfare last week</a> by iptables developer Patrick McHardy, the launch of the nftables alpha has barely been mentioned by the press. </p>
+<!--excerpt-above-->
+
+<p>That's somewhat surprising, considering the new software will represent the biggest change to Linux firewalling since the introduction of iptables in 2001. </p>
+<p>Gordon 'Fyodor' Lyon, the creator of the nmap security scanning tool, says he's excited by the alpha release. </p>
+<p>"I'm... looking forward to its general release in the mainstream Linux kernel," he told <em>Risky.Biz</em>. "The previous transitions from ipfwadm to ipchains and then to netfilter (iptables) each brought a new, more powerful firewall interfaces to the user.  I expect nftables  to do the same."</p>
+<p>Administrators who learn the nftables syntax will find it much more expressive and easier to read, Lyon added. </p>
+<p>Melbourne-based CSO Adam Pointon says he's surprised the announcement hasn't made more of a splash.</p>
+<p>"It's the next generation Linux firewall," he says. "It's a significant milestone and people should pay attention to it."</p>
+<p>However, it's not great news for everyone. Iptables and netfilter will be phased out as nftables becomes the norm, Pointon says, which could create some extra work for security appliance manufacturers. </p>
+<p>"Iptables is used heavily by lots of UTM products, like routers, DSL modems and the like," he says. "Support will end for that code and everyone will move to nftables. So all the Linux boxes out there using it... will eventually have to re-write all their stuff or wind up using old, unsupported code."</p>
+<p>The new firewall has native IPv6 support and userland queuing. "Snort and anything at that layer will be better integrated," Pointon says, adding that nftables will be faster, process rules more efficiently and allow administrators more control at the userland level. </p>
+<p>The code base is also significantly smaller. "That can only be a good thing for its security," Pointon says. "It will take Linux firewalling to the next level."</p>
+<p>While the alpha release is available now, nftables will go through an extensive beta testing phase before finding itself included in the Linux Kernel.</p>

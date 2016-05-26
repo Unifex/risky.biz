@@ -1,0 +1,35 @@
+---
+layout: post
+title: "EXCLUSIVE: I know what you ate last summer"
+tagline: "New Zealand-based Hell Pizza&apos;s database gets walked..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /hell/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p><em>Risky.Biz</em> understands multiple intruders have compromised Hell Pizza's 400mb database. While it does not contain any credit card information, it does contain in excess of 230,000 rows of customer entries.</p>
+<!--excerpt-above-->
+
+<p>The company operates 64 stores in New Zealand, three in England, nine in Australia and one in Ireland.</p>
+<p>The database entries include the full names, addresses, phone numbers, e-mail addresses, passwords and order history for the company's customers. The information is "doing the rounds" across New Zealand.</p>
+<p>Some who came into contact with the database contacted the company last year, posing as "concerned customers", but received no acknowledgement of the data breach. They fear the database may have already found its way into the wrong hands.</p>
+<p>When contacted by <em>Risky.Biz</em>, Hell Pizza co-owner Stuart McMullin said he was unaware of the data breach. He offered no comment when a list of questions was e-mailed to him, beyond acknowledging the contact from "concerned customers" in 2009.</p>
+<p>"I have spoken to my IT staff and they are not aware that our site was hacked or any records lost," McMullin wrote in an e-mail to <em>Risky.Biz</em>. "There were a couple of 'customers' that thought it was the case last year who emailed us - perhaps these are the sources you are referring to - but not to our knowledge."</p>
+<p>While the database has become a valuable tool for security professionals in New Zealand, they believe the exposure of the data is exposing the company's customers to spam and other attacks.</p>
+<p>It's possible that many users have recycled their passwords between their e-mail, PayPal, TradeMe, banking, eBay, Hell Pizza and other accounts. Even if just a few percent of the company's customers are recycling passwords, the database is worth obtaining, they say.</p>
+<p>Downloading the Hell Pizza database, apparently, was very easy.</p>
+<p>One source Risky.Biz spoke to says they looked into the security of the website when rumours of the breach started doing the rounds: </p>
+<p><cite>Immediately I spotted the SQL Queries being made by the Flash SWF as part of the query string to the server-side. The Flash client makes queries which are hard-coded in the .swf (this is dumb as it means SQL Injection is effectively a 'feature' of the store).</cite></p>
+<p><cite>You could easily alter the query string to show the hashes stored in the MySQL users table. I figured out the version of MySQL was 4.0 (Debian Sarge) - and the hashes in this version are very weak, cracking them would take less than a couple of hours.</cite></p>
+<p><cite>MySQL was listening on a remote port, so one could simply log in remotely and run queries or dump the database slowly so as to not be noticed.</cite></p>
+<p>Security researcher and Metasploit creator H D Moore described the security arrangements of the online ordering portal, as described above, as "about 50 steps of fail".</p>
+<p>Another penetration tester says the Hell Pizza database is an excellent example of "non critical" information that could still be used by attackers for great benefit.</p>
+<p>The Chair of New Zealand's Internet Task Force, Paul McKitrick, told <em>Risky.Biz</em> that he had heard rumours of the database circulating around the security community as far back as last year.</p>
+<p>"A database like this of New Zealand users' personal information provides miscreants with a valuable list of commonly used, New Zealand-centric passwords which could prove useful in brute forcing passwords," he said. </p>
+<p>"If Hell Pizza were aware of this then they should have notified their customers.  I do not know what actions Hell Pizza took, but I was a customer and I have never received any notification that my personal information has been compromised."</p>
+<p>McKitrick, the former head of the New Zealand Government's Centre for Critical Infrastructure Protection, added organisations that collect and store the personal details of their customers, have a responsibility to notify their customers if they believe that there has been a breach of their personal information.</p>
+<p>"This enables customers to do something about mitigating their own personal exposure, such as ensuring that the compromised password was changed everywhere it had been used, because people frequently reuse their passwords."</p>
+<p>Hell Pizza reported the breach to police after <em>Risky.Biz</em> provided it with some database excerpts it could verify.</p>

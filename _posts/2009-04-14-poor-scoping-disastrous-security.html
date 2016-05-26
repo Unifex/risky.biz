@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Poor Scoping Disastrous for Security"
+tagline: "The limited scope afforded to your security staff and contractors could harm your business, writes Metlstorm..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /news_and_opinion/metlstorm/2009-04-14/poor-scoping-disastrous-security/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>All enterprises must eventually accept that security is just one more part of software or system development lifecycle. Both designs and implementations must be reviewed, developers need security training and infosec teams need the power to veto go-live dates.</p>
+<!--excerpt-above-->
+
+<p>Lots of businesses have arrived at this point. But what often happens as a result is security gets siloed per project. The project scope determines where security people will see, where there is budget, and critically, where the incentive to fix the problems lies.</p>
+<p>This means that the way that project siloes interact -- the reefs between scope islands -- are never in scope. And as we all know, scope is for project managers, auditors and security consultants. Hackers don't care about your scope.</p>
+<p>Let's look at how scoping can create some pretty peverse outcomes.</p>
+<p>So I owned this bank system. Hard. Pentesting externally, I managed to go from no auth to complete customer account compromise. I could reset passwords, transfer money, whatever. Pretty bad as customer facing banking system deployment projects go, right?</p>
+<p>I head to the wrapup meeting, held in a typical bank meeting room. You know the type -- poorly cleaned motorised-printy whiteboard that no longer motors, acoustic tiled ceiling the colour of institutional gravy, one glass wall out into the post-carpet-cubicle humanist refurbishment. </p>
+<p>The cubicles are slightly curvy now, less beige, lower and more modular and hip, but still festooned with the trademark flotsam of the corporate slum; a thousand colour laser printed pictures of funny cats, babies, daughters with ponies, movie posters with someone's head photoshopped -- no hang on, MS paint.exe'd -- on and captioned with some tepid project in-joke.</p>
+<p>This is the meeting where I explain what's going to be in the report, discuss the technical remediation options with the developers and the impact on project go-live signoff with the project manager. Normally what you're aiming for here is dismissive-defensive-disbelief-dawninghorror from the developers, and something approaching open weeping from the PM. A grimace is good, but actual sobbing is better.</p>
+<p>I lay it out for them. A few technical details for the nerdy types, some screenshots on my laptop for the PM, then the chill starts to set in. The PM is ashen, the developers in the final d-stage. Beautifully orchestrated meeting-fu, Metl. They're weeping from the palm of my hand. So much for that project deadline, now a zeppelin destined to miss its mooring post in the dark night sky.</p>
+<p>"Oh, god, there's no way we're going to be able to go live Friday week," the PM cries. "This is a disaster; Bob's HVT project depends on, oh, and the entire New SSI project... How are we going to..."</p>
+<p>But I too am human and I misjudge my final salvo; I let my guard down, falling for the anthropomorphism the marketing team work so hard to erect: That the corporation is a caring, living organism, in verdant symbiosis with its adoring customers.</p>
+<p>"I, uh, think this affects the live system too," I say.</p>
+<p>"Whaaaat?"</p>
+<p>"Yeah. I didn't test it obviously, but this bug is due to the way your new system interacts with the backend DollaMasta2000. If anything, it's a business rules bug, where your ..."</p>
+<p>I trail off. The project manager has a rictus grin on her face. All of a sudden I feel unsure of myself, like I've just made some awful faux pas. I feel like a turd in a punchbowl.</p>
+<p>"Are you saying," she begins slowly, "that this affects the production system? That you could do this to anyone's real accounts? My account?"</p>
+<p>Oh, phew, I think. She does get it after all. "Yes!" I gush, enthusiasm at my own cleverness replacing the awkwardness of a moment before. "I can own anyone's account, this is pretty bad."</p>
+<p>"OH THANK CHRIST FOR THAT!"</p>
+<p>I blink.</p>
+<p>"LEGACY ISSUE! OUT OF SCOPE! DOESNT AFFECT OUR GOLIVE! NOT EVEN IN OUR BUDGET! OOOOH YEAH!"</p>
+<p>There's a big, shit-eating grin on her face. You. have. got. to. be. kidding, right Metl?</p>
+<p>No, I'm not. I'm serious. This is how it went down. I'm not making this up.</p>
+<p>That's what "scoping" is doing to your enterprise.</p>
+<p>So here's my one line take-away for this week:</p>
+<p><strong>Hackers don't give a shit about your scope.</strong></p>
+<p>They couldn't care less if that legacy HPUX box wasn't in scope when you did the Northern-Data-Centre Refresh Project. They don't care that layer-2 segregation is implemented by one team, but that layer-3 filtering is implemented by another, and the two don't talk. They don't care that all your corporate laptops are locked down as hell, because the CEO is surfin' on his wireless toobs at the airport business class lounge and just got owned. </p>
+<p>The fundamental asymmetry of this industry wins - the hacker only has to find one easy way in, and that, I guarantee you, will be in the place that was never in scope.</p>
+<p>Project-based security is important for the long-term health of your business, but don't let it starve out real, holistic, enterprise-wise security goals. Don't write off business-targeted, no-holds-barred pentesting as 'scaremongering'; don't get hostile because the pen-testers waltzed around your network popping shells and illuminating your failings with all the stark horror of a blacklight in a Vegas hotel room. It's our job, and some of us are good at it.</p>
+<p>Sometimes you need to let us own you, hard, brutally and for real. To show you how easy it is, to gouge out real business impact, to shred all the garish crepe paper disguising the cracks around your delusional scoping. You need to be re-focussed, brought back down to earth, out of your politics and scoping and business silo structure, because the truth here is that no one outside of your organisation gives a shit, and least of all the dude that just owned you.</p>
+<p><em>Metlstorm is a New Zealand-based freelance security consultant. He's created several tools including Hai2IVR, Winlockpwn and SSH Jack. He's also an organiser of the annual Kiwicon security conference in Wellington, New Zealand.</em></p>

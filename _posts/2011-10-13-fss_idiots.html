@@ -1,0 +1,39 @@
+---
+layout: post
+title: "EXCLUSIVE: NSW cops quiz Aussie security researcher"
+tagline: "Boneheaded superannuation firm tries shooting messenger..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /fss_idiots/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>Webster had noticed his pension fund, <a href="http://firststatesuper.com.au/" target="new">First State Superannuation</a>, allowed logged in members to access online statements via "direct object reference," a security lapse so boneheaded <a href="https://www.owasp.org/index.php/Top_10_2010-A4-Insecure_Direct_Object_References" target="new">it's included</a> in OWASP's infamous top ten list of Web application security bugs.</p>
+<!--excerpt-above-->
+
+<p>For those unfamiliar with direct object reference, it means documents are served up by way of a direct ID in a URL. The problem is that by changing the document ID in the browser's URL bar, another document will be accessed and served to the user. </p>
+<p>Direct object reference issues have been well known for over a decade. The Australian Treasury's GST Web Site was <a href="http://www.abc.net.au/7.30/stories/s146760.htm" target="new">affected by a similar glitch in 2000.</a></p>
+<p>Sure enough when Webster incremented the document ID number in the URL linking to his super statement, up popped another member's statement. He contacted First State Superannuation's administration arm, Pillar Administration, to notify them of the problem the morning after he discovered the company's shoddy coding. </p>
+<p>He even sent one of the fund's IT staffers a bash script to demonstrate the issue. The script enumerated document IDs and downloaded statements. </p>
+<p>"It needed to be fixed ASAP," Webster, who runs information security company <a href="http://www.osisecurity.com.au/" target="new">OSI Security</a> and is a prolific Metasploit contributor, told <em>Risky.Biz</em>. "That's why I made a script and sent it to [redacted], so he could run the script himself and see what I meant."</p>
+<p>The initial response from the fund was positive, with e-mails seen by <em>Risky.Biz</em> praising Webster for taking the time to notify the right people.</p>
+<p>First State Superannuation has 770,000 members, mostly working for the NSW State Government. Members include everyone from magistrates to police officers and nurses.</p>
+<p>It was two of those NSW police officers that turned up at Webster's front door at around 9pm last night. </p>
+<p>"They just rocked up on the doorstep and said 'We're after Patrick'," he said. "They said it was about downloading files from First State Super. They said they didn't really understand it. They were the local Police.</p>
+<p>"The annoying part is that I contacted First State straight up. I gave them my number, email... and full details in my email including LinkedIn and they called the cops," Webster said.</p>
+<p>It is generally understood in the information security industry that data accessed via a URL without further authentication has, in essence, been made public by the system allowing the access.</p>
+<p>It is difficult to argue that the access of such material is the bypass of a security control; it is merely proof of the <em>absence</em> of a security control. </p>
+<p>Webster demonstrated that any logged in First State Superannuation member could access the online statements of <em>any</em> other member via URL manipulation alone.</p>
+<p>It was Pillar Administration and First State Superannuation's diabolical violation of good practice that exposed members' details, not Webster's actions. </p>
+<p>For background on just how dysfunctional and negligent an organisation has to be to allow direct object reference to sensitive information, <a href="http://risky.biz/citi">click here</a>.</p>
+<p>Perhaps instead of contacting the law, First State Superannuation would have done well to send Webster, who ironically enough spent much of his career working in information security for NSW Police, a nice bottle of single malt and a sun hat. </p>
+<p>The company has suspended online access to Webster's account. Passing the buck, wasting taxpayers' money and police time FTW.</p>
+<p>Calls to Pillar Administration's head office and individual staffers were not returned. Staffers reached would not comment. Comment from NSW Police could not be obtained by time of publication and detectives reached would not comment.</p>
+<p>Pillar Administration and First State Superannuation have since fixed the direct access bug and notified members whose information was accessed by Webster's script. See the letter <a href="http://media.risky.biz/fssletter.pdf" target="new">here [pdf]</a>.</p>
+<p>The only silver lining that could come out of Webster being charged with something -- what, exactly is a bit foggy -- would be watching a prosecutor try to explain to a magistrate that changing a single digit in a browser bar is a computer crime. </p>
+<p>Lawl/snort/chortle etc.</p>
+<p><em>Follow Patrick Gray on Twitter <a href="http://twitter.com/riskybusiness/" target="new">here</a>.</em></p>
+<p><em>Check out the Risky Business podcast <a href="http://risky.biz/netcasts/risky-business" target="new">here</a>.</em></p>
+<p><em>Subscribe to podcast feeds <a href="http://risky.biz/feeds/">here</a>.</em></p>

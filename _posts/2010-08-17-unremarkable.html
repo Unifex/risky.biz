@@ -1,0 +1,46 @@
+---
+layout: post
+title: "Unremarkable spam remarkably effective"
+tagline: "Effective spamming all too easy..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /unremarkable/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>Then I spotted the following, <a href="https://twitter.com/davidfarrier/status/20698676484" target="new">unremarkable tweet</a> from @davidfarrier:</p>
+<!--excerpt-above-->
+
+<p>"some chap in china just hacked my gmail. and just to tell people about iphone 4s. as if people didn't know already. silly bugger."</p>
+<p>Quickly followed by <a href="https://twitter.com/davidfarrier/status/20736866038" target="new">this</a>:</p>
+<p>"seems like lots of us twits have had our gmails/hotmails hacked this week. are you on the "hack" list? i certainly was."</p>
+<p>The tweets in themselves were unremarkable. What was interesting was the amount of chatter surrounding the keywords "Gmail" and "Hacked". Everyone I spoke to throughout the morning knew someone who had been compromised or had been sent badly constructed spam from someone's legitimate Gmail account. </p>
+<p>An initial look around suggested that thousands if not tens-of-thousands of accounts have been hit.</p>
+<p>So what was going on?</p>
+<p>Well, simply put, every "hacked" Gmail account was logged into using valid credentials that appeared to have been previously stolen. Once the attackers compromised the accounts, they drafted emails to the victims' contacts with an email along these lines:</p>
+<p><em>Dear friends:</em></p>
+<p><em>Last week ,I have Order china  Samsung UN55B8000 55-Inch</em></p>
+<p><em>this w e bsite:dhsellso.com</em></p>
+<p><em>I have received the product!</em></p>
+<p><em>It's amazing! The item is original, brand new and has high quality, but it's much cheaper. I'm pleased to share this good news with you! I believe you will find 7what you want there and have an good experience on shopping from them.</em></p>
+<p><em>Regards!<br/>
+</em></p>
+<p>Presumably this was the work of a script with previously compromised account details purchased from a botnet or phishing operator. There's nothing remarkable about it at all.  </p>
+<p>In each sample that I have looked at, the source IP address of the Gmail session was the unremarkable China located 115.49.90.219 and the text was identical (with exception to the product being pimped).</p>
+<p>One possible theory that has been raised by several people I have talked to (and this is, just a theory), is that the BGP "misroute" earlier in the year captured a bunch of logins (HTTP, POP3, IMAP) to Gmail services and they have been harvested as apart of this attack.</p>
+<p>Personally, I find it hard to link the two together. The reason why I find it difficult to believe is because I think that an operation capable of dragging in 37,000 networks (and managing to successfully sniff the bridged the traffic), would not blindly sell the acquired data to some crappy low-level scam operation. </p>
+<p>That sort of capability would surely attract higher bidders.</p>
+<p>So let's continue to work with the unremarkable theory of buying some stolen Gmail credentials from a basic botnet operation to log in and send spam.</p>
+<p>So what was the deal with the spam? The target site was dhsellso.com which in itself is also unremarkable in many ways. It doesn't appear to host malware or phish people for details. It is reasonably well constructed and appears patched against known flaws. It is, by all accounts, just a good ol' fashioned "too good to be true and there for is fraud" site.</p>
+<p>Funnily enough, the person(s) behind dhsellso have <a href="http://www.google.co.nz/#hl=en&amp;q=%22myfure.com%22&amp;fp=49292d9483d96d20" target="new">struck before</a> and have registered at least two other sites at the same time as dhsellso.com presumably for nefarious purposes (dbyers.com and dbyers1.com).</p>
+<p>So what is remarkable about all this? How successful the operation has been.</p>
+<p>This is for several reasons:</p>
+<p>1) Harvested email lists traditionally sell by accuracy. 100,000 email addresses at 70% accuracy will always sell for more than 100,000 email addresses with 60% accuracy. In this case, by using the victims address book, you can be sure the accuracy of the target email addresses would have been high (maybe 90+%?).</p>
+<p>2) Dhsellso.com succeeded in getting their message out beyond e-mails. Systems such as blogger.com and posterous allow users to configure "magic" or hidden email addresses that when emailed, generate blog posts. Naturally, many blogs around the world started showing posts with dhsellso.com email subject and body on Google almost straight away.</p>
+<p>3) The "junk" rate of the generated emails within Gmail / Google Apps has been pretty "low". Presumably because emails originated from valid Gmail HTTP sessions &amp; accounts.</p>
+<p>4) Given the fact that all emails would have appeared from trusted people, I would imagine the click rate might have been pretty high</p>
+<p>5) The fact that no one gives a shit. Pretty much everyone I spoke to who had been hacked simply shrugged, changed their password and moved on. Like getting your Gmail account owned happens every other day.</p>
+<p>Seeing such remarkable results from such unremarkable campaigns is a tad depressing.</p>
+<p>Now, back to my unremarkable day.</p>

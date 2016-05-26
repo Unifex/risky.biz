@@ -1,0 +1,27 @@
+---
+layout: post
+title: "McAfee Gets Worked. Hard."
+tagline: "Embarrassing vulnerabilities in McAfee websites poised to make headlines..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /news_and_opinion/patrick-gray/2009-05-05/mcafee-gets-worked-hard/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>A Cross Site Request Forgery (CSRF) vulnerability uncovered in McAfee's "secure" vulnerability scanning portal would have allowed attacker to take control of client accounts. The portal is designed to scan customer websites for security vulnerabilities and fulfil some PCI DSS compliance requirements.</p>
+<!--excerpt-above-->
+
+<p>To fall victim to the attack the target would have to be logged in to their McAfee account and browse to a malicious website that exploited the CSRF bug.</p>
+<p>Commenting on his CSRF discovery, security researcher Mike Bailey didn't pull punches. "Until last week, McAfee Secure was vulnerable to critical CSRF holes," he <a href="http://skeptikal.org/2009/05/epic-failure-from-mcafee.html " target="new">wrote on his blog</a>. "Not little ones, or ones that were difficult to exploit. [These are] basic, zero-knowledge, classic GET-based total-account-compromise holes."</p>
+<p>McAfee did not comply with PCI requirements for Approved Scanning Vendors as defined by the PCI Security Standards Council, Bailey claims, and believes the company failed to use a secure software development lifecycle when building the application. </p>
+<p>Furthermore, a penetration test should have caught the problem, he wrote, thus he concludes "no such audit has taken place".</p>
+<p>Another, seemingly unrelated Cross Site Scripting (CSS) bug in a McAfee website <a href="http://www.readwriteweb.com/archives/mcafee_enabling_malware_distribution_and_fraud.php" target="new">allows miscreants to create pages that appear to be hosted on McAfee domains</a>, when in fact the content is being served from elsewhere. Worse, no SSL errors would be generated in this attack, so even a vigilant user would be fooled.</p>
+<p>SecureScience.net has demonstrated the attack by creating a "buy now" page for McAfee products, which, if a user clicked through to that page, would steal their credit card number and deliver a trojaned version of McAfee's product. (Click <a href="https://kc.mcafee.com/corporate/index?page=answers&amp;type=search&amp;searchid=1240943327683&amp;question_box=%3Cscript+src%3D%22http%3A%2F%2Fwww.securescience.net%2Fxss%2Fmcafee%2Fmcafee.js%22" target="new">here</a> for the dummied up CSS'd page. It won't bite.)</p>
+<p>It's feared spammers could exploit the bug to offer seemingly legitimate "special deal offers" on McAfee products, using the CSS bug to create a genuine-looking purchase page with a valid SSL cert. McAfee, presumably, is scrambling to fix this second issue.</p>
+<p>Ironically, marketing material for McAfee's secure scanning portal <a href="http://www.mcafeesecure.com/us/technology-scan.jsp" target="new">claims the service detects CSS vulnerabilities</a>. </p>
+<p>Sydney-based security consultant Chris Gatford, who works for Pure Hacking, believes the disclosures highlight an all too common hypocrisy among security providers. "It's a sad fact that many security service providers do not practice what they preach," he says.</p>
+<p>Others thought the revelations were nothing short of hilarious. One local PCI Qualified Security Assessor (QSA), who did not want to be named, described the news as hysterical. "If there was a vote for lolz of the year I would be voting for McAfee Secure," he says. "That's just stunning."</p>
+<p>McAfee isn't the only security vendor to wear egg on its face this year. The website of antivirus software maker Kaspersky was defaced in February. The website of BitDefender, another AV vendor, was also defaced. </p>
+<p>Risky.biz sought comment from McAfee, but due to time-zone differences it was unable to offer any response in time for deadline.</p>

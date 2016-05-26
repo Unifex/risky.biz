@@ -1,0 +1,22 @@
+<article>
+  <div class="post-excerpt">
+    <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+    {% if post.tagline %}
+    <span class="field-content">{{ post.tagline }}</span>
+    {% endif %}
+
+    <div class="byline">
+      <p class="author">By <span>{% if post.author %} {{ post.author }} {% else %} {{ site.author }} {% endif %}</span></p>
+      {% if post.organization %}
+      <p class="organization">{{ post.organization }}</p>
+      {% endif %}
+      <p class="pub-date">{{ post.date | date: '%B %d, %Y' }}</p>
+    </div>
+    <div class="content">
+    {{ post.excerpt }}
+    </div>
+    <div class="read-more">
+      <span><a href="{{ post.url }}">&gt;&gt; read more/listen</a></span>
+    </div>
+  </div>
+</article>

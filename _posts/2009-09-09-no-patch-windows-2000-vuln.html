@@ -1,0 +1,22 @@
+---
+layout: post
+title: "No patch for Windows 2000 vuln"
+tagline: "RIP Windows 2000?"
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /news_and_opinion/patrick-gray/2009-09-09/no-patch-windows-2000-vuln/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>While the bug allows remote code execution several versions of Windows, including Vista and Server 2008, its impact on Windows 2000 is limited to causing a denial of service.</p>
+<!--excerpt-above-->
+
+<p>Let's hope it's not one of those Denial of Service bugs that turns out to be quite serious later.</p>
+<p>The bug appears to be some sort of TCP/IP stack problem -- discovered by <a href="http://blogs.hackerscenter.com/2009/03/unicornscan-author-jack-c-louis-dies-in.html" target="new">the late Jack C. Louis</a> -- which allows attackers with the ability to connect to any port to run code or DoS the target, depending on the version of Windows. </p>
+<p>It's a bad one.</p>
+<p>It's especially bad if you're running legacy applications on Windows 2000. The only mitigation for this thing is a properly configured firewall that cleans TCP window sizes (cleans Windows' windows, hur hur) in front of the Windows 2000 host. </p>
+<p>Here's the relevant bit of the <a href="http://www.microsoft.com/technet/security/Bulletin/MS09-048.mspx" target="new">advisory</a>:</p>
+<p>"The architecture to properly support TCP/IP protection does not exist on Microsoft Windows 2000 systems, making it infeasible to build the fix for Microsoft Windows 2000 Service Pack 4 to eliminate the vulnerability. To do so would require rearchitecting a very significant amount of the Microsoft Windows 2000 Service Pack 4 operating system, not just the affected component. The product of such a rearchitecture effort would be sufficiently incompatible with Microsoft Windows 2000 Service Pack 4 that there would be no assurance that applications designed to run on Microsoft Windows 2000 Service Pack 4 would continue to operate on the updated system."</p>
+<p>Windows 2000 support was to continue until July next year.</p>

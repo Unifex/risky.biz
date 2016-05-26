@@ -1,0 +1,41 @@
+---
+layout: post
+title: "I Heart... Windows?!"
+tagline: "Metlstorm justifies his forbidden love for Windows..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+permalink: /news_and_opinion/metlstorm/2009-04-02/i-heart-windows/
+mediaurl: 
+mediaurlogg: 
+medialength: 
+mediatype: audio/mpeg
+---
+<p>"They're making us roll out Active Directory," he whined, looking for sympathy from a fellow UNIXnerd. But the sad, awful truth is this: Windows infrastructure is actually usable -- and perhaps even securable -- in the enterprise.</p>
+<!--excerpt-above-->
+
+<p>Ugh. It pains me to say it, but really, are you trying to tell me that you'd prefer NIS, NFS and LPR over AD and SMB? Oh come on, even from a usability perspective, let alone security. To get any sort of kerberized auth for file sharing in UNIX, you're dispatched into the ebola-grade intestinal sloughing of AFS. And sure, CUPS kinda works, but when did you ever celebrate because your Windows printer worked?</p>
+<p>To really gouge some salt into the wound, go count the number of security advisories in UNIX kerberos implementations. Now compare to Microsoft's.</p>
+<p>Yeah, exactly.</p>
+<p>What's funny here is that the age-old dichotomy -- Windows for games, UNIX for Serious Intertubes Bizness -- is actually ass-backwards for the enterprise. Your average home user Windows box is an awful, spyware ridden porn-popup carnival, and your average home UNIX box is a fully patched Ubuntu with a 190 day uptime.</p>
+<p>But in the enterprise, people run fully patched Windows Server 2k3 domain controllers, and locked down desktops with nicely packaged software rollouts, reimaging procedures, patch management, endpoint security software and jolly corporate screensavers showing your fellow workmates grinning as they build brand value.</p>
+<p>And the UNIX systems? Oh, God. Ancient Solaris boxes filled with awful, awful "Enterprise" UNIX software. BMC anything, Tivoli anything, anything that does backups or SNMP, or even worse, CA anything. Awful shellscripts written by well meaning admins, awful outsourced UNIX managment, awful root cronjobs running awful scripts off awful NFS shares. Never ever patched. Never up to date.</p>
+<p>Let's face it, while the availability of UNIX systems might be great, for the other two corners of the CISSP triad -- integrity and confidentiality -- they're fucking awful.</p>
+<p>Ask yourself - when was was the last time you saw a corporate UNIX environment that doesn't make you rub your temples and sob quietly into your audit worksheet? Or a Sol10 box that despite its ZFS and zones and all of Sun's engineering whizbangerry, wasn't adminned like it was 2.5.1? Now, what about when you last saw decent, competently run Windows infrastructure? Probably, what, last week?</p>
+<p>This all came to me today as I audited a UNIX box. (Don't be shocked. I do have a beard.)</p>
+<p>UNIX host configuration reviews are in our blood in this industry -- many of us grew up playing with, hacking, escalating privilege on UNIX boxen; our home 386 Slackware Linux, university Solaris machines, random HPUX or AIX or, ha ha ha, A/UX, Apple's UNIX from way, way before this whole ridiculous Mac OS X lark.</p>
+<p>Reviewing a multiuser UNIX for config and local priv escalation, well, it feels like coming home. Grandma's warm apple crumble, coffee at dawn looking out your kitchen window, or finding that postcard from a holiday romance 15 years ago. It's probably how Rob T Morris Jr. feels every time he sees a sendmail MTA string in his headers.</p>
+<p>I heart UNIX.</p>
+<p>This particular box is running some Serius Internets Bizness -- important stuff -- and after the UNIX ops team finish their kibitz, sucking their teeth at my request for the mighty root access to a production server, I finally sit down to start. I don't really have the heart to tell them that my asking for root is just professional courtesy.</p>
+<p>After covering off the basics, I settle in for the enjoyable bit -- going through all the user and network service accounts, then figuring out how to get root from every single one.</p>
+<p>It rarely gets as far as rpm -qa to figure out if they're patched up to date (they never are). I take perverse satisfaction in auditing UNIX filesystem permissions - there's something oh so sweet about the simplicity of it all. Oh, look! BMC Patrol runs at boot, gets started by that initscript as root, which sets its path to include /opt/patrol/bin before /bin, and oh dear that directory is owned by uid patrol. *Sigh* Oh look, suid root bins which include libraries writable another user. *Sigh*. Oh look, root writing files in directories that are world writable and aren't sticky. *Sigh*. And ohmigod, did you see that sudoers config? I actually laughed out loud at that one, and over the carpet cubicle wall I hear someone saying "uh, its not good when the beardy security consultant is giggling like a schoolgirl in his little blue culottes, is it?"</p>
+<p>Well, yes and no. I mean, they did try. It was certainly no worse than any other enterprise UNIX box I've reviwed, and better than plenty. Sure, the umasks are crap, sure there's 87 different versions of the java runtime installed from 2003 to present, sure there's more suid binaries than the Suharto family has rupiah, sure there's world readable SSL private keys and cleartext passwords in bash_histories and X11 displays with xauth + and... oh my, those shellscripts, they make my eyes water with the mirth of it all.</p>
+<p>But! None of this is unusual, or different, or even particularly worse than any other enterprise UNIX box. That's when it hit me. We really don't think about Windows as a multiuser OS like we do with UNIX. That gives it the advantage.</p>
+<p>Because we can't trust individual Windows systems, we have to build resilient Windows networks with single sign on that's actually usable plus all the management tools that make it possible to actually run large-scale desktop computing infrastructure. God help the poor engineers at Novell tasked with doing this all with SuSE.</p>
+<p>I hope never to be a corporate Windows admin. I'd take the corporate UNIX admin job any day of the week instead -- my pager would go off less often, I'd meet my KPIs better, and I'd be much, much happier than the poor Windows sod with his recurring MS Patch Tuesday nightmares. But would I believe that my shit was more secure than his?</p>
+<p>Well, I present to you the Metlstorm Simple UNIX Examination (the 'MetlSUX' if you will):</p>
+<p># find / -path */bin/java | wc -l</p>
+<p>0-5   Lucky you, you might make it to 21 mins<br/>
+5-10 Write once, test everywhere<br/>
+10-30 Serious Internet Business Production System<br/>
+30+ Do you, like, work at Sun?</p>
+<p><em>Metlstorm is a New Zealand-based freelance security consultant. He's created several tools including Hai2IVR, Winlockpwn and SSH Jack. He's also an organiser of the annual Kiwicon security conference in Wellington, New Zealand.</em></p>
