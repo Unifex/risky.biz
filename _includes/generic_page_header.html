@@ -3,7 +3,10 @@
 <header class="intro-header visible-xs">
     <div id="logo-title">
         <div id="logo">
-            <a href="/" title="{{ page.title }}" rel="home"><img src="/static/img/logos/rblogo-395.png"  class="img-responsive" alt="Home" id="logo-image"></a>
+            <a href="/" title="{{ page.title }}" rel="home">
+            <img data-original="/static/img/logos/rblogo-395.png" class="lazy img-responsive" alt="Home" id="logo-image">
+            <noscript><img src="/static/img/logos/rblogo-395.png" class="img-responsive" alt="Home" id="logo-image"></noscript>
+            </a>
         </div>
     </div> <!-- /#logo-title -->
 </header>

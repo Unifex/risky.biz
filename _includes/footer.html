@@ -48,18 +48,24 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" integrity="sha384-6ePHh72Rl3hKio4HiJ841psfsRJveeS+aLoaEf3BWfS+gTF0XdAqku2ka8VddikM" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" integrity="sha384-ovn+ksX00EqrxlV2SLbvnb13K5244CZPrO3v08mAssOuQ1AgGVcEu4k44sdOJPJE" crossorigin="anonymous"></script>
+
 <!-- JS libs -->
-<script src="/static/js/super-search.js"></script>
+<script src="/static/js/super-search.js" integrity="tWqc4itsS4p6z3QI2WoyOE47wv/DhoOF2vQ1Rtk2wfBLV2zRPX/gwgFMzWtomUTC" crossorigin="anonymous"></script>
 
 {% if site.socialite %}
 <!-- Social links -->
-<script src="{{ "/static/js/socialite.min.js" | prepend: site.baseurl }}"></script>
+<script src="/static/js/socialite.min.js" integrity="iTgAd3J2FidHjdo5XwgxDwBPr8iHT+dImjmShNUWaSWY0ZJRWJyrrKapzE0vIPot" crossorigin="anonymous"></script>
 <script type="text/javascript">
     (function($) {
+		$("img.lazy").lazyload({
+			skip_invisible : true
+		});
         Socialite.load();
     })(jQuery);
+    
 </script>
 {% endif %}
 
