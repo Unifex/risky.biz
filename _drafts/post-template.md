@@ -6,10 +6,10 @@ tagline: "Notes and stuff"
 excerpt_separator: <!--excerpt-above-->
 categories: 
 permalink: /post_template
-mediaurl: 
-mediaurlogg: 
-medialength: 
-mediatype: 
+media_url: 
+media_url_ogg: 
+media_length: 
+media_type: 
 show_notes :
   - title: Teh Googles
     link: http://google.com

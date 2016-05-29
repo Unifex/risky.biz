@@ -32,7 +32,7 @@ layout: null
             <category>{{ tag | xml_escape }}</category>{% endfor %}
             {% for cat in post.categories %}
             <category>{{ cat | xml_escape }}</category>{% endfor %}
-            {% if post.mediaurl %}<enclosure url="{{ post.mediaurl }}" length="{{ post.medialength }}" type="{{ post.mediatype }}" />{% endif %}
+            {% if post.media_url %}<enclosure url="{{ post.media_url }}" length="{{ post.media_length }}" type="{{ post.media_type }}" />{% endif %}
             {% if post.tagline %}<itunes:subtitle>{{ post.tagline }}</itunes:subtitle>{% endif %}
             <itunes:explicit>{% if post.explicit %}{{ post.explicit }}{% else %}No{% endif %}</itunes:explicit>
             <itunes:summary>{{ post.content | strip_html | truncate: 4000 }}</itunes:summary>

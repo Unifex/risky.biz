@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="/static/css/syntax.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <blink href="/static/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -33,8 +39,15 @@
                 {{ content }}
             </div><!-- end /.col-sm-8 -->
             <div class="col-sm-4 col-sm-pull-8">
+
+                <div class="visible-sm">
+                    <a href="/"><img id="about" src="/static/img/logos/rblogo-216.jpg" alt="Home" class="img-responsive" /></a>
+                </div>
                 <div class="visible-md">
-                    <a href="/"><img id="about" src="/static/img/risky.png" /></a>
+                    <a href="/"><img id="about" src="/static/img/logos/rblogo-245.png" alt="Home" class="img-responsive" /></a>
+                </div>
+                <div class="visible-lg">
+                    <a href="/"><img id="about" src="/static/img/logos/rblogo-280.png" alt="Home" class="img-responsive" /></a>
                 </div>
                 
                 <div class="search" id="js-search">
@@ -52,10 +65,12 @@
                 {% for category in site.categories %}
                     {% capture category_slug %}{{ category | first }}{% endcapture %}
                     {% for c_slug in category_slug %}
-                        {% if c_slug == page.categories %}
-                            &raquo; <span class="active">{{ site.data.categories.[c_slug].title }}</span><br />
-                        {% else %}
-                            &raquo; <a href="/category/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
+                        {% if site.data.categories.[c_slug].published %}
+                            {% if c_slug == page.categories %}
+                                &raquo; <span class="active">{{ site.data.categories.[c_slug].title }}</span><br />
+                            {% else %}
+                                &raquo; <a href="/category/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
