@@ -6,7 +6,7 @@ layout: null
     <channel>
         <title>{{ site.title | xml_escape }}</title>
         <description>{{ site.description | xml_escape }}</description>
-        <link>{{ site.url }}{{ site.baseurl }}/</link>
+        <link>{{ site.url }}/</link>
         <language>en</language>
         <atom:link href="http://evolved.net.nz/feed.xml" rel="self" type="application/rss+xml" />
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
@@ -25,13 +25,13 @@ layout: null
         
         
         {% if site.categories[page.category] %}
-            {% for post in site.categories[page.category] %}
+            {% for post in site.categories[page.category] limit:20 %}
         
         <item>
             <title>{{ post.title }}</title>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-            <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+            <link>{{ post.url | prepend: site.url }}</link>
+            <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
             {% for tag in post.tags %}
             <category>{{ tag | xml_escape }}</category>{% endfor %}
             {% for cat in post.categories %}
@@ -39,8 +39,13 @@ layout: null
             {% if post.media_url %}<enclosure url="{{ post.media_url }}" length="{{ post.media_length }}" type="{{ post.media_type }}" />{% endif %}
             {% if post.tagline %}<itunes:subtitle>{{ post.tagline }}</itunes:subtitle>{% endif %}
             <itunes:explicit>{% if post.explicit %}{{ post.explicit }}{% else %}No{% endif %}</itunes:explicit>
-            <itunes:summary>{{ post.content | strip_html | truncate: 4000 }}</itunes:summary>
+            <itunes:summary>
+            	<![CDATA[
+                {{ post.content | strip_html | truncate: 4000 }}
+                ]]>
+            </itunes:summary>
             <description>
+            	<![CDATA[
                 {{ post.content | xml_escape }}
                 
                 {% if post.show_notes %}
@@ -51,13 +56,14 @@ layout: null
                     <div class="panel-body">
                         <dl>
                         {% for show_note in post.show_notes %}
-                          <dt><a href="{{ show_note.link }}">{{ show_note.title }}</a></dt>
-                          <dd>{{ show_note.description }}</dd>
+                          <dt><a href="{{ show_note.link }}">{{ show_note.title | xml_escape }}</a></dt>
+                          <dd>{{ show_note.description | xml_escape }}</dd>
                         {% endfor %}
                         </dl>
                     </div>
                 </div>
                 {% endif %}
+                ]]>
             </description>
         </item>
             {% endfor %}

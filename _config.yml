@@ -3,9 +3,9 @@ description: "It's a jungle out there"
 author: Patrick Gray
 urls:
     - text: About
-      url: /about/
+      url: /about
     - text: Contact
-      url: /contact/
+      url: /contact
     - text: Sponsorship
       url: /sponsorship
 url: "https://riskybiz.evolved.net.nz"
