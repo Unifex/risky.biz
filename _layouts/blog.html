@@ -1,0 +1,82 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+{% if page.tagline %}
+<div class="tagline">{{ page.tagline }}</div>
+{% endif %}
+<div class="content">
+	{% if page.sponsor %}
+	<div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" width="100%" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This episode sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
+	{% endif %}
+	<div class="byline">
+      <p>By <span class="author">{% if page.author %} {{ site.data.authors[page.author].name }} {% else %} {{ site.data.authors[site.default_author].name }} {% endif %}</span>
+      {% if page.organization %}
+      &middot; <span class="organization">{{ page.organization }}</span>
+      {% endif %}
+      &middot; <span class="pub-date">{{ page.date | date: '%B %d, %Y' }}</span>
+      </p>
+    </div>
+    <div class="post">{{ content }}</div>
+</div>
+{% assign hasSimilar = '' %}
+{% for post in site.posts  %}
+    {% assign postHasSimilar = false %}
+    {% for tag in post.categories %}
+        {% for thisTag in page.categories %}
+            {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
+                {% if hasSimilar.size == 0 %}
+<div class="panel-body">
+    <h4>Related Posts</h4>
+    <ul>
+                {% endif %}
+        <li class="relatedPost">
+            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                {% if post.categories %}
+                    (Categories: 
+                    {% for category in post.categories %}
+                        <a href="/category/{{ category }}">{{ site.data.categories.[category].title }}</a>
+                        {% if forloop.last == false %}, {% endif %}
+                    {% endfor %})
+                {% endif %}
+        </li>
+                {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+                {% assign postHasSimilar = true %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+{% if hasSimilar.size > 0 %}
+    </ul>
+</div>
+{% endif %}
+
+<div class="PageNavigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+  {% endif %}
+</div>
+
+{% if site.disqus_shortname %}
+<div class="disqus-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+
+        var disqus_shortname = '{{ site.disqus_shortname }}';
+        var disqus_identifier = "{{ site.url }}_{{ page.title }}";
+        var disqus_title = "{{ page.title }}";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    /* ]]> */
+    </script>
+</div>
+{% endif %}

@@ -12,11 +12,11 @@ risky-business:
     published: true
     description : "Risky Business is a weekly information security podcast featuring news and in-depth interviews with industry luminaries. Launched in February 2007, Risky Business is a must-listen digest for information security pros. With a running time of approximately 40 minutes, Risky Business is pacy; a security podcast without the waffle."
 rb2:
-    title: "Risky Business 2"
+    title: "Risky Business Extra"
     stub: "rb2"
     type: "netcast"
     published: true
-    description: "Risky Business 2, or RB2, is Risky.biz's second podcast feed. Here you'll find recorded security presentations and lectures, single-shot interviews with industry players, freelance contributions and more. Clearly labelled, single-shot sponsored content sometimes appears in RB2."
+    description: "Risky Business Extra is Risky.biz's second podcast feed. Here you'll find recorded security presentations and lectures, single-shot interviews with industry players, freelance contributions and more. Clearly labelled, single-shot sponsored content sometimes appears in this feed."
 auscert:
     title: "AusCERT"
     stub: "auscert"
@@ -33,5 +33,5 @@ serious-business:
     title: "Serious Business"
     stub: "sb"
     type: "netcast"
-    published: true
+    published: false
     description: "Patrick invites Australian comedian Dan Ilic and others to his soap box to talk about less technical stuff. It is, none the less, serious business."

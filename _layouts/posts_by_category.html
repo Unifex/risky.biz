@@ -10,19 +10,21 @@ layout: default
     {{ site.data.categories[page.categories].description }}
   </div>
   <div class="panel-heading text-right">
-    <a href="/feeds/{{ page.categories }}"><img src="/static/img/rss-icon.jpg" width="20" height="20"></a>
-    <a href="{{ site.itpcurl }}/feeds/{{ page.categories }}"><img src="/static/img/itunes-icon.png" width="20" height="20"></a>
+    <a href="/feeds/{{ page.categories }}"><img src="/static/img/icons/rss-icon-80.png" width="80" height="80"></a>
+	<a href="{{ site.itpcurl }}/feeds/{{ page.categories }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="220" height="80"></a><br />
   </div>
 </div>
 <div id="post-content">    <hr />
     {% for category in site.categories %}
         {% capture category_slug %}{{ category | first }}{% endcapture %}
         {% for c_slug in category_slug %}
-            {% if c_slug == page.categories %}
-                <button class="btn btn-sm btn-default active">{{ site.data.categories[c_slug].title }}</button>
-            {% else %}
-                <a href="/category/{{ c_slug }}" class="btn btn-sm btn-default">{{ site.data.categories[c_slug].title }}</a>
-            {% endif %}
+            {% if site.data.categories[c_slug].published %}
+				{% if c_slug == page.categories %}
+					<button class="btn btn-sm btn-default active">{{ site.data.categories[c_slug].title }}</button>
+				{% else %}
+					<a href="/category/{{ c_slug }}" class="btn btn-sm btn-default">{{ site.data.categories[c_slug].title }}</a>
+				{% endif %}
+			{% endif %}
         {% endfor %}
     {% endfor %}
     <hr />

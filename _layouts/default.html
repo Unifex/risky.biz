@@ -27,6 +27,7 @@
     <!-- Custom CSS -->        
     <link rel="stylesheet" href="/static/css/super-search.css">
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/risky-biz.css">
 
     <!-- jQuery is loaded in the foot. -->
 </head>
@@ -59,30 +60,31 @@
                     </a>
                 </div>
 
-                <div class="search" id="js-search">
+                <div class="search text-center" id="js-search">
                     <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
                     <ul class="search__results" id="js-search__results"></ul>
                 </div>
-                
-                <strong>Navigation</strong><br />
-                &raquo; <a href="/">Home</a><br />
-                {% for i in site.urls %}
-                &raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
-                {% endfor %}
-                
-                <strong>Categories</strong><br />
-                {% for category in site.categories %}
-                    {% capture category_slug %}{{ category | first }}{% endcapture %}
-                    {% for c_slug in category_slug %}
-                        {% if site.data.categories.[c_slug].published %}
-                            {% if c_slug == page.categories %}
-                                &raquo; <span class="active">{{ site.data.categories.[c_slug].title }}</span><br />
-                            {% else %}
-                                &raquo; <a href="/category/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
+                <div class="menus text-center">
+					<strong>Navigation</strong><br />
+					&raquo; <a href="/">Home</a><br />
+					{% for i in site.urls %}
+					&raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
+					{% endfor %}
+					
+					<strong>Categories</strong><br />
+					{% for category in site.categories %}
+						{% capture category_slug %}{{ category | first }}{% endcapture %}
+						{% for c_slug in category_slug %}
+							{% if site.data.categories.[c_slug].published %}
+								{% if c_slug == page.categories %}
+									&raquo; <span class="active">{{ site.data.categories.[c_slug].title }}</span><br />
+								{% else %}
+									&raquo; <a href="/category/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+				</div>
             </div>
         </div>
         {% include footer.html %}

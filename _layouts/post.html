@@ -14,11 +14,13 @@ layout: default
 
 <div class="content">
 	{% if page.sponsor %}
-	<div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This episode sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
+	<div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" width="100%" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This episode sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
 	{% endif %}
-    <div class="post">{{ content }}</div>
+    <div class="post">
+    <p class="pub-date">{{ post.date | date: '%B %d, %Y' }}</p>
+    {{ content }}</div>
     {% if page.media_url %}
-        <div class="well well-sm">
+        <div class="well well-sm text-center">
             <!-- Simple audio playback -->
             <audio controls preload="none">
                 <source src="{{ page.media_url }}" type="audio/mp3">
@@ -33,31 +35,34 @@ layout: default
                     <p>The Audio tag isn't supported and neither is flash... You could always download the file and play locally.</p>
                 </object>Hmm...
             </audio>
+			{% if page.categories %}
+            <div id="service-download-links">
+				{% for category in page.categories %}
+				    <div class="category-{{ category }}">
+						<a href="/feeds/{{ category }}"><img src="/static/img/icons/rss-icon-80.png" width="80" height="80"></a>
+						<a href="{{ site.itpcurl }}/feeds/{{ category }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="220" height="80"></a><br />
+						Subscribe to the {{ site.data.categories[category].title }} feed.
+					</div>
+				{% endfor %}
+            </div>
+			{% endif %}
             <div id="download-links">
                 <a href="{{ page.media_url }}"><span class="glyphicon glyphicon-cloud-download"></span> Download mp3 </a>
                 {% if page.media_url_ogg %}
                     | <a href="{{ page.media_url_ogg }}"><span class="glyphicon glyphicon-cloud-download"></span> Download ogg</a>
                 {% endif %}
-                {% if page.categories %}
-                    {% for category in page.categories %}
-                        | 
-                        <a href="/feeds/{{ category }}"><img src="/static/img/rss-icon.jpg" width="20" height="20"></a>
-                        <a href="{{ site.itpcurl }}/feeds/{{ category }}"><img src="/static/img/itunes-icon.png" width="20" height="20"></a>
-                        Subscribe to the {{ site.data.categories[category].title }} feed.
-                    {% endfor %}
-                {% endif %}
             </div>
         </div>
     {% endif %}
     {% if page.show_notes %}
-    <div class="panel panel-default">
+    <div class="panel panel-default show-notes">
         <div class="panel-heading">
             <h3 class="panel-title">Show notes</h3>
         </div>
         <div class="panel-body">
             <dl>
             {% for show_note in page.show_notes %}
-                <dt>&middot; <a href="{{ show_note.link }}">{{ show_note.title }}</a></dt>
+                <dt><a href="{{ show_note.link }}">{{ show_note.title }}</a></dt>
                 <dd>{{ show_note.description }}</dd>
             {% endfor %}
             </dl>

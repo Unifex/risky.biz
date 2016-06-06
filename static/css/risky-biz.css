@@ -1,0 +1,21 @@
+.sponsor {
+	margin: 0.5em
+}
+
+.show-notes dt:not(:first-of-type) {
+	margin-top: 4px;
+	border-top: #f5f5f5 solid thin;
+	padding-top: 4px;
+}
+
+#js-search .form-control {
+	width: initial;
+}
+
+#js-search li {
+	text-align: left;
+}
+
+#js-search li span.search__result-date {
+	white-space: nowrap;
+}

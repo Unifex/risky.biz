@@ -2,3 +2,7 @@ bromium:
   name: Bromium
   url: https://www.bromium.com/
   banner_url: /static/img/sponsors/bromium.svg
+thinkst:
+  name: Thinkst
+  url: http://thinkst.com/
+  banner_url: /static/img/sponsors/thinkst.svg

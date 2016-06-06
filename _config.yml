@@ -1,6 +1,7 @@
 title: Risky Business
 description: "It's a jungle out there"
 author: Patrick Gray
+default_author: patrick-gray
 urls:
     - text: About
       url: /about
