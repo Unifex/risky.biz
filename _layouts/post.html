@@ -38,11 +38,14 @@ layout: default
 			{% if page.categories %}
             <div id="service-download-links">
 				{% for category in page.categories %}
+        {% if site.data.categories[category].published %}
 				    <div class="category-{{ category }}">
 						<a href="/feeds/{{ category }}"><img src="/static/img/icons/rss-icon-80.png" width="80" height="80"></a>
 						<a href="{{ site.itpcurl }}/feeds/{{ category }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="220" height="80"></a><br />
+            {% if site.data.categories[category].play-link %}<a href="{{ site.data.categories[category].play-link }}"><img src="/static/img/icons/google-play-badge.png" height="80"></a>{% endif %}<br />
 						Subscribe to the {{ site.data.categories[category].title }} feed.
 					</div>
+        {% endif %}
 				{% endfor %}
             </div>
 			{% endif %}
