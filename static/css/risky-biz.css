@@ -9,7 +9,7 @@
 }
 
 #js-search .form-control {
-	width: initial;
+	width: 100%;
 }
 
 #js-search li {
@@ -18,4 +18,9 @@
 
 #js-search li span.search__result-date {
 	white-space: nowrap;
+}
+
+.img-center {
+  margin-left: auto;
+  margin-right: auto;
 }
