@@ -6,6 +6,17 @@ It came about because [I](https://github.com/Unifex) had some time on my hands a
 
 While this site is geared towards podcasts it will serve nicely as a clean, stand alone blog. Regarding the podcasts, Patrick hosts his media on a separate CND so none of the larger files are in this repo.
 
+## Building the site
+
+I've found the easiest way to work with Jekyll is with the docker container. Starting [here](https://github.com/jekyll/docker/wiki/Usage:-Running) you can be building the site in less than a few minutes. In short;
+
+    cd /path/to/repo
+    docker run --rm --label=jekyll --volume=$(pwd):/srv/jekyll -it -p 127.0.0.1:4000:4000 jekyll/jekyll
+
+Then point a browser at http://127.0.0.1:4000
+
+If you're uploading the generated site it will be in the `_site` directory.
+
 ## Credits
 
 * Jekyll: for the engine and for providing an awesome [docker instance](https://hub.docker.com/r/jekyll/jekyll/) that makes all the things easy.
