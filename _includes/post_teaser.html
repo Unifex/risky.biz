@@ -6,10 +6,6 @@
     {% endif %}
 
     <div class="byline">
-      <p class="author">By <span>{% if post.author %} {{ post.author }} {% else %} {{ site.author }} {% endif %}</span></p>
-      {% if post.organization %}
-      <p class="organization">{{ post.organization }}</p>
-      {% endif %}
       <p class="pub-date">{{ post.date | date: '%B %d, %Y' }}</p>
     </div>
     <div class="content">
