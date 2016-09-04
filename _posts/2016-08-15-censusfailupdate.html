@@ -1,0 +1,66 @@
+---
+layout: post
+title: "Censusfail and the fog of war"
+tagline: "Revisiting last week&apos;s post..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+sponsor: 
+permalink: /censusfailupdate/
+media_url: 
+media_url_ogg: 
+media_length: 
+media_type: audio/mpeg
+---
+<p>As far as I know the information I posted is accurate, but I wanted to write this to add a bit more context and look at where it's shaky. I literally wrote that thing up in about 10 minutes while I was working on last week's show. I was doubly under the pump because The Project had a camera guy coming to my house that evening to record an interview about the whole debacle. </p>
+<!--excerpt-above-->
+
+<p>I'd also just arrived back in Australia after spending six days in Las Vegas attending Black Hat, B-Sides and Defcon. Prior to that I was in Brazil. So yes, long story short, I was exhausted, jet lagged, slammed with work and I didn't really have much time to write a decent post. I certainly wasn't expecting what I did write to be spread so widely. So, now that I've had a minute to breathe, let's look back through the bullet points in original post to see where it's solid and where it isn't.</p>
+<p>The information I put together came from multiple sources, some closer to the action that others.</p>
+<ul>
+<strong>
+<li>IBM and the ABS were offered DDoS prevention services from their upstream provider, NextGen Networks, and said they didn't need it.</li>
+<p></p></strong>
+<p>I'm pretty firm on this one. They may have worked with their upstream provider on a contingency plan (geoblocking) but I've got pretty solid information that they opted not to have DDoS gear installed at the edge of the census network. That was a mistake. The edge gear can detect certain types of DDoS activity and send a signal to the upstream provider for its filtering/blocking to begin. If you don't have it, you're basically running naked if your geoblocking isn't effective. Oops.</p>
+<p><strong>
+<li>Their plan was to just ask NextGen to geoblock all traffic outside of Australia in the event of an attack.</li>
+<p></p></strong></p>
+<p>Again, as far as I know this is solid and supported by statements made by officials since.</p>
+<p><strong>
+<li>This plan was activated when there was a small-scale attack against the census website.</li>
+<p></p></strong></p>
+<p>As far as I know this is also solid. There was a DDoS attack targeting the Census website and they asked NextGen to block all non-Australia packets. This worked, for a time.</p>
+<p><strong>
+<li>Unfortunately another attack hit them from inside Australia. This was a straight up DNS reflection attack with a bit of ICMP thrown in for good measure. It filled up their firewall's state tables. Their solution was to reboot their firewall, which was operating in a pair.</li>
+<p></p></strong></p>
+<p>This is the part I suspect *could* be wrong. Whether this attack actually happened or not I can't be sure. One source told me there was attack traffic hitting the Census website from within Australia, but the more I think of it the more I realise this could have just been legit traffic mischaracterised as DDoS traffic. That's the thing with stories like these. It's like reporting on a battle: The fog of war kicks in and details get lost or smudged.</p>
+<p>I am very firm on the census website firewall being rebooted at some point and the secondary not being synced. I'm not 100% on whether this was because of Australia-based DDoS traffic hitting the census website or it was a result of straight-up shitty capacity planning. So was it an attack or their connection filling up? I can't be 100% sure. I doubt they are either.</p>
+<p><strong>
+<li>They hadn't synced the ruleset when they rebooted the firewall so the secondary was essentially operating as a very expensive paperweight. This resulted in a short outage.</li>
+<p></p></strong></p>
+<p>Again, very solid on this having happened. Just not sure on the why.</p>
+<p><strong>
+<li>Some time later IBM's monitoring equipment spat out some alerts that were interpreted by the people receiving them as data exfiltration. Already jittery from the DDoS disaster and wonky firewalls, they became convinced they'd been owned and the DDoS attack was a distraction to draw their focus away from the exfil.</li>
+<p></p></strong></p>
+<p>I am absolutely, 100% rock solid on this one. We even saw the relevant minister and senior bureaucrats support this one in statements made to the media. The bit they left out is the traffic that triggered the alarm was entirely normal and should never have resulted in a false positive.</p>
+<p><strong>
+<li>They pulled the pin and ASD was called in.</li>
+<p></p></strong></p>
+<p>Public statements support this.</p>
+<p><strong>
+<li>The IBM alerts were false positives incorrectly characterising offshore-bound system information/logs as exfil.</li>
+<p></p></strong></p>
+<p>This is the part that's most hilarious. I'm told it was bog-stock traffic behvaiour that set off the alerts. I am confident there was no valid reason behind those alerts triggering.</p>
+<p>I'm actually pretty sympathetic here and it's hard to say the person who decided to unplug made the wrong call. If you suspect you've been owned and all your data is being siphoned off, it's probably the right thing to do.</p>
+<p>It's the people who set up such shitty monitoring that are to blame for this part of the disaster, not the people who pulled the pin.</p>
+<p><strong>
+<li>ASD still needs to roll incident response before they can send the website live again. Even though it was false positives that triggered the investigation, there still needs to be an investigation.</li>
+<p></p></strong></p>
+<p>This is just standard. Once you call an IR team they need to investigate.</p></ul>
+<p>So. That's where I stand on what I wrote last week. I'm sure about most of it, but the timeline and details around whether there was Australian attack traffic? I can't 100% substantiate that. </p>
+<p>I'm highly confident the firewall thing happened. They did reboot without a synced secondary. But that's just sort of funny, and if it happened in isolation no one would think it's a big deal.</p>
+<p>There's other stuff I haven't mentioned, too, like routes changing on the night to send traffic around the primary connectivity provider. This might be due to the "geoblocking falling over," something our fearless leaders have mentioned once or twice in interviews and at press conferences. If I had to guess, they tried to route around NextGen and get Telstra to pull together some last-minute DDoS filtering. That's just speculation, but if I had to guess, that's how it went down.</p>
+<p>Either way it was amateur hour. The next question becomes: Who's responsible?</p>
+<p>Predictably, the government is trying to shift blame for the debacle on to ABS bureaucrats and  IBM. That's mostly fair enough. Telling a company like IBM that they should prepare for DDoS attacks is sort of like telling your babysitter not to put the kids in the oven while you're out for the night. It's just so weird that they didn't adequately prepare for it. That said, we don't know who made the final decision. It could have been an IBMer telling the ABS that they absolutely had it under control, or it could have been an executive-level public servant trying to shave a few bucks off the budget. We just don't know.</p>
+<p>The thing I'd really like to know is why the ASD wasn't given authority to actually look at this set up before it went live. If its only involvement was asking high-level, compliance-like questions ("Do you have a DDoS mitigation plan? Y/N") then honestly that's not good enough. I suspect that's what's happened in this instance and this is where you'd go looking for ministerial accountability if you were so inclined.</p>
+<p>If you're interested in infosec stuff beyond CensusFail, do check out my podcast, Risky Business. RSS feed <a href="http://risky.biz/feeds/risky-business">here</a>. iTunes subscription link <a href="//risky.biz/feeds/risky-business">here</a>.</p>
+<p>Or follow me on Twitter <a href="https://twitter.com/riskybusiness">here</a>.</p>

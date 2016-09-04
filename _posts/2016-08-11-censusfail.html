@@ -1,0 +1,25 @@
+---
+layout: post
+title: "What I&apos;ve been told about #censusfail"
+tagline: "High level sources say..."
+excerpt_separator: <!--excerpt-above-->
+categories: []
+sponsor: 
+permalink: /censusfail/
+media_url: 
+media_url_ogg: 
+media_length: 
+media_type: audio/mpeg
+---
+<ul>
+<li>IBM and the ABS were offered DDoS prevention services from their upstream provider, NextGen Networks, and said they didn't need it.</li>
+<li>Their plan was to just ask NextGen to geoblock all traffic outside of Australia in the event of an attack.</li>
+<li>This plan was activated when there was a small-scale attack against the census website.</li>
+<li>Unfortunately another attack hit them from inside Australia. This was a straight up DNS reflection attack with a bit of ICMP thrown in for good measure. It filled up their firewall's state tables. Their solution was to reboot their firewall, which was operating in a pair.</li>
+<li>They hadn't synced the ruleset when they rebooted the firewall so the secondary was essentially operating as a very expensive paperweight. This resulted in a short outage.</li>
+<li>Some time later IBM's monitoring equipment spat out some alerts that were interpreted by the people receiving them as data exfiltration. Already jittery from the DDoS disaster and wonky firewalls, they became convinced they'd been owned and the DDoS attack was a distraction to draw their focus away from the exfil.</li>
+<li>They pulled the pin and ASD was called in.</li>
+<li>The IBM alerts were false positives incorrectly characterising offshore-bound system information/logs as exfil.</li>
+<li>ASD still needs to roll incident response before they can send the website live again. Even though it was false positives that triggered the investigation, there still needs to be an investigation.</li>
+<p>At least IBM got to bump their margins up a bit by not paying for the DDoS prevention though... amirite?!</p>
+<!--excerpt-above-->
