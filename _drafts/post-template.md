@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: podcast
 published: true
 title: "Post Template"
 tagline: "Notes and stuff"
