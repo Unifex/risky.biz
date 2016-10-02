@@ -11,7 +11,7 @@ While this site is geared towards podcasts it will serve nicely as a clean, stan
 I've found the easiest way to work with Jekyll is with the docker container. Starting [here](https://github.com/jekyll/docker/wiki/Usage:-Running) you can be building the site in less than a few minutes. In short;
 
     cd /path/to/repo
-    docker run --rm --label=jekyll --volume=$(pwd):/srv/jekyll -it -p 127.0.0.1:4000:4000 jekyll/jekyll
+    docker run --rm --label=jekyll --volume=$(pwd):/srv/jekyll:2.5.3 -it -p 127.0.0.1:4000:4000 jekyll/jekyll
 
 Then point a browser at http://127.0.0.1:4000
 
