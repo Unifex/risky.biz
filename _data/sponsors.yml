@@ -6,3 +6,19 @@ thinkst:
   name: Thinkst
   url: http://thinkst.com/
   banner_url: /static/img/sponsors/thinkst.svg
+senetas:
+  name: Senetas
+  url: http://www.senetas.com/
+  banner_url: /static/img/sponsors/senetas-logo.png
+cylance:
+  name: Cylance
+  url: https://www.cylance.com/
+  banner_url: /static/img/sponsors/Cylance_Logo2x.png
+hp_enterprise_fortify:
+  name: HP Enterprise Fortify
+  url: http://www8.hp.com/us/en/software-solutions/enterprise-security.html
+  banner_url: 
+tenable:
+  name: Tenable Network Security
+  url: http://www.tenable.com/
+  banner_url: /static/img/sponsors/tenable_logo.svg
