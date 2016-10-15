@@ -6,6 +6,10 @@ It came about because [I](https://github.com/Unifex) had some time on my hands a
 
 While this site is geared towards podcasts it will serve nicely as a clean, stand alone blog. Regarding the podcasts, Patrick hosts his media on a separate CND so none of the larger files are in this repo.
 
+## Editing...
+
+The site is easy enough to maintain by hand, if you are comfortable with that sort of thing. However, that's not everone. I'm considering adding a simple php based editor designed to be run on a local machine. This will just look after edits of posts and is not intended to be used online. Git management will still be a manual process, but there are a lot of GUI's out there that look after that.
+
 ## Building the site
 
 I've found the easiest way to work with Jekyll is with the docker container. Starting [here](https://github.com/jekyll/docker/wiki/Usage:-Running) you can be building the site in less than a few minutes. In short;
