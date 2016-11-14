@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% set month_array =
+  {
+    '01':'January',
+    '02':'February',
+    '03':'March',
+    '04':'April',
+    '05':'May',
+    '06':'June',
+    '07':'July',
+    '08':'August',
+    '09':'September',
+    '10':'October',
+    '11':'November',
+    '12':'December'
+  }
+%}
+
+{% if states %}
+  {% block status %}
+    <script type="text/javascript">
+      $(window).on('load', function () {
+        status_call();
+      });
+      function status_call() {
+        $.ajax(
+          'status_check.php',
+          {
+            success: function(data, string, jqXHR) {
+              $('.status_check').html(data);
+              if (data == "") {
+                $('.status_check').hide();
+              } else {
+                $('.status_check').show();
+              }
+            },
+            error: function () {
+              $('.status_check').html('error');
+            }
+        })
+        .done(function() {
+          window.setTimeout(status_call, 5000);
+        });
+      }
+    </script>
+    <div class="alert alert-info status_check" style="display: none;">
+      {% include 'site_status.html' %}
+    </div>
+  {% endblock %}
+{% endif %}
+
+{% block content %}
+<div class="jumbotron">
+  <ul class="list-group">
+    <li class="list-group-item"><a href="post.php">New Post</a></li>
+    <li class="list-group-item">
+      {% for year, months in items %}
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ year }} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            {% for month, count in months %}
+            <li>
+              <a href="list.php?y={{ year }}&m={{ month }}">
+                {{ month_array[month] }}
+                <span class="badge">{{ count }}</span>
+              </a>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </li>
+    <li class="list-group-item"><a href="build.php?site=staging">Build Staging</a></li>
+    <li class="list-group-item"><a href="build.php?site=production">Build Production</a></li>
+  </ul>
+</div>
+{% endblock %}

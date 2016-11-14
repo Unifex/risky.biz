@@ -1,0 +1,9 @@
+{
+  "require": {
+    "symfony/yaml": "3.*",
+    "monolog/monolog": "1.0.*",
+    "mnapoli/front-yaml": "1.*",
+    "twig/twig": "1.*",
+    "jc21/filelist": "1.*"
+  }
+}
