@@ -1,0 +1,25 @@
+{
+    "name": "jc21/filelist",
+    "description": "File Listing helper class",
+    "keywords": ["file", "dir", "listing"],
+    "homepage": "https://github.com/jc21/filelist",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Jamie Curnow",
+            "email": "jc@jc21.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "victorjonsson/markdowndocs": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "jc21": "src"
+        }
+    }
+}

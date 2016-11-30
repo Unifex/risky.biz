@@ -17,6 +17,13 @@ foreach ($build_sites as $site_state) {
   }
 }
 
+if (file_exists('/tmp/last_build')) {
+  $states = array_merge(
+    $states,
+    explode("\n", file_get_contents('/tmp/last_build'))
+  );
+}
+
 if (!empty($states)) {
   $vars['states'] = array_filter($states);
 }

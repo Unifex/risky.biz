@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    
+
 
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-    <!-- Custom CSS -->        
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/super-search.css">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/risky-biz.css">
@@ -70,7 +70,7 @@
 					{% for i in site.urls %}
 					&raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
 					{% endfor %}
-					
+
 					<strong>Categories</strong><br />
 					{% for category in site.categories %}
 						{% capture category_slug %}{{ category | first }}{% endcapture %}
@@ -79,7 +79,7 @@
 								{% if c_slug == page.categories %}
 									&raquo; <span class="active">{{ site.data.categories.[c_slug].title }}</span><br />
 								{% else %}
-									&raquo; <a href="/category/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
+									&raquo; <a href="/{{ site.data.categories.[c_slug].type-stub }}/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
 								{% endif %}
 							{% endif %}
 						{% endfor %}
