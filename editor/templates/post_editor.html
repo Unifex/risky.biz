@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-horizontal" role="form" method="post">
+<input type="hidden" name="src_file" value="{{ src_file }}" />
+<div class="row" id="post_editor">
+  <ul class="nav nav-tabs tabs">
+    <li><a href="#post-body" class="active">Body</a></li>
+    <li><a href="#post-show-notes">Show notes</a></li>
+    <li><a href="#post-mp3">MP3</a></li>
+  </ul>
+
+  <div class="panel panel-default">
+    <div id="post-body">
+      <div class="panel-heading"><h3 class="panel-title">Detail</h3></div>
+      <div class="panel-body">
+        <div class="col-md-6">
+    			<div class="form-group">
+    			  <label for="inputTitle" class="col-sm-2 control-label">Title </label>
+    			  <div class="col-sm-10">
+      				<input type="text" name="title" class="form-control" id="inputTitle" value="{{ post.title }}" />
+    			  </div>
+    			</div>
+    			<div class="form-group">
+    			  <label for="inputTagline" class="col-sm-2 control-label">Tagline </label>
+    			  <div class="col-sm-10">
+      				<input type="text" name="tagline" class="form-control" id="inputTagline" value="{{ post.tagline }}" />
+    			  </div>
+    			</div>
+
+          <div class="form-group">
+            <label for="inputPermalink" class="col-sm-2 control-label">Permalink </label>
+            <div class="col-sm-10">
+              <input type="text" name="permalink" class="form-control" id="inputTagline" value="{{ post.permalink }}" />
+            </div>
+    			</div>
+    			<div class="control-group">
+    			  <label class="col-sm-2 control-label" for="sponsor">Sponsor</label>
+    			  <div class="col-sm-10 controls">
+      				<select id="sponsor" name="sponsor" class="input-xlarge">
+      				  <option>-- none --</option>
+      				  {% for key, sponsor in sponsors %}
+      				  <option value="{{ key }}" {% if post.sponsor == key %}selected=selected{% endif %}>{{ sponsor.name }}</option>
+      				  {% endfor %}
+      				</select>
+    			  </div>
+    			</div>
+    			<div class="form-group">
+            <label class="col-sm-pull-2 col-sm-2 control-label" for="categories[]">Categories</label>
+    				<div class="col-sm-offset-2 col-sm-10">
+  						{% for key, cat in categories %}
+              	<input type="checkbox" name="categories[]" value="{{ key }}" {% if key in post.categories %}checked=checked{% endif %} /> {{ cat.title }}<br />
+  						{% endfor %}
+    				</div>
+    			</div>
+          <div class="panel panel-default">
+            <div class="panel-heading">Post Filename Details</div>
+            <div class="panel-body">
+              <div class="form-group">
+        			  <label for="inputPostDate" class="col-sm-2 control-label">Date </label>
+                <div class="date col-sm-10">
+                  <div class="col-sm-3">
+                    <input name="post[date_dd]" size="2" type="text" class="form-control" id="inputPostDateDD" value="{{ post.file_date_dd }}" placeholder="DD">
+                  </div>
+                  <div class="col-sm-3">
+                    <input name="post[date_mm]" size="2" type="text" class="form-control" id="inputPostDateMM" value="{{ post.file_date_mm }}" placeholder="MM">
+                  </div>
+                  <div class="col-sm-6">
+                    <input name="post[date_yyyy]" size="10" type="text" class="form-control" id="inputPostDateYYYY" value="{{ post.file_date_yyyy }}" placeholder="YYYY">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputFileStub" class="col-sm-2 control-label">File Stub </label>
+                <div class="col-sm-10">
+                  <input type="text" name="post[file_stub]" class="form-control" id="inputFIleStub" value="{{ post.file_stub }}" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Body</div>
+            <div class="panel-body">
+      			  <textarea name="body" rows="17" class="form-control" id="inputBody" />{{ post.body }}</textarea>
+            </div>
+            <div class="panel-footer">
+  						{% for key, type in file_types %}
+              <span>
+                <input name="post[extension]" type="radio" aria-label="{{ type }}" value="{{ key }}" {% if key == post.file_extension %}checked=checked{% endif %} />
+                {{ type }}
+              </span><!-- /input-group -->
+  						{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="post-show-notes">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Show notes
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div id="new-shownote">
+          <div class="well well-sm">
+            <div class="form-group">
+              <label for="inputNoteTitle" class="col-sm-2 control-label">Title </label>
+              <div class="col-sm-10">
+                <input type="text" name="note_title[]" class="form-control" id="addNoteTitle" value="{{ note.title }}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputNoteUrl" class="col-sm-2 control-label">URL </label>
+              <div class="col-sm-10">
+                <input type="text" name="note_link[]" class="form-control" id="addNoteUrl" value="{{ note.link }}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputNoteDescription" class="col-sm-2 control-label">Description </label>
+              <div class="col-sm-10">
+                <input type="text" name="note_description[]" class="form-control" id="addNoteDescription" value="{{ note.description }}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputNoteDescription" class="col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-success" id="add-shownote">Add Shownote</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="append-show-notes">
+          {% for note in post.show_notes %}
+          <div class="well well-sm">
+      			<div class="form-group">
+      			  <label for="inputNoteTitle" class="col-sm-2 control-label">Title </label>
+      			  <div class="col-sm-10">
+        				<input type="text" name="note_title[]" class="form-control" value="{{ note.title }}" />
+      			  </div>
+      			</div>
+      			<div class="form-group">
+      			  <label for="inputNoteUrl" class="col-sm-2 control-label">URL </label>
+      			  <div class="col-sm-10">
+        				<input type="text" name="note_link[]" class="form-control" value="{{ note.link }}" />
+      			  </div>
+      			</div>
+      			<div class="form-group">
+      			  <label for="inputNoteDescription" class="col-sm-2 control-label">Description </label>
+      			  <div class="col-sm-10">
+        				<input type="text" name="note_description[]" class="form-control" value="{{ note.description }}" />
+      			  </div>
+      			</div>
+      		</div>
+      		{% endfor %}
+        </div>
+        <div id="new-shownote-template" class="hidden">
+          <div class="well well-sm new-shownote-template">
+      			<div class="form-group">
+      			  <label for="inputNoteTitle" class="col-sm-2 control-label">Title </label>
+      			  <div class="col-sm-10">
+      				<input type="text" name="note_title[]" class="form-control" id="newNoteTitle" value="{{ note.title }}" />
+      			  </div>
+      			</div>
+      			<div class="form-group">
+      			  <label for="inputNoteUrl" class="col-sm-2 control-label">URL </label>
+      			  <div class="col-sm-10">
+      				<input type="text" name="note_link[]" class="form-control" id="newNoteUrl" value="{{ note.link }}" />
+      			  </div>
+      			</div>
+      			<div class="form-group">
+      			  <label for="inputNoteDescription" class="col-sm-2 control-label">Description </label>
+      			  <div class="col-sm-10">
+      				<input type="text" name="note_description[]" class="form-control" id="newNoteDescription" value="{{ note.description }}" />
+      			  </div>
+      			</div>
+      		</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="post-mp3">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          MP3
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="inputMP3" class="col-sm-2 control-label">URL</label>
+          <div class="col-sm-10 input-group">
+
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="http://media.risky.biz/..."
+                name="media_url"
+                id="inputMediaURL"
+                value="{{  post.media_url  }}" />
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" id="checkMediaUrl"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></button>
+                </span>
+              </div><!-- /input-group -->
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputMediaLength" class="col-sm-2 control-label">Content Length</label>
+          <div class="col-sm-10 input-group">
+            <input type="text" name="media_length" class="form-control" id="inputMediaLength" value="{{  post.media_length  }}" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputMediaType" class="col-sm-2 control-label">Content Type</label>
+          <div class="col-sm-10 input-group">
+            <input type="text" name="media_type" class="form-control" id="inputMediaType" value="{{  post.media_type  }}" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-default">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+</form>
+{% endblock %}

@@ -10,8 +10,8 @@ layout: default
     {{ site.data.categories[page.categories].description }}
   </div>
   <div class="panel-heading text-right">
-    <a href="/feeds/{{ page.categories }}"><img src="/static/img/icons/rss-icon-80.png" width="80" height="80"></a>
-	<a href="{{ site.itpcurl }}/feeds/{{ page.categories }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="220" height="80"></a><br />
+    <a href="/feeds/{{ page.categories }}"><img src="/static/img/icons/rss-icon-80.png" width="45" height="45"></a>
+	  <a href="{{ site.itpcurl }}/feeds/{{ page.categories }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="124" height="45"></a><br />
   </div>
 </div>
 <div id="post-content">    <hr />
@@ -22,7 +22,7 @@ layout: default
 				{% if c_slug == page.categories %}
 					<button class="btn btn-sm btn-default active">{{ site.data.categories[c_slug].title }}</button>
 				{% else %}
-					<a href="/category/{{ c_slug }}" class="btn btn-sm btn-default">{{ site.data.categories[c_slug].title }}</a>
+					<a href="/{{ site.data.categories.[c_slug].type-stub }}/{{ c_slug }}" class="btn btn-sm btn-default">{{ site.data.categories[c_slug].title }}</a>
 				{% endif %}
 			{% endif %}
         {% endfor %}
@@ -37,7 +37,7 @@ layout: default
                 <div class="list-group">
                     <ul class="posts">
             {% endif %}
-            
+
             {% if forloop.first == false %}
                 {% assign previous_index = forloop.index0 | minus: 1 %}
                 {% capture previous_post_year %}{{ site.categories[page.categories][previous_index].date | date: '%Y' }}{% endcapture %}
