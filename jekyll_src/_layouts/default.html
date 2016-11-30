@@ -70,7 +70,7 @@
 					{% for i in site.urls %}
 					&raquo; <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
 					{% endfor %}
-
+<!--
 					<strong>Categories</strong><br />
 					{% for category in site.categories %}
 						{% capture category_slug %}{{ category | first }}{% endcapture %}
@@ -84,6 +84,12 @@
 							{% endif %}
 						{% endfor %}
 					{% endfor %}
+-->
+          <br />
+          <strong>Subscribe</strong><br />
+          <a href="/feeds/risky-business"><img src="/static/img/icons/rss-icon-80.png" width="45" height="45"></a>
+          <a href="{{ site.itpcurl }}/feeds/risky-business"><img src="/static/img/icons/link-badge-itunes_2x.png" width="124" height="45"></a><br />
+
 				</div>
             </div>
         </div>

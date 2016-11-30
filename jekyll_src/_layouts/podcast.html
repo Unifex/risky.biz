@@ -40,8 +40,8 @@ layout: default
 				{% for category in page.categories %}
         {% if site.data.categories[category].published %}
 				    <div class="category-{{ category }}">
-						<a href="/feeds/{{ category }}"><img src="/static/img/icons/rss-icon-80.png" width="70" height="70"></a>
-						<a href="{{ site.itpcurl }}/feeds/{{ category }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="193" height="70"></a><br />
+						<a href="/feeds/{{ category }}"><img src="/static/img/icons/rss-icon-80.png" width="45" height="45"></a>
+						<a href="{{ site.itpcurl }}/feeds/{{ category }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="124" height="45"></a><br />
             {% if site.data.categories[category].play-link %}<a href="{{ site.data.categories[category].play-link }}"><img src="/static/img/icons/google-play-badge.png" height="80"></a>{% endif %}<br />
 						Subscribe to the {{ site.data.categories[category].title }} feed.
 					</div>

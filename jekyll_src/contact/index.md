@@ -2,6 +2,8 @@
 layout: page
 title: Contact
 ---
-Hmm... Can you create a contact form in Jekyll?
 
-Do pages need to be a minimum length?
+e-Mail is the preferred form of contact. The addresses are self-explanatory.
+
+* [Sales](mailto:sales@risky.biz)
+* [Editorial](mailto:editorial@risky.biz)
