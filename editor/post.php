@@ -22,6 +22,10 @@ $vars = array(
   'src_file' => '',
   'write_message' => '',
   'write_status' => '',
+  'post_types' => array(
+    'podcast' => 'Podcast',
+    'blog' => 'Blog',
+  ),
 );
 
 if (!empty($_POST)) {
@@ -51,13 +55,15 @@ if (!empty($_GET['p'])) {
   $document = $parser->parse($str, false);
 
   $file_bits = explode("-", $_GET['p']);
-  $file_bits[3] = explode(".", $file_bits[3]);
+  $last_bit = count($file_bits) - 1;
+  $file_bits[$last_bit] = explode(".", $file_bits[$last_bit]);
+  $file_extension = $file_bits[$last_bit][1];
+  $file_bits[$last_bit] = $file_bits[$last_bit][0];
 
   $file_date_dd = $file_bits[2];
   $file_date_mm = $file_bits[1];
   $file_date_yyyy = $file_bits[0];
-  $file_stub = $file_bits[3][0];
-  $file_extension = $file_bits[3][1];
+  $file_stub = implode('-', array_slice($file_bits, 3));
 
   $yaml = $document->getYAML();
   $body= $document->getContent();
@@ -66,7 +72,7 @@ if (!empty($_GET['p'])) {
   $currentPost['body'] = $body;
 }
 $vars['post'] = $currentPost;
-
+// echo "<pre>".print_r($vars,1)."</pre>";
 $vars['post']['file_date_dd'] = $file_date_dd;
 $vars['post']['file_date_mm'] = $file_date_mm;
 $vars['post']['file_date_yyyy'] = $file_date_yyyy;
@@ -87,6 +93,9 @@ $twig = new Twig_Environment($loader, array(
 try {
   $template = $twig->loadTemplate('post_editor.html');
   echo $template->render($vars);
+  echo "===<pre>";
+  print_r($vars);
+  echo "</pre>===";
 } catch (Twig_Error_Syntax $e) {
   // $template contains one or more syntax errors
   echo "+++<pre>";

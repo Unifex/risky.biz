@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% if subtitle %}
+  {% block subtitle %}
+  <h2>Blog Posts</h2>
+  {% endblock %}
+{% endif %}
+
+{% block content %}
+<div class="row" id="post_list">
+  {% for postCollection in posts %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       <h3 class="panel-title">
+    		{{ postCollection.heading }}
+      </h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        {% for catPost in postCollection.posts %}
+        <li><a href="{{ catPost.href }}" {% if catPost.first %}class="active"{% endif %}>{{ catPost.text}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

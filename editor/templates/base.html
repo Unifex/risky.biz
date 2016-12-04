@@ -25,6 +25,11 @@
   </head>
   <body>
     <h1><a href="/">Risky Biz Editor</a></h1>
+    {% if write_status != '' %}
+    <div class="alert alert-{{ write_status }}">
+      {{ write_message }}
+    </div>
+    {% endif %}
     {% block subtitle %}{% endblock %}
     {% block status %}{% endblock %}
     <div class="container-fluid">

@@ -1,5 +1,12 @@
 $(window).on('load', function () {
 
+  displayAlerts();
+
+  // Update alerts based on Post type.
+  $('#layout').on('change', function () {
+    displayAlerts();
+  });
+
   $('button#add-shownote').click(function () {
     if ($('#inputNoteTitle').val() == '' || $('#inputNoteUrl').val() == '') {
       alert('Title and Description are both required');
@@ -64,3 +71,9 @@ $(window).on('load', function () {
     });
   });
 });
+
+function displayAlerts() {
+  post_type = '.post-type-' + $('#layout option:selected').val();
+  $('.post-type-block').hide();
+  $(post_type).show();
+}

@@ -5,6 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 Twig_Autoloader::register();
 
 $vars['states'] = array();
+$states = array();
 
 $build_sites = array('staging', 'production');
 foreach ($build_sites as $site_state) {

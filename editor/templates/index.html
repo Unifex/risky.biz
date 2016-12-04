@@ -69,12 +69,18 @@
               </a>
             </li>
             {% endfor %}
+            <li><a href="blog_list.php">Blogs</a></li>
         </ul>
       </div>
       {% endfor %}
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" aria-haspopup="false" aria-expanded="false">
+          <a href="blog_list.php">Blogs</a>
+        </button>
+      </div>
     </li>
     <li class="list-group-item"><a href="build.php?site=staging">Build Staging</a></li>
-    <li class="list-group-item"><a href="build.php?site=production">Build Production</a></li>
+    <li class="list-group-item"><a href="build.php?site=master">Build Production</a></li>
   </ul>
 </div>
 {% endblock %}

@@ -13,7 +13,7 @@ layout: default
 {% endif %}
 
 <div class="content">
-	{% if page.sponsor %}
+	{% if page.sponsor != '-- none --' %}
 	<div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" width="100%" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This episode sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
 	{% endif %}
     <div class="post">

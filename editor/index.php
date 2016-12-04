@@ -10,7 +10,6 @@ $siteSrc = '../jekyll_src/';
 $postsDir = $siteSrc . '_posts/';
 $vars = array();
 
-
 # Posts
 $fileList = new FileList;
 $items = $fileList->get($postsDir, FileList::TYPE_FILE, FileList::KEY_NAME, FileList::DESC);

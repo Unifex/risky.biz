@@ -18,6 +18,8 @@ $frontmatter = array(
 );
 $frontmatter['title'] = $_POST['title'];
 $frontmatter['tagline'] = $_POST['tagline'];
+$frontmatter['author'] = $_POST['author'];
+$frontmatter['layout'] = $_POST['layout'];
 $frontmatter['permalink'] = $_POST['permalink'];
 $frontmatter['sponsor'] = $_POST['sponsor'];
 $frontmatter['categories'] = $_POST['categories'];
@@ -47,7 +49,16 @@ $post_string .= "\n---\n";
 $post_string .= $_POST['body'];
 
 // Write the new file.
-if (is_writable($postsDir)) {
+if (!is_writable($postsDir)) {
+  // Jekyll _posts dir is unwritable.
+  $vars['write_status'] = 'danger';
+  $vars['write_message'] = "The _posts directory is unwriteable. " .
+    "Dir: " . $postsDir;
+} elseif (!is_writable($postsDir . $build_filename)) {
+  $vars['write_status'] = 'danger';
+  $vars['write_message'] = "The _post file is unwriteable. " .
+    "File: " . $postsDir . $build_filename;
+} else {
   $write_bytes = file_put_contents($postsDir . $build_filename, $post_string);
   if ($write_bytes) {
     // New post written.
@@ -74,8 +85,4 @@ if (is_writable($postsDir)) {
       $build_filename,
     ));
   }
-} else {
-  // Jekyll _posts dir is unwritable.
-  $vars['write_status'] = 'danger';
-  $vars['write_message'] = "The _posts directory is unwriteable.";
 }

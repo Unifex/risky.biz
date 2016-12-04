@@ -50,29 +50,21 @@ foreach ($items as $item) {
   $str = file_get_contents($filename);
   $document = $parser->parse($str, false);
   $yaml = $document->getYAML();
-  $body= $document->getContent();
-  if (empty($yaml['categories'])) {
-    $postList['uncategorized'][] = array(
+  if ($yaml['layout'] == 'blog') {
+    $postList[] = array(
       'href' => "/post.php?p=" . $item['name'],
       'text' => $yaml['title'],
     );
-  } else {
-    foreach ($yaml['categories'] as $cat) {
-      $postList[$cat][] = array(
-        'href' => "/post.php?p=" . $item['name'],
-        'text' => $yaml['title'],
-      );
-    }
   }
   $posts = array();
-  foreach ($postList as $cat => $thePosts) {
-    $posts[] = array(
-      'category' => $cat,
-      'heading' => ($cat == 'uncategorized') ? 'Uncategorized' : $vars['categories'][$cat]['title'],
-      'posts' => $thePosts,
-    );
-  }
+  $posts[] = array(
+    'category' => blog,
+    'heading' => 'Blog',
+    'posts' => $postList,
+  );
+
   $vars['posts'] = $posts;
+  /*
   if (!empty($_GET['p']) && $_GET['p'] == $item['name']) {
     $currentPost = $yaml;
     $currentPost['body'] = $body;
@@ -80,10 +72,13 @@ foreach ($items as $item) {
     $vars['post_active'] = 'active';
   }
   $vars['post'] = $currentPost;
+  */
 }
+/*
 if (empty($vars['post_active'])) {
   $vars['index_active'] = 'active';
 }
+*/
 // Prep template.
 $tmp_cache_dir = dirname(__FILE__) . '/template_cache';
 $template_dir = dirname(__FILE__) . '/templates';
@@ -96,7 +91,7 @@ $twig = new Twig_Environment($loader, array(
 ));
 
 try {
-  $template = $twig->loadTemplate('list.html');
+  $template = $twig->loadTemplate('blog_list.html');
   echo $template->render($vars);
 } catch (Twig_Error_Syntax $e) {
   // $template contains one or more syntax errors
