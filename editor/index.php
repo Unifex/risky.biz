@@ -31,7 +31,7 @@ foreach ($vars['items'] as $year => $months) {
 $tmp_cache_dir = dirname(__FILE__) . '/template_cache';
 $template_dir = dirname(__FILE__) . '/templates';
 if (!is_dir($tmp_cache_dir)) {
-  mkdir($tmp_cache_dir, 0700);
+  mkdir($tmp_cache_dir, 0770);
 }
 $loader = new Twig_Loader_Filesystem($template_dir);
 $twig = new Twig_Environment($loader, array(
