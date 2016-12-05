@@ -72,7 +72,6 @@ if (!empty($_GET['p'])) {
   $currentPost['body'] = $body;
 }
 $vars['post'] = $currentPost;
-// echo "<pre>".print_r($vars,1)."</pre>";
 $vars['post']['file_date_dd'] = $file_date_dd;
 $vars['post']['file_date_mm'] = $file_date_mm;
 $vars['post']['file_date_yyyy'] = $file_date_yyyy;
@@ -93,9 +92,6 @@ $twig = new Twig_Environment($loader, array(
 try {
   $template = $twig->loadTemplate('post_editor.html');
   echo $template->render($vars);
-  echo "===<pre>";
-  print_r($vars);
-  echo "</pre>===";
 } catch (Twig_Error_Syntax $e) {
   // $template contains one or more syntax errors
   echo "+++<pre>";
