@@ -17,7 +17,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2011-10-24 09:39:02",
+        "time": "2011-10-24T09:39:02+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -45,47 +45,6 @@
         ]
     },
     {
-        "name": "erusev/parsedown",
-        "version": "1.6.0",
-        "version_normalized": "1.6.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/erusev/parsedown.git",
-            "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/erusev/parsedown/zipball/3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
-            "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
-            "shasum": ""
-        },
-        "time": "2015-10-04 16:44:32",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Parsedown": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Emanuil Rusev",
-                "email": "hello@erusev.com",
-                "homepage": "http://erusev.com"
-            }
-        ],
-        "description": "Parser for Markdown.",
-        "homepage": "http://parsedown.org",
-        "keywords": [
-            "markdown",
-            "parser"
-        ]
-    },
-    {
         "name": "mnapoli/front-yaml",
         "version": "1.5.2",
         "version_normalized": "1.5.2.0",
@@ -108,7 +67,7 @@
             "league/commonmark": "~0.7",
             "phpunit/phpunit": "~4.5"
         },
-        "time": "2016-10-01 11:06:51",
+        "time": "2016-10-01T11:06:51+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -142,7 +101,7 @@
         "require-dev": {
             "victorjonsson/markdowndocs": "dev-master"
         },
-        "time": "2015-08-19 06:10:51",
+        "time": "2015-08-19T06:10:51+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -170,27 +129,33 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v3.1.6",
-        "version_normalized": "3.1.6.0",
+        "version": "v3.2.1",
+        "version_normalized": "3.2.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/yaml.git",
-            "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
+            "reference": "a7095af4b97a0955f85c8989106c249fa649011f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
-            "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/a7095af4b97a0955f85c8989106c249fa649011f",
+            "reference": "a7095af4b97a0955f85c8989106c249fa649011f",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-10-24 18:41:13",
+        "require-dev": {
+            "symfony/console": "~2.8|~3.0"
+        },
+        "suggest": {
+            "symfony/console": "For validating YAML files using the lint command"
+        },
+        "time": "2016-12-10T10:07:06+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.2-dev"
             }
         },
         "installation-source": "dist",
@@ -221,17 +186,17 @@
     },
     {
         "name": "twig/twig",
-        "version": "v1.27.0",
-        "version_normalized": "1.27.0.0",
+        "version": "v1.31.0",
+        "version_normalized": "1.31.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97"
+            "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
-            "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
+            "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
             "shasum": ""
         },
         "require": {
@@ -239,13 +204,13 @@
         },
         "require-dev": {
             "symfony/debug": "~2.7",
-            "symfony/phpunit-bridge": "~2.7"
+            "symfony/phpunit-bridge": "~3.2"
         },
-        "time": "2016-10-25 19:17:17",
+        "time": "2017-01-11T19:36:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.27-dev"
+                "dev-master": "1.31-dev"
             }
         },
         "installation-source": "dist",
@@ -280,6 +245,94 @@
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
+        ]
+    },
+    {
+        "name": "erusev/parsedown",
+        "version": "1.6.1",
+        "version_normalized": "1.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown.git",
+            "reference": "20ff8bbb57205368b4b42d094642a3e52dac85fb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown/zipball/20ff8bbb57205368b4b42d094642a3e52dac85fb",
+            "reference": "20ff8bbb57205368b4b42d094642a3e52dac85fb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-11-02T15:56:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Parsedown": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "Parser for Markdown.",
+        "homepage": "http://parsedown.org",
+        "keywords": [
+            "markdown",
+            "parser"
+        ]
+    },
+    {
+        "name": "perchten/rmrdir",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/perchten/php-rmrdir.git",
+            "reference": "ce8b95e509d64f339a10c3475a13ad687f1e6905"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/perchten/php-rmrdir/zipball/ce8b95e509d64f339a10c3475a13ad687f1e6905",
+            "reference": "ce8b95e509d64f339a10c3475a13ad687f1e6905",
+            "shasum": ""
+        },
+        "time": "2014-05-14T13:49:47+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/rmrdir.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alastair Brayne",
+                "email": "al@perchten.co.uk",
+                "homepage": "http://perchten.co.uk"
+            }
+        ],
+        "description": "Recusrive rmdir for PHP",
+        "homepage": "https://github.com/perchten/php-rmrdir",
+        "keywords": [
+            "dir",
+            "recursive",
+            "rm",
+            "rm -r",
+            "rmdir"
         ]
     }
 ]

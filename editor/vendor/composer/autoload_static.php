@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
 {
+    public static $files = array (
+        '52aedd6bde5708f06004dbaa477f23bd' => __DIR__ . '/..' . '/perchten/rmrdir/src/rmrdir.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
