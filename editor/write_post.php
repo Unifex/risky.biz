@@ -26,14 +26,33 @@ $frontmatter['categories'] = $_POST['categories'];
 $frontmatter['media_url'] = $_POST['media_url'];
 $frontmatter['media_length'] = $_POST['media_length'];
 $frontmatter['media_type'] = $_POST['media_type'];
-for ($i = 0; $i < count($_POST['note_title']); $i++) {
-  if (!empty($_POST['note_title'][$i]) && !empty($_POST['note_link'][$i])) {
+if (!empty(trim($_POST['bulk_show_notes']))) {
+  $show_notes = explode("\n", trim($_POST['bulk_show_notes']));
+  while (count($show_notes) >= 2) {
+    $note_title = array_shift($show_notes);
+    $note_link = array_shift($show_notes);
+    if (count($show_notes)) {
+      $note_description = array_shift($show_notes);
+    } else {
+      $note_description = '';
+    }
     // Add this shownote.
     $frontmatter['show_notes'][] = array(
-      'title' => $_POST['note_title'][$i],
-      'link' => $_POST['note_link'][$i],
-      'description' => $_POST['note_description'][$i],
+      'title' => $note_title,
+      'link' => $note_link,
+      'description' => $note_description,
     );
+  }
+} else {
+  for ($i = 0; $i < count($_POST['note_title']); $i++) {
+    if (!empty($_POST['note_title'][$i]) && !empty($_POST['note_link'][$i])) {
+      // Add this shownote.
+      $frontmatter['show_notes'][] = array(
+        'title' => $_POST['note_title'][$i],
+        'link' => $_POST['note_link'][$i],
+        'description' => $_POST['note_description'][$i],
+      );
+    }
   }
 }
 // Build the Frontmatter string.
@@ -54,10 +73,6 @@ if (!is_writable($postsDir)) {
   $vars['write_status'] = 'danger';
   $vars['write_message'] = "The _posts directory is unwriteable. " .
     "Dir: " . $postsDir;
-} elseif (!is_writable($postsDir . $build_filename)) {
-  $vars['write_status'] = 'danger';
-  $vars['write_message'] = "The _post file is unwriteable. " .
-    "File: " . $postsDir . $build_filename;
 } else {
   $write_bytes = file_put_contents($postsDir . $build_filename, $post_string);
   if ($write_bytes) {
@@ -75,9 +90,9 @@ if (!is_writable($postsDir)) {
       // The post is being saved to a different filename and the src_file is
       // pointing to the correct directory... Delete the original.
       unlink($_POST['src_file']);
-      header('Location: ' . '/post.php?p=' . $build_filename);
-      die();
     }
+    header('Location: ' . '/post.php?p=' . $build_filename);
+    die();
   } else {
     // Failed to write to the file.
     $vars['write_status'] = 'danger';
