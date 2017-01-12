@@ -6,8 +6,9 @@
 <div class="row" id="post_editor">
   <ul class="nav nav-tabs tabs">
     <li><a href="#post-body" class="active">Body</a></li>
-    <li><a href="#post-show-notes">Show notes</a></li>
     <li><a href="#post-mp3">MP3</a></li>
+    <li><a href="#post-show-notes">Show notes</a></li>
+    <li><a href="#post-bulk-show-notes">Bulk add Show notes</a></li>
   </ul>
 
   <div class="panel panel-default">
@@ -122,6 +123,24 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+
+    <div id="post-bulk-show-notes">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Bulk add show notes
+        </h3>
+      </div>
+      <div class="post-type-blog post-type-block alert alert-warning">
+        Only used for Podcasts.
+      </div>
+      <div class="panel-body">
+        <textarea name="bulk_show_notes" class="form-control" height="25"></textarea>
+      </div>
+      <div class="post-type-podcast post-type-block alert alert-danger">
+        Entering anything here will replace all show notes with the show notes found in the data submitted. The format is expected to be 3 lines per show note with the first being the title, the second being the URL and the third being any extra description (or blank).
       </div>
     </div>
 
