@@ -5,6 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 Twig_Autoloader::register();
 
 use jc21\FileList;
+use perchten\rmrdir;
 
 $siteSrc = '../jekyll_src/';
 $postsDir = $siteSrc . '_posts/';
@@ -30,6 +31,9 @@ foreach ($vars['items'] as $year => $months) {
 // Prep template.
 $tmp_cache_dir = dirname(__FILE__) . '/template_cache';
 $template_dir = dirname(__FILE__) . '/templates';
+if (!empty($_GET['cc'])) {
+  rmrdir($tmp_cache_dir);
+}
 if (!is_dir($tmp_cache_dir)) {
   mkdir($tmp_cache_dir, 0770);
 }

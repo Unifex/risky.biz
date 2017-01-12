@@ -6,6 +6,7 @@ Twig_Autoloader::register();
 
 use jc21\FileList;
 use Symfony\Component\Yaml\Yaml;
+use perchten\rmrdir;
 
 $parser = new Mni\FrontYAML\Parser();
 
@@ -64,24 +65,14 @@ foreach ($items as $item) {
   );
 
   $vars['posts'] = $posts;
-  /*
-  if (!empty($_GET['p']) && $_GET['p'] == $item['name']) {
-    $currentPost = $yaml;
-    $currentPost['body'] = $body;
-    $currentPost['file'] = $item;
-    $vars['post_active'] = 'active';
-  }
-  $vars['post'] = $currentPost;
-  */
 }
-/*
-if (empty($vars['post_active'])) {
-  $vars['index_active'] = 'active';
-}
-*/
+
 // Prep template.
 $tmp_cache_dir = dirname(__FILE__) . '/template_cache';
 $template_dir = dirname(__FILE__) . '/templates';
+if (!empty($_GET['cc'])) {
+  rmrdir($tmp_cache_dir);
+}
 if (!is_dir($tmp_cache_dir)) {
   mkdir($tmp_cache_dir, 0700);
 }

@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use jc21\FileList;
 use Symfony\Component\Yaml\Yaml;
+use perchten\rmrdir;
 
 $parser = new Mni\FrontYAML\Parser();
 
@@ -81,6 +82,9 @@ $vars['post']['file_extension'] = $file_extension;
 // Prep template.
 $tmp_cache_dir = dirname(__FILE__) . '/template_cache';
 $cache_dir = dirname(__FILE__) . '/templates';
+if (!empty($_GET['cc'])) {
+  rmrdir($tmp_cache_dir);
+}
 if (!is_dir($tmp_cache_dir)) {
   mkdir($tmp_cache_dir, 0700);
 }

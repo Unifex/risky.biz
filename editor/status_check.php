@@ -2,6 +2,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+use perchten\rmrdir;
+
 Twig_Autoloader::register();
 
 $vars['states'] = array();
@@ -32,6 +34,9 @@ if (!empty($states)) {
 // Prep template.
 $tmp_cache_dir = dirname(__FILE__) . '/template_cache';
 $template_dir = dirname(__FILE__) . '/templates';
+if (!empty($_GET['cc'])) {
+  rmrdir($tmp_cache_dir);
+}
 if (!is_dir($tmp_cache_dir)) {
   mkdir($tmp_cache_dir, 0700);
 }
