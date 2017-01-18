@@ -8,6 +8,7 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
 {
     public static $files = array (
         '52aedd6bde5708f06004dbaa477f23bd' => __DIR__ . '/..' . '/perchten/rmrdir/src/rmrdir.php',
+        'e9b046393eb3376a21bcc1a30bd2fe64' => __DIR__ . '/..' . '/querypath/querypath/src/qp_functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -18,6 +19,7 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
         'M' => 
         array (
             'Mni\\FrontYAML\\' => 14,
+            'Masterminds\\' => 12,
         ),
     );
 
@@ -29,6 +31,10 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
         'Mni\\FrontYAML\\' => 
         array (
             0 => __DIR__ . '/..' . '/mnapoli/front-yaml/src',
+        ),
+        'Masterminds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/masterminds/html5/src',
         ),
     );
 
@@ -45,6 +51,13 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'Q' => 
+        array (
+            'QueryPath' => 
+            array (
+                0 => __DIR__ . '/..' . '/querypath/querypath/src',
             ),
         ),
         'P' => 

@@ -7,22 +7,29 @@
 {% endif %}
 
 {% block content %}
-<div class="row" id="post_list">
+<ul class="nav nav-tabs tabs">
   {% for postCollection in posts %}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-       <h3 class="panel-title">
-    		{{ postCollection.heading }}
-      </h3>
-    </div>
-    <div class="panel-body">
-      <ul>
-        {% for catPost in postCollection.posts %}
-        <li><a href="{{ catPost.href }}" {% if catPost.first %}class="active"{% endif %}>{{ catPost.text}}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
+  <li><a href="#{{ postCollection.category }}">{{ postCollection.heading }}</a>
   {% endfor %}
+</ul>
+<div class="row">
+  <div class="panel panel-default">
+    {% for postCollection in posts %}
+    <div id="{{ postCollection.category }}">
+      <div class="panel-heading">
+         <h3 class="panel-title">
+      		{{ postCollection.heading }}
+        </h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          {% for catPost in postCollection.posts %}
+          <li><a href="{{ catPost.href }}">{{ catPost.text}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

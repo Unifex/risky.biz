@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '52aedd6bde5708f06004dbaa477f23bd' => $vendorDir . '/perchten/rmrdir/src/rmrdir.php',
+    'e9b046393eb3376a21bcc1a30bd2fe64' => $vendorDir . '/querypath/querypath/src/qp_functions.php',
 );

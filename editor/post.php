@@ -71,7 +71,41 @@ if (!empty($_GET['p'])) {
 
   $currentPost = $yaml;
   $currentPost['body'] = $body;
+} elseif (!empty($_GET['i'])) {
+  $currentPost = array(
+    'layout' => 'blog',
+    'title' => '',
+    'tagline' => '',
+    'excerpt_separator' => '<!--excerpt-above-->',
+    'categories' => array(),
+    'sponsor' => '',
+    'permalink' => '',
+    'media_url' => '',
+    'media_url_ogg' => '',
+    'media_length' => '',
+    'media_type' => '',
+    'show_notes' => array(),
+    'body' => '',
+  );
+  $rb_path = 'http://risky.biz' . $_GET['i'];
+
+  $post = htmlqp($rb_path);
+  $currentPost['title'] = $post->find('#content h1.title')->text();
+  $currentPost['permalink'] = $_GET['i'];
+  $currentPost['tagline'] = $post->find('#content div.tagline')->text();
+  $srcDate = substr($post->find('#content div.content span.date')->text(), 0, -4);
+  $postDate = strtotime($srcDate);
+  $file_date_dd = date('d', $postDate);
+  $file_date_mm = date('m', $postDate);
+  $file_date_yyyy = date('Y', $postDate);
+  $file_stub = implode('-', array_filter(explode('/', $_GET['i'])));
+
+  $post->find('#content div.content span.date')->remove();
+  $currentPost['body'] = trim($post->find('#content div.content')->innerhtml());
+
+  $file_extension = 'html';
 }
+
 $vars['post'] = $currentPost;
 $vars['post']['file_date_dd'] = $file_date_dd;
 $vars['post']['file_date_mm'] = $file_date_mm;

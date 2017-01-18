@@ -5,6 +5,7 @@
     "mnapoli/front-yaml": "1.*",
     "twig/twig": "1.*",
     "jc21/filelist": "1.*",
-    "perchten/rmrdir": "1.*"
+    "perchten/rmrdir": "1.*",
+    "querypath/querypath": "3.*"
   }
 }
