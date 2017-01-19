@@ -1,23 +1,25 @@
 ---
-layout: podcast
-title: "AusCERT jumps the gun on BIND bug release"
-tagline: "Bulletins prematurely released on evening of July 4, USA time..."
-excerpt_separator: <!--excerpt-above-->
-categories: []
-sponsor: 
+layout: blog
+excerpt_separator: '<!--excerpt-above-->'
+title: 'AusCERT jumps the gun on BIND bug release'
+tagline: 'Bulletins prematurely released on evening of July 4, USA time...'
+author: patrick-gray
 permalink: /auscert-bind/
-media_url: 
-media_url_ogg: 
-media_length: 
-media_type: audio/mpeg
----
-<p>The accidental disclosure comes as the United States celebrates the evening of July 4, its independence day. The bulletin was supposed to be issued on the morning of July 6, US time. Instead, it was mailed to AusCERT's subscribers a short time ago.</p>
-<!--excerpt-above-->
+sponsor: '-- none --'
+categories: null
+media_url: ''
+media_length: ''
+media_type: ''
 
+---
+<p>AusCERT has broken an embargo, accidentally and prematurely broadcasting a security bulletin pertaining to multiple vulnerabilities in the BIND DNS server earlier today.</p>
+<p>The accidental disclosure comes as the United States celebrates the evening of July 4, its independence day. The bulletin was supposed to be issued on the morning of July 6, US time. Instead, it was mailed to AusCERT's subscribers a short time ago.</p>
 <p>The bugs themselves aren't Earth-shattering; two remote DoS conditions, including a packet-of-death-style attack. But operators of "important" BIND installations will likely be annoyed by the holiday-destroying timing of the release.</p>
 <p>"We made a mistake, we weren't supposed to issue them," <a href="http://auscert.org.au" target="new">AusCERT</a>'s general manager Graham Ingram told <em>Risky.Biz</em>. "We've apologised to group involved, we didn't quite understand the embargo, we missed it, and we accidentally released it."</p>
 <p>AusCERT sent a bulletin recall a short time ago. In part, it reads: <em>"We apologise if the premature announcement has caused you to initiate any action for which you are unprepared and which must now be interrupted. Please do not distribute the AusCERT bulletin. Please delete it from your system immediately and permanently."</em></p>
 <p>The extra two days lead time would-be attackers may have up their sleeve due to the disclosure is unlikely to be sufficient for the bug to be weaponised before ISC2 releases the relevant patches, said a security professional who declined to be named.</p>
 <p>"It looks like the new code/version isn't up yet, but given the statement says there's no known workarounds, it would still be of concern to an admin," our uber-sekr3t source says. "But it's an unauthenticated remote DoS. If it was a remote code execution issue, the information in the bulletin would be more useful to an attacker."</p>
 <p>TL;DR: AusCERT make boo boo. Drunk/hungover/angry BIND admins work holiday.</p>
-<p><em>Check out the latest Risky Business podcast <a href="http://risky.biz/netcasts/risky-business" target="new">here</a>.</em></p>
+<p>
+  <em>Check out the latest Risky Business podcast <a href="http://risky.biz/netcasts/risky-business" target="new">here</a>.</em>
+</p>

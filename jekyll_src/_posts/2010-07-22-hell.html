@@ -1,19 +1,19 @@
 ---
-layout: podcast
-title: "EXCLUSIVE: I know what you ate last summer"
-tagline: "New Zealand-based Hell Pizza&apos;s database gets walked..."
-excerpt_separator: <!--excerpt-above-->
-categories: []
-sponsor: 
+layout: blog
+excerpt_separator: '<!--excerpt-above-->'
+title: 'EXCLUSIVE: I know what you ate last summer'
+tagline: 'New Zealand-based Hell Pizza''s database gets walked...'
+author: patrick-gray
 permalink: /hell/
-media_url: 
-media_url_ogg: 
-media_length: 
-media_type: audio/mpeg
----
-<p><em>Risky.Biz</em> understands multiple intruders have compromised Hell Pizza's 400mb database. While it does not contain any credit card information, it does contain in excess of 230,000 rows of customer entries.</p>
-<!--excerpt-above-->
+sponsor: '-- none --'
+categories: null
+media_url: ''
+media_length: ''
+media_type: ''
 
+---
+<p>The online customer database of a New Zealand-headquartered pizza store chain has been compromised.</p>
+<p><em>Risky.Biz</em> understands multiple intruders have compromised Hell Pizza's 400mb database. While it does not contain any credit card information, it does contain in excess of 230,000 rows of customer entries.</p>
 <p>The company operates 64 stores in New Zealand, three in England, nine in Australia and one in Ireland.</p>
 <p>The database entries include the full names, addresses, phone numbers, e-mail addresses, passwords and order history for the company's customers. The information is "doing the rounds" across New Zealand.</p>
 <p>Some who came into contact with the database contacted the company last year, posing as "concerned customers", but received no acknowledgement of the data breach. They fear the database may have already found its way into the wrong hands.</p>
@@ -23,9 +23,15 @@ media_type: audio/mpeg
 <p>It's possible that many users have recycled their passwords between their e-mail, PayPal, TradeMe, banking, eBay, Hell Pizza and other accounts. Even if just a few percent of the company's customers are recycling passwords, the database is worth obtaining, they say.</p>
 <p>Downloading the Hell Pizza database, apparently, was very easy.</p>
 <p>One source Risky.Biz spoke to says they looked into the security of the website when rumours of the breach started doing the rounds: </p>
-<p><cite>Immediately I spotted the SQL Queries being made by the Flash SWF as part of the query string to the server-side. The Flash client makes queries which are hard-coded in the .swf (this is dumb as it means SQL Injection is effectively a 'feature' of the store).</cite></p>
-<p><cite>You could easily alter the query string to show the hashes stored in the MySQL users table. I figured out the version of MySQL was 4.0 (Debian Sarge) - and the hashes in this version are very weak, cracking them would take less than a couple of hours.</cite></p>
-<p><cite>MySQL was listening on a remote port, so one could simply log in remotely and run queries or dump the database slowly so as to not be noticed.</cite></p>
+<p>
+  <cite>Immediately I spotted the SQL Queries being made by the Flash SWF as part of the query string to the server-side. The Flash client makes queries which are hard-coded in the .swf (this is dumb as it means SQL Injection is effectively a 'feature' of the store).</cite>
+</p>
+<p>
+  <cite>You could easily alter the query string to show the hashes stored in the MySQL users table. I figured out the version of MySQL was 4.0 (Debian Sarge) - and the hashes in this version are very weak, cracking them would take less than a couple of hours.</cite>
+</p>
+<p>
+  <cite>MySQL was listening on a remote port, so one could simply log in remotely and run queries or dump the database slowly so as to not be noticed.</cite>
+</p>
 <p>Security researcher and Metasploit creator H D Moore described the security arrangements of the online ordering portal, as described above, as "about 50 steps of fail".</p>
 <p>Another penetration tester says the Hell Pizza database is an excellent example of "non critical" information that could still be used by attackers for great benefit.</p>
 <p>The Chair of New Zealand's Internet Task Force, Paul McKitrick, told <em>Risky.Biz</em> that he had heard rumours of the database circulating around the security community as far back as last year.</p>

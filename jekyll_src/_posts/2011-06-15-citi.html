@@ -1,21 +1,21 @@
 ---
-layout: podcast
-title: "Primitive Persistent Threat"
-tagline: "It&apos;s time to party like it&apos;s 1999..."
-excerpt_separator: <!--excerpt-above-->
-categories: []
-sponsor: 
+layout: blog
+excerpt_separator: '<!--excerpt-above-->'
+title: 'Primitive Persistent Threat'
+tagline: 'It''s time to party like it''s 1999...'
+author: patrick-gray
 permalink: /citi/
-media_url: 
-media_url_ogg: 
-media_length: 
-media_type: audio/mpeg
----
-<p>You can read the article <a href="http://www.nytimes.com/2011/06/14/technology/14security.html" target="new">here</a>.</p>
-<!--excerpt-above-->
+sponsor: '-- none --'
+categories: null
+media_url: ''
+media_length: ''
+media_type: ''
 
+---
+<p>According to The New York Times, "sophisticated attackers" stole large quantities of customer data from Citi, using computers.</p>
+<p>You can read the article <a href="http://www.nytimes.com/2011/06/14/technology/14security.html" target="new">here</a>.</p>
 <p>We know the attackers used computers, because they typed an account number into a URL bar, and computers have URL bars. Computers are sophisticated, and anyone who uses them is, apparently, "especially ingenious". Just read the article.</p>
-<p>But the quote that really got me was this one: "[The attackers] leapfrogged between the accounts of different Citi customers by inserting various account numbers into a string of text located in the browser's address bar."</p>
+<p>But the quote that really got me was this one: "[The attackers] leapfrogged between the accounts of different Citi customers by inserting various account numbers into a string of text located in the browser’s address bar."</p>
 <p>The report quoted a security expert familiar with the investigation as saying "it would have been hard to prepare for this type of vulnerability" and this attack is only one of a "wave of more and more sophisticated breaches by hi-tech thieves". </p>
 <p>Now I've tested a few Web apps in my time as an information security consultant, so I guess I am moderately sophisticated with these here com-putars by the standards of The New York Times, but as far as I can tell the OWASP Top 10 Number 4: "Insecure Direct Object Reference" is a fancy way of saying "herp a derp, lets put the account number in the URL bar, and just hope no one increments it". </p>
 <p>So lets just come right out and say it: If this NYTimes piece is correct, these are not sophisticated attacks.</p>
@@ -24,7 +24,7 @@ media_type: audio/mpeg
 <p>Anyone from a 13 year old kid to the Russian mafia can and will break into almost anything  in minutes using common garden flaws that even the slightest attempt at planning an approach to the foothills of the snowy, cloud-lost peaks of Mt Best Practice would have spotted. </p>
 <p>If, as per the reports, Citi got 200,000 customer records stolen through changing the account number in the URL string, then it's almost certain it never got that Web site tested for security.</p>
 <p>Can we all just say that out loud? It's possible that the world's largest financial services network <strong>didn't get this system tested for security</strong>. </p>
-<p>The NYT breaks it down for mom-n-pop: "Think of it as a mansion with a high-tech security system -- but the front door wasn't locked tight." </p>
+<p>The NYT breaks it down for mom-n-pop: "Think of it as a mansion with a high-tech security system -- but the front door wasn’t locked tight." </p>
 <p>No: <strong>They. Didn't. Test. It.</strong> </p>
 <p>Hell, even if you fired an automated webappsec tool at something like that, you'd find it. Same as with all Sony's SQL injection. These are not "high-tech security systems" that aren't "locked tight". If the NYT report is accurate, this is straight out negligence. </p>
 <p>In Maine last week, the judge in the case of Patco vs Ocean Bank <a href="http://www.wired.com/threatlevel/2011/06/bank-ach-theft/" target="new">concluded</a> "the law does not require the bank to implement the 'best' security measures available and that the bank is clear to customers when they sign up about the level of security it provides". </p>
@@ -36,4 +36,6 @@ media_type: audio/mpeg
 <p>Your bank gets owned because computers are sophisticated. Computers are hard. Building, deploying and maintaining secure business computer systems is fiendishly hard. </p>
 <p>But, NYTimes, don't tell me that Citi lost 200,000 customers worth of information because of a sophisticated attacker. Tell me the truth: it lost the information because it failed to test its systems. It failed to take even what limited basic options we as an infosec industry can offer -- the OWASP Top 10, some basic Web app penetration testing, and perhaps hiring a security consultant who might better prepare the company against an earth-shatteringly sophisticated attack involving the alteration of an account number in the URL bar. </p>
 <p>TL;DR Typed account number into browser, owned bank.</p>
-<p><em>Editor's note: The funny thing is we hear good things about Citi's in-house pentesters. Either the NYTimes article is incorrect, or somehow this bug just slipped through to the keeper. We have no idea. It's hardly the point: Even if Citi didn't get owned this way, plenty of others do and it makes us all very sad pandas at Risky Business HQ. :'( </em></p>
+<p>
+  <em>Editor's note: The funny thing is we hear good things about Citi's in-house pentesters. Either the NYTimes article is incorrect, or somehow this bug just slipped through to the keeper. We have no idea. It's hardly the point: Even if Citi didn't get owned this way, plenty of others do and it makes us all very sad pandas at Risky Business HQ. :'( </em>
+</p>

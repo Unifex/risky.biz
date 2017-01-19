@@ -1,23 +1,22 @@
 ---
-layout: podcast
-title: "Censusfail and the fog of war"
-tagline: "Revisiting last week&apos;s post..."
-excerpt_separator: <!--excerpt-above-->
-categories: []
-sponsor: 
+layout: blog
+excerpt_separator: '<!--excerpt-above-->'
+title: 'Censusfail and the fog of war'
+tagline: 'Revisiting last week''s post...'
+author: patrick-gray
 permalink: /censusfailupdate/
-media_url: 
-media_url_ogg: 
-media_length: 
-media_type: audio/mpeg
----
-<p>As far as I know the information I posted is accurate, but I wanted to write this to add a bit more context and look at where it's shaky. I literally wrote that thing up in about 10 minutes while I was working on last week's show. I was doubly under the pump because The Project had a camera guy coming to my house that evening to record an interview about the whole debacle. </p>
-<!--excerpt-above-->
+sponsor: '-- none --'
+categories: null
+media_url: ''
+media_length: ''
+media_type: ''
 
+---
+<p>Last week I dashed off a very <a href="http://risky.biz/censusfail">quick post</a> about #CensusFail that went stupid viral. I think it was retweeted about 1200 times and it sort of became "the story" of what happened.</p>
+<p>As far as I know the information I posted is accurate, but I wanted to write this to add a bit more context and look at where it's shaky. I literally wrote that thing up in about 10 minutes while I was working on last week's show. I was doubly under the pump because The Project had a camera guy coming to my house that evening to record an interview about the whole debacle. </p>
 <p>I'd also just arrived back in Australia after spending six days in Las Vegas attending Black Hat, B-Sides and Defcon. Prior to that I was in Brazil. So yes, long story short, I was exhausted, jet lagged, slammed with work and I didn't really have much time to write a decent post. I certainly wasn't expecting what I did write to be spread so widely. So, now that I've had a minute to breathe, let's look back through the bullet points in original post to see where it's solid and where it isn't.</p>
 <p>The information I put together came from multiple sources, some closer to the action that others.</p>
-<ul>
-<strong>
+<ul><strong>
 <li>IBM and the ABS were offered DDoS prevention services from their upstream provider, NextGen Networks, and said they didn't need it.</li>
 <p></p></strong>
 <p>I'm pretty firm on this one. They may have worked with their upstream provider on a contingency plan (geoblocking) but I've got pretty solid information that they opted not to have DDoS gear installed at the edge of the census network. That was a mistake. The edge gear can detect certain types of DDoS activity and send a signal to the upstream provider for its filtering/blocking to begin. If you don't have it, you're basically running naked if your geoblocking isn't effective. Oops.</p>
@@ -55,8 +54,7 @@ media_type: audio/mpeg
 <p><strong>
 <li>ASD still needs to roll incident response before they can send the website live again. Even though it was false positives that triggered the investigation, there still needs to be an investigation.</li>
 <p></p></strong></p>
-<p>This is just standard. Once you call an IR team they need to investigate.</p></ul>
-<p>So. That's where I stand on what I wrote last week. I'm sure about most of it, but the timeline and details around whether there was Australian attack traffic? I can't 100% substantiate that. </p>
+<p>This is just standard. Once you call an IR team they need to investigate.</p></ul><p>So. That's where I stand on what I wrote last week. I'm sure about most of it, but the timeline and details around whether there was Australian attack traffic? I can't 100% substantiate that. </p>
 <p>I'm highly confident the firewall thing happened. They did reboot without a synced secondary. But that's just sort of funny, and if it happened in isolation no one would think it's a big deal.</p>
 <p>There's other stuff I haven't mentioned, too, like routes changing on the night to send traffic around the primary connectivity provider. This might be due to the "geoblocking falling over," something our fearless leaders have mentioned once or twice in interviews and at press conferences. If I had to guess, they tried to route around NextGen and get Telstra to pull together some last-minute DDoS filtering. That's just speculation, but if I had to guess, that's how it went down.</p>
 <p>Either way it was amateur hour. The next question becomes: Who's responsible?</p>

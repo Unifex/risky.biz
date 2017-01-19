@@ -1,18 +1,19 @@
 ---
-layout: podcast
-title: "What I&apos;ve been told about #censusfail"
-tagline: "High level sources say..."
-excerpt_separator: <!--excerpt-above-->
-categories: []
-sponsor: 
+layout: blog
+excerpt_separator: '<!--excerpt-above-->'
+title: 'What I''ve been told about #censusfail'
+tagline: 'High level sources say...'
+author: patrick-gray
 permalink: /censusfail/
-media_url: 
-media_url_ogg: 
-media_length: 
-media_type: audio/mpeg
+sponsor: '-- none --'
+categories: null
+media_url: ''
+media_length: ''
+media_type: ''
+
 ---
-<ul>
-<li>IBM and the ABS were offered DDoS prevention services from their upstream provider, NextGen Networks, and said they didn't need it.</li>
+<p>I have been able to cobble together the following by talking to my sources. Sorry this post is so brief, but I'm still trying to get this week's show out and I'm massively under the pump. So here it is: Set your faces to stunned.</p>
+<ul><li>IBM and the ABS were offered DDoS prevention services from their upstream provider, NextGen Networks, and said they didn't need it.</li>
 <li>Their plan was to just ask NextGen to geoblock all traffic outside of Australia in the event of an attack.</li>
 <li>This plan was activated when there was a small-scale attack against the census website.</li>
 <li>Unfortunately another attack hit them from inside Australia. This was a straight up DNS reflection attack with a bit of ICMP thrown in for good measure. It filled up their firewall's state tables. Their solution was to reboot their firewall, which was operating in a pair.</li>
@@ -22,4 +23,4 @@ media_type: audio/mpeg
 <li>The IBM alerts were false positives incorrectly characterising offshore-bound system information/logs as exfil.</li>
 <li>ASD still needs to roll incident response before they can send the website live again. Even though it was false positives that triggered the investigation, there still needs to be an investigation.</li>
 <p>At least IBM got to bump their margins up a bit by not paying for the DDoS prevention though... amirite?!</p>
-<!--excerpt-above-->
+</ul>

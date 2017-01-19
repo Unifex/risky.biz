@@ -1,19 +1,19 @@
 ---
-layout: podcast
-title: "Unremarkable spam remarkably effective"
-tagline: "Effective spamming all too easy..."
-excerpt_separator: <!--excerpt-above-->
-categories: []
-sponsor: 
+layout: blog
+excerpt_separator: '<!--excerpt-above-->'
+title: 'Unremarkable spam remarkably effective'
+tagline: 'Effective spamming all too easy...'
+author: patrick-gray
 permalink: /unremarkable/
-media_url: 
-media_url_ogg: 
-media_length: 
-media_type: audio/mpeg
----
-<p>Then I spotted the following, <a href="https://twitter.com/davidfarrier/status/20698676484" target="new">unremarkable tweet</a> from @davidfarrier:</p>
-<!--excerpt-above-->
+sponsor: '-- none --'
+categories: null
+media_url: ''
+media_length: ''
+media_type: ''
 
+---
+<p>Last Tuesday was an unremarkable day. I awoke to the usual E-Mails IRC chatter and RSS reading, the most noteworthy of which was a small cluster of ZDI advisories addressing issues in WebKit.</p>
+<p>Then I spotted the following, <a href="https://twitter.com/davidfarrier/status/20698676484" target="new">unremarkable tweet</a> from @davidfarrier:</p>
 <p>"some chap in china just hacked my gmail. and just to tell people about iphone 4s. as if people didn't know already. silly bugger."</p>
 <p>Quickly followed by <a href="https://twitter.com/davidfarrier/status/20736866038" target="new">this</a>:</p>
 <p>"seems like lots of us twits have had our gmails/hotmails hacked this week. are you on the "hack" list? i certainly was."</p>
@@ -21,13 +21,24 @@ media_type: audio/mpeg
 <p>An initial look around suggested that thousands if not tens-of-thousands of accounts have been hit.</p>
 <p>So what was going on?</p>
 <p>Well, simply put, every "hacked" Gmail account was logged into using valid credentials that appeared to have been previously stolen. Once the attackers compromised the accounts, they drafted emails to the victims' contacts with an email along these lines:</p>
-<p><em>Dear friends:</em></p>
-<p><em>Last week ,I have Order china  Samsung UN55B8000 55-Inch</em></p>
-<p><em>this w e bsite:dhsellso.com</em></p>
-<p><em>I have received the product!</em></p>
-<p><em>It's amazing! The item is original, brand new and has high quality, but it's much cheaper. I'm pleased to share this good news with you! I believe you will find 7what you want there and have an good experience on shopping from them.</em></p>
-<p><em>Regards!<br/>
-</em></p>
+<p>
+  <em>Dear friends:</em>
+</p>
+<p>
+  <em>Last week ,I have Order china  Samsung UN55B8000 55-Inch</em>
+</p>
+<p>
+  <em>this w e bsite:dhsellso.com</em>
+</p>
+<p>
+  <em>I have received the product!</em>
+</p>
+<p>
+  <em>It's amazing! The item is original, brand new and has high quality, but it's much cheaper. I'm pleased to share this good news with you! I believe you will find 7what you want there and have an good experience on shopping from them.</em>
+</p>
+<p>
+  <em>Regards!<br /></em>
+</p>
 <p>Presumably this was the work of a script with previously compromised account details purchased from a botnet or phishing operator. There's nothing remarkable about it at all.  </p>
 <p>In each sample that I have looked at, the source IP address of the Gmail session was the unremarkable China located 115.49.90.219 and the text was identical (with exception to the product being pimped).</p>
 <p>One possible theory that has been raised by several people I have talked to (and this is, just a theory), is that the BGP "misroute" earlier in the year captured a bunch of logins (HTTP, POP3, IMAP) to Gmail services and they have been harvested as apart of this attack.</p>
