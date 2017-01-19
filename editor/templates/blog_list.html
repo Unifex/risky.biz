@@ -7,11 +7,6 @@
 {% endif %}
 
 {% block content %}
-<ul class="nav nav-tabs tabs">
-  {% for postCollection in posts %}
-  <li><a href="#{{ postCollection.category }}">{{ postCollection.heading }}</a>
-  {% endfor %}
-</ul>
 <div class="row">
   <div class="panel panel-default">
     {% for postCollection in posts %}

@@ -10,14 +10,14 @@ use perchten\rmrdir;
 
 $parser = new Mni\FrontYAML\Parser();
 
-$validation_url = 'http://risky.biz/export/blogs/urls';
+//$validation_url = 'http://risky.biz/export/blogs/urls';
 # @TODO: Only fetch if this isn't a 404.
 //$file = file_get_contents($validation_url);
-$spans = htmlqp($validation_url, '.view-blog-urls span.field-content')->toArray();
-$src_blog_paths = array();
-foreach ($spans as $span) {
-  $src_blog_paths[] = trim($span->nodeValue) . '/';
-}
+//$spans = htmlqp($validation_url, '.view-blog-urls span.field-content')->toArray();
+//$src_blog_paths = array();
+//foreach ($spans as $span) {
+//  $src_blog_paths[] = trim($span->nodeValue) . '/';
+//}
 
 $blog_paths = array();
 
@@ -78,18 +78,18 @@ $posts[] = array(
   'posts' => $postList,
 );
 
-$postList = array();
-foreach ($src_blog_paths as $src_path) {
-  $postList[] = array(
-    'href' => "/post.php?i=" . $src_path,
-    'text' => $src_path,
-  );
-}
-$posts[] = array(
-  'category' => 'unimported-blogs',
-  'heading' => 'Unimported Blogs',
-  'posts' => $postList,
-);
+//$postList = array();
+//foreach ($src_blog_paths as $src_path) {
+//  $postList[] = array(
+//    'href' => "/post.php?i=" . $src_path,
+//    'text' => $src_path,
+//  );
+//}
+//$posts[] = array(
+//  'category' => 'unimported-blogs',
+//  'heading' => 'Unimported Blogs',
+//  'posts' => $postList,
+//);
 $vars['posts'] = $posts;
 
 // Prep template.
