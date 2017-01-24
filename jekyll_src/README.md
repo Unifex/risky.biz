@@ -21,6 +21,29 @@ Then point a browser at http://127.0.0.1:4000
 
 If you're uploading the generated site it will be in the `_site` directory.
 
+## Configuration
+In the \_data directory there are a number of YML files. These are used in providing various values to the FrontMatter used in the blog and podcasts layouts.
+
+### authors.yml
+These are used on the blog posts to present a consistant author name and the key can be used as a url slug in the future should we ever add something like ```/author/author-slug```.
+
+### categories.yml
+This was used to provide a few extra values to each category. The Categories are no longer used.
+
+### rss.yml
+This file contains values replaced in the RSS feeds.
+
+### sponsors.yml
+The layout for these are:
+sponsor_key:
+  name: Display name
+  url: The url the user is sent to if clicked
+  banner_url: path or URL to the browser
+
+The sponsor key is not displayed. It just needs to be unique, a single string(no spaces(use underscores)), something related is good.
+
+The banner_url can either be a fully formed URL or an absolute path. In the ```jekyll_src``` directory any directories that _do not_ with an underscore will be added to the compiled site. The ```static/img/sponsors``` directory is where I've been putting the images so to reference images in that directory the banner_url would be ```/static/img/sponsors/placeholder_sponsor_image.png```.
+
 ## Credits
 
 * Jekyll: for the engine and for providing an awesome [docker instance](https://hub.docker.com/r/jekyll/jekyll/) that makes all the things easy.
