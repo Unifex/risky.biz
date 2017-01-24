@@ -35,10 +35,12 @@ This file contains values replaced in the RSS feeds.
 
 ### sponsors.yml
 The layout for these are:
+```
 sponsor_key:
   name: Display name
   url: The url the user is sent to if clicked
   banner_url: path or URL to the browser
+```
 
 The sponsor key is not displayed. It just needs to be unique, a single string(no spaces(use underscores)), something related is good.
 
