@@ -20,6 +20,15 @@
 	white-space: nowrap;
 }
 
+.search__result-date:before {
+  content: " - ";
+}
+
+.search__result-date {
+  position: initial;
+  right: initial;
+}
+
 .img-center {
   margin-left: auto;
   margin-right: auto;
