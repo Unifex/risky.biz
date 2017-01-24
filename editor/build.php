@@ -11,6 +11,7 @@ if (!preg_match('/[^a-z]/', $_GET['site'])) {
       if (!file_exists('/tmp/build_' . $_GET['site'])) {
         file_put_contents('/tmp/build_' . $_GET['site'], "build requested\n");
       }
+      chmod('/tmp/build_' . $_GET['site'], 'ug_rw');
   }
 }
 header('Location: /');
