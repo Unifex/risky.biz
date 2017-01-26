@@ -2,6 +2,12 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+$tmp_dir = dirname(__FILE__) . '/tmp';
+
+if (!file_exists($tmp_dir)) {
+  mkdir($tmp_dir);
+}
+
 Twig_Autoloader::register();
 
 use jc21\FileList;
@@ -45,11 +51,11 @@ $twig = new Twig_Environment($loader, array(
 // Check build states.
 $build_sites = array('staging', 'production');
 foreach ($build_sites as $site_state) {
-  if (file_exists('/tmp/build_' . $site_state)) {
+  if (file_exists($tmp_dir . '/build_' . $site_state)) {
     $states[] = '+++ ' . ucfirst($site_state) . ' +++';
     $states = array_merge(
       $states,
-      explode("\n", file_get_contents('/tmp/build_' . $site_state))
+      explode("\n", file_get_contents($tmp_dir . '/build_' . $site_state))
     );
   }
 }
