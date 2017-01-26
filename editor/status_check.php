@@ -12,6 +12,7 @@ $states = array();
 $build_sites = array('staging', 'production');
 foreach ($build_sites as $site_state) {
   if (file_exists('/tmp/build_' . $site_state)) {
+    chmod('/tmp/build_' . $site_state, '0777');
     $states[] = '+++ ' . ucfirst($site_state) . ' +++';
     $states = array_merge(
       $states,
