@@ -1,4 +1,5 @@
 <?php
+$tmp_dir = dirname(__FILE__) . '/tmp';
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -9,23 +10,33 @@ Twig_Autoloader::register();
 $vars['states'] = array();
 $states = array();
 
-$build_sites = array('staging', 'production');
+$build_sites = array('staging', 'master');
 foreach ($build_sites as $site_state) {
-  if (file_exists('/tmp/build_' . $site_state)) {
-    chmod('/tmp/build_' . $site_state, '0777');
+  if (file_exists($tmp_dir . '/build_' . $site_state)) {
+    chmod($tmp_dir, 0777);
+    if (!chmod($tmp_dir . '/build_' . $site_state, 0777)) {
+      print "error on chmod";
+    }
     $states[] = '+++ ' . ucfirst($site_state) . ' +++';
     $states = array_merge(
       $states,
-      explode("\n", file_get_contents('/tmp/build_' . $site_state))
+      explode("\n", file_get_contents($tmp_dir . '/build_' . $site_state))
     );
+  } else {
+    $states[] = "File does not exist (looking for {$tmp_dir}/build_" . $site_state . ")";
+    $states[] = ">> " . ucfirst($site_state) . " build has not been requested.";
   }
 }
 
-if (file_exists('/tmp/last_build')) {
+if (file_exists($tmp_dir . '/last_build')) {
+  $states[] = '+++ Build Log +++';
   $states = array_merge(
     $states,
-    explode("\n", file_get_contents('/tmp/last_build'))
+    explode("\n", file_get_contents($tmp_dir . '/last_build'))
   );
+} else {
+  $states[] = "File does not exist (looking for {$tmp_dir}/last_build)";
+  $states[] = ">> Build is not in progress.";
 }
 
 if (!empty($states)) {

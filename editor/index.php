@@ -2,16 +2,29 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$tmp_dir = dirname(__FILE__) . '/tmp';
-
-if (!file_exists($tmp_dir)) {
-  mkdir($tmp_dir);
-}
-
 Twig_Autoloader::register();
 
 use jc21\FileList;
 use perchten\rmrdir;
+
+$tmp_dir = dirname(__FILE__) . '/tmp';
+$tmp_cache_dir = dirname(__FILE__) . '/template_cache';
+$template_dir = dirname(__FILE__) . '/templates';
+if (!empty($_GET['cc'])) {
+  if (file_exists($tmp_cache_dir)) {
+    rmrdir($tmp_cache_dir);
+  }
+  if (file_exists($tmp_dir)) {
+    rmrdir($tmp_dir);
+  }
+}
+if (!is_dir($tmp_cache_dir)) {
+  mkdir($tmp_cache_dir, 0770);
+}
+if (!file_exists($tmp_dir)) {
+  mkdir($tmp_dir);
+  chmod ($tmp_dir, 0777);
+}
 
 $siteSrc = '../jekyll_src/';
 $postsDir = $siteSrc . '_posts/';
@@ -34,15 +47,6 @@ foreach ($vars['items'] as $year => $months) {
   ksort($vars['items'][$year]);
 }
 
-// Prep template.
-$tmp_cache_dir = dirname(__FILE__) . '/template_cache';
-$template_dir = dirname(__FILE__) . '/templates';
-if (!empty($_GET['cc'])) {
-  rmrdir($tmp_cache_dir);
-}
-if (!is_dir($tmp_cache_dir)) {
-  mkdir($tmp_cache_dir, 0770);
-}
 $loader = new Twig_Loader_Filesystem($template_dir);
 $twig = new Twig_Environment($loader, array(
   'cache' => $tmp_cache_dir,
