@@ -9,12 +9,12 @@ urls:
       url: /contact
     - text: Sponsorship
       url: /sponsorship
-url: "https://riskybiz.biz"
+url: "https://risky.biz"
 baseurl: ""
 email:
   contact: patrick@risky.biz
   sales: sales@risky.biz
-itpcurl: "itpc://riskybiz.evolved.net.nz"
+itpcurl: "itpc://risky.biz"
 whitelist:
   - jekyll-redirect-from
 gems:
