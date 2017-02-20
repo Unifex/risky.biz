@@ -33,3 +33,15 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+article .content a,
+article .content a:link,
+article .content a:active,
+article .content .post a,
+article .content .post a:link,
+article .content .post a:active,
+article .read-more a,
+article .read-more a:link,
+article .read-more a:active {
+  text-decoration: underline;
+}
