@@ -46,7 +46,7 @@ layout: null
             </itunes:summary>
             <description>
             	<![CDATA[
-                {{ post.content | xml_escape }}
+                {{ post.content }}
                 
                 {% if post.show_notes %}
                 <div class="panel panel-default">
@@ -56,8 +56,8 @@ layout: null
                     <div class="panel-body">
                         <dl>
                         {% for show_note in post.show_notes %}
-                          <dt><a href="{{ show_note.link }}">{{ show_note.title | xml_escape }}</a></dt>
-                          <dd>{{ show_note.description | xml_escape }}</dd>
+                          <dt><a href="{{ show_note.link }}">{{ show_note.title | strip_html | xml_escape }}</a></dt>
+                          <dd>{{ show_note.description | strip_html | xml_escape }}</dd>
                         {% endfor %}
                         </dl>
                     </div>
