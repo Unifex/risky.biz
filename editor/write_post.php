@@ -19,6 +19,7 @@ $frontmatter = array(
 $frontmatter['title'] = $_POST['title'];
 $frontmatter['tagline'] = $_POST['tagline'];
 $frontmatter['author'] = $_POST['author'];
+$frontmatter['explicit'] = $_POST['explicit'];
 $frontmatter['layout'] = $_POST['layout'];
 $frontmatter['permalink'] = $_POST['permalink'];
 $frontmatter['sponsor'] = $_POST['sponsor'];
