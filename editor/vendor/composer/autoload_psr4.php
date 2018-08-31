@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Symfony\\Component\\Serializer\\' => array($vendorDir . '/symfony/serializer'),
     'Mni\\FrontYAML\\' => array($vendorDir . '/mnapoli/front-yaml/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
+    'Fitbug\\SymfonySerializer\\YamlEncoderDecoder\\' => array($vendorDir . '/fitbug/symfony-yaml-serializer-encoder-decoder/src'),
 );

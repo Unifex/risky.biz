@@ -2,6 +2,13 @@ $(window).on('load', function () {
 
   displayAlerts();
 
+  $('textarea').each(function () {
+    this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+  }).on('input', function () {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  });
+
   // Update alerts based on Post type.
   $('#layout').on('change', function () {
     displayAlerts();

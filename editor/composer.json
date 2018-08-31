@@ -6,6 +6,7 @@
     "twig/twig": "1.*",
     "jc21/filelist": "1.*",
     "perchten/rmrdir": "1.*",
-    "querypath/querypath": "3.*"
+    "querypath/querypath": "3.*",
+    "fitbug/symfony-yaml-serializer-encoder-decoder": "^0.1.1"
   }
 }

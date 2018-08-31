@@ -15,11 +15,16 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
         'S' => 
         array (
             'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\Serializer\\' => 29,
         ),
         'M' => 
         array (
             'Mni\\FrontYAML\\' => 14,
             'Masterminds\\' => 12,
+        ),
+        'F' => 
+        array (
+            'Fitbug\\SymfonySerializer\\YamlEncoderDecoder\\' => 44,
         ),
     );
 
@@ -28,6 +33,10 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Symfony\\Component\\Serializer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/serializer',
+        ),
         'Mni\\FrontYAML\\' => 
         array (
             0 => __DIR__ . '/..' . '/mnapoli/front-yaml/src',
@@ -35,6 +44,10 @@ class ComposerStaticInit49b1f14450695aaaf99163e1db7a3ab7
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'Fitbug\\SymfonySerializer\\YamlEncoderDecoder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fitbug/symfony-yaml-serializer-encoder-decoder/src',
         ),
     );
 
