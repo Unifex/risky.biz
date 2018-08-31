@@ -1,81 +1,80 @@
 bromium:
-  name: Bromium
-  url: https://www.bromium.com/
-  banner_url: /static/img/sponsors/bromium.svg
+    name: Bromium
+    url: 'https://www.bromium.com/'
+    banner_url: /static/img/sponsors/bromium.svg
 thinkst:
-  name: Thinkst
-  url: http://canary.tools/
-  banner_url: /static/img/sponsors/canarylogo.png
+    name: Thinkst
+    url: 'http://canary.tools/'
+    banner_url: /static/img/sponsors/canarylogo.png
 senetas:
-  name: Senetas
-  url: http://www.senetas.com/
-  banner_url: /static/img/sponsors/senetas-logo.png
+    name: Senetas
+    url: 'http://www.senetas.com/'
+    banner_url: /static/img/sponsors/senetas-logo.png
 cylance:
-  name: Cylance
-  url: https://www.cylance.com/
-  banner_url: /static/img/sponsors/cylance.png
+    name: Cylance
+    url: 'https://www.cylance.com/'
+    banner_url: /static/img/sponsors/cylance.png
 hp_enterprise_fortify:
-  name: HP Enterprise Fortify
-  url: http://www8.hp.com/us/en/software-solutions/enterprise-security.html
-  banner_url: /static/img/sponsors/hpe.png
+    name: 'HP Enterprise Fortify'
+    url: 'http://www8.hp.com/us/en/software-solutions/enterprise-security.html'
+    banner_url: /static/img/sponsors/hpe.png
 tenable:
-  name: Tenable Security
-  url: http://www.tenable.com/
-  banner_url: /static/img/sponsors/tenable_logo.svg
+    name: 'Tenable Security'
+    url: 'http://www.tenable.com/'
+    banner_url: /static/img/sponsors/tenable_logo.svg
 veracode:
-  name: Veracode
-  url: http://www.veracode.com/
-  banner_url: /static/img/sponsors/veracode.png
+    name: Veracode
+    url: 'http://www.veracode.com/'
+    banner_url: /static/img/sponsors/veracode.png
 rapid7:
-  name: Rapid7
-  url: http://www.rapid7.com/
-  banner_url: /static/img/sponsors/rapid7.png
+    name: Rapid7
+    url: 'http://www.rapid7.com/'
+    banner_url: /static/img/sponsors/rapid7.png
 trail_of_bits:
-  name: Trail of Bits
-  url: http://www.trailofbits.com/
-  banner_url: /static/img/sponsors/tob.jpeg
+    name: 'Trail of Bits'
+    url: 'http://www.trailofbits.com/'
+    banner_url: /static/img/sponsors/tob.jpeg
 signal_sciences:
-  name: Signal Sciences
-  url: http://www.signalsciences.com/
-  banner_url: /static/img/sponsors/signal_sciences.png
+    name: 'Signal Sciences'
+    url: 'http://www.signalsciences.com/'
+    banner_url: /static/img/sponsors/signal_sciences.png
 remediant:
-  name: Remediant
-  url: http://www.remediant.com/
-  banner_url: /static/img/sponsors/remediant.png
+    name: Remediant
+    url: 'http://www.remediant.com/'
+    banner_url: /static/img/sponsors/remediant.png
 netsparker:
-  name: NetSparker
-  url: http://www.netsparker.com/
-  banner_url: /static/img/sponsors/netsparker.png
+    name: NetSparker
+    url: 'http://www.netsparker.com/'
+    banner_url: /static/img/sponsors/netsparker.png
 duo_security:
-  name: Duo Security
-  url: http://www.duo.com/
-  banner_url: /static/img/sponsors/duo.png
+    name: 'Duo Security'
+    url: 'http://www.duo.com/'
+    banner_url: /static/img/sponsors/duo.png
 bugcrowd:
-  name: Bugcrowd
-  url: http://www.bugcrowd.com/
-  banner_url: /static/img/sponsors/bugcrowd.jpeg
+    name: Bugcrowd
+    url: 'http://www.bugcrowd.com/'
+    banner_url: /static/img/sponsors/bugcrowd.jpeg
 exabeam:
-  name: Exabeam
-  url: http://www.exabeam.com/
-  banner_url: /static/img/sponsors/exabeam.png
+    name: Exabeam
+    url: 'http://www.exabeam.com/'
+    banner_url: /static/img/sponsors/exabeam.png
 cyberark:
-  name: Cyber Ark
-  url: http://www.cyberark.com/
-  banner_url: /static/img/sponsors/cyberark.png
+    name: 'Cyber Ark'
+    url: 'http://www.cyberark.com/'
+    banner_url: /static/img/sponsors/cyberark.png
 sensepost:
-  name: Sensepost
-  url: http://www.sensepost.com/
-  banner_url: /static/img/sponsors/sensepost.png
+    name: Sensepost
+    url: 'http://www.sensepost.com/'
+    banner_url: /static/img/sponsors/sensepost.png
 iceberg:
-  name: ICEBRG
-  url: https://icebrg.io/?utm_source=riskybiz&utm_medium=podcast&utm_campaign=networksecurity
-  banner_url: /static/img/sponsors/ICEBRG_logo_whitebg.png
+    name: ICEBRG
+    url: 'https://icebrg.io/?utm_source=riskybiz&utm_medium=podcast&utm_campaign=networksecurity'
+    banner_url: /static/img/sponsors/ICEBRG_logo_whitebg.png
 attackiq:
-  name: AttackIQ
-  url: https://www.attackiq.com/
-  banner_url: /static/img/sponsors/attackiqlogo.png
+    name: AttackIQ
+    url: 'https://www.attackiq.com/'
+    banner_url: /static/img/sponsors/attackiqlogo.png
 senrio:
-  name: Senrio
-  url: http://senr.io/
-  banner_url: /static/img/sponsors/senriologo.png
-
+    name: Senrio
+    url: 'http://senr.io/'
+    banner_url: /static/img/sponsors/senriologo.png
