@@ -4,8 +4,8 @@ bromium:
   banner_url: /static/img/sponsors/bromium.svg
 thinkst:
   name: Thinkst
-  url: http://thinkst.com/
-  banner_url: /static/img/sponsors/thinkst.svg
+  url: http://canary.tools/
+  banner_url: /static/img/sponsors/canarylogo.png
 senetas:
   name: Senetas
   url: http://www.senetas.com/
@@ -66,3 +66,16 @@ sensepost:
   name: Sensepost
   url: http://www.sensepost.com/
   banner_url: /static/img/sponsors/sensepost.png
+iceberg:
+  name: ICEBRG
+  url: https://icebrg.io/?utm_source=riskybiz&utm_medium=podcast&utm_campaign=networksecurity
+  banner_url: /static/img/sponsors/ICEBRG_logo_whitebg.png
+attackiq:
+  name: AttackIQ
+  url: https://www.attackiq.com/
+  banner_url: /static/img/sponsors/attackiqlogo.png
+senrio:
+  name: Senrio
+  url: http://senr.io/
+  banner_url: /static/img/sponsors/senriologo.png
+
