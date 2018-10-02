@@ -78,3 +78,7 @@ senrio:
     name: Senrio
     url: 'http://senr.io/'
     banner_url: /static/img/sponsors/senriologo.png
+Yubico:
+    name: Yubico
+    url: 'https://yubico.com'
+    banner_url: /static/img/sponsors/Yubico-logo-website.png

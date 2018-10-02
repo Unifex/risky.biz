@@ -12,7 +12,7 @@ $update_sponsors[$_POST['edit_key']]['url'] = $_POST['edit_url'];
 // Handle the file.
 if (!empty($_FILES['edit_file']['tmp_name'])) {
   $uploaddir = realpath(dirname(__FILE__) . '/../jekyll_src/static/img/sponsors/');
-  $uploadfile = $uploaddir . basename($_FILES['edit_file']['name']);
+  $uploadfile = $uploaddir . '/' . basename($_FILES['edit_file']['name']);
   if (!is_writable($uploaddir)) {
     $err[] = "Nope, can't write to $uploaddir";
   } elseif (move_uploaded_file($_FILES['edit_file']['tmp_name'], $uploadfile)) {

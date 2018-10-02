@@ -2,6 +2,9 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+jekyll_src/static/img/sponsors/*
+jekyll_src/_posts/20*
+editor/tmp
 
 # For ViM (because why would you need any other editor?)
 *~
