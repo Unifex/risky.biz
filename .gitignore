@@ -2,6 +2,7 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+jekyll_src/_data/*
 jekyll_src/static/img/sponsors/*
 jekyll_src/_posts/20*
 editor/tmp
