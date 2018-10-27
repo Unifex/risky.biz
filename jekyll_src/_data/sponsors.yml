@@ -81,4 +81,12 @@ senrio:
 Yubico:
     name: Yubico
     url: 'https://yubico.com'
-    banner_url: /static/img/sponsors/Yubico-logo-website.png
+    banner_url: /static/img/sponsors/yubico.png
+Gigamon:
+    name: Gigamon
+    url: 'https://www.gigamon.com/solutions/gigamon-insight.html'
+    banner_url: '/static/img/sponsors/Web-2017-Gigamon-Free-Standing-Orange-Logo (2).png'
+TrendMicro:
+    name: 'Trend Micro'
+    url: 'https://trendmicro.com'
+    banner_url: /static/img/sponsors/trend-logo.png
