@@ -46,3 +46,7 @@ article .read-more a:active {
   text-decoration: underline;
   color: black;
 }
+
+article audio {
+  width: 100%;
+}
