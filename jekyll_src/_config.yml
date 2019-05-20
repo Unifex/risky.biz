@@ -14,7 +14,7 @@ baseurl: ""
 email:
   contact: patrick@risky.biz
   sales: sales@risky.biz
-itpcurl: "itpc://risky.biz"
+itpcurl: "feed://risky.biz"
 whitelist:
   - jekyll-redirect-from
 gems:
