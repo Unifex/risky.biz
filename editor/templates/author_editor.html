@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-body">
+    <p>Keys are the stubs used in the URLs. Once created you can't removed them without manually editing the yml. Onced used in a post they should never be removed.</p>
+    <div id="author-list">
+      <ul class="list-group">
+      {% for key, author in authors %}
+        <li class="list-group-item">
+          <a name="jump_{{ key }}"></a>
+          <span class="badge"><a href="authors.php?e={{ key }}#edit" style="color: white;"> <span class="glyphicon glyphicon-pencil"></span> {{ key }} </a></span>
+          {{ author.name }}
+        </li>    
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+<a name="edit"></a>
+<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="src_author" value="{{ edit.key }}" />
+  <div class="panel panel-default">
+    {% if edit.name %}
+    <div class="panel-heading">Edit {{ edit.name }}</div>
+    {% else %}
+    <div class="panel-heading">Add new author</div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="input-group">
+        <span class="input-group-addon" style="width: 120px;">Key</span>
+        <input 
+          name="edit_key"
+          style="width: 320px;"
+          type="text"
+          value="{{ edit.key }}"
+          class="form-control"
+          placeholder="author key"
+          {% if edit.key %}readonly{% endif %}>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" style="width: 120px;">Name</span>
+        <input 
+          name="edit_name"
+          style="width: 320px;"
+          type="text" \
+          value="{{ edit.name }}" \
+          class="form-control" \
+          placeholder="author name">
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-default">
+        Submit
+      </button>
+    </div>
+  </div>
+</form>
+{% endblock %}
