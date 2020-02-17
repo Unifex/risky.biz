@@ -6,6 +6,7 @@ jekyll_src/_data/*
 jekyll_src/static/img/sponsors/*
 jekyll_src/_posts/20*
 editor/tmp
+build_overrides
 
 # For ViM (because why would you need any other editor?)
 *~
