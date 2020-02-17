@@ -30,6 +30,11 @@
       {{ write_message }}
     </div>
     {% endif %}
+    {% if debug_show and debug_message != '' %}
+    <div class="alert alert-status">
+      {{ debug_message | raw }}
+    </div>
+    {% endif %}
     {% block subtitle %}{% endblock %}
     {% block status %}{% endblock %}
     <div class="container-fluid">

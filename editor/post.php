@@ -23,6 +23,8 @@ $vars = array(
   'src_file' => '',
   'write_message' => '',
   'write_status' => '',
+  'debug_show' => FALSE,
+  'debug_message' => '',
   'post_types' => array(
     'podcast' => 'Podcast',
     'blog' => 'Blog',
@@ -120,7 +122,7 @@ if (!empty($_GET['cc'])) {
   rmrdir($tmp_cache_dir);
 }
 if (!is_dir($tmp_cache_dir)) {
-  mkdir($tmp_cache_dir, 0700);
+  mkdir($tmp_cache_dir, 0770);
 }
 $loader = new Twig_Loader_Filesystem($cache_dir);
 $twig = new Twig_Environment($loader, array(

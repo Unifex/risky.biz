@@ -50,7 +50,7 @@ if (!empty($_GET['cc'])) {
   rmrdir($tmp_cache_dir);
 }
 if (!is_dir($tmp_cache_dir)) {
-  mkdir($tmp_cache_dir, 0700);
+  mkdir($tmp_cache_dir, 0770);
 }
 
 $loader = new Twig_Loader_Filesystem($template_dir);
