@@ -9,7 +9,12 @@
       <p class="pub-date">{{ post.date | date: '%B %d, %Y' }}</p>
     </div>
     <div class="content">
-    {{ post.excerpt }}
+
+    {% if post.teaser %}
+      {{ post.teaser }}
+    {% else %}
+      {{ post.excerpt }}
+    {% endif %}
     </div>
     <div class="read-more">
       <span><a href="{{ post.url }}">&gt;&gt; read more/listen</a></span>

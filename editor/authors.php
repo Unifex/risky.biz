@@ -10,6 +10,7 @@ $parser = new Mni\FrontYAML\Parser();
 
 $siteSrc = '../jekyll_src/';
 $dataDir = realpath($siteSrc . '_data') . '/';
+$authorDir = realpath($siteSrc . 'author') . '/';
 $authorList = array();
 $currentPost = array();
 $vars = array(
@@ -38,6 +39,9 @@ if (!empty($_GET['woot'])) {
     $vars['write_status'] = 'success';
     $vars['write_message'] = $vars['authors'][$_GET['woot']]['name'] . ' updated.';
   }
+}
+if (isset($_GET['woot'])) {
+  require_once('write_author_templates.php');
 }
 
 if (!empty($_POST)) {

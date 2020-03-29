@@ -3,7 +3,7 @@ layout: podcast
 published: true
 title: "Post Template"
 tagline: "Notes and stuff"
-excerpt_separator: <!--excerpt-above-->
+excerpt_separator: <--excerpt-above-->
 categories: 
 permalink: /post_template
 media_url: 
@@ -22,7 +22,7 @@ This is a sample post to test things. The formatting is Markdown and sections of
 
 To test this you can build it with --draft.  Full details on [drafts the Jekyll site](https://jekyllrb.com/docs/drafts/)
 
-<!--excerpt-above-->
+<--!excerpt-above-->
 
 ## Blockquotes
 

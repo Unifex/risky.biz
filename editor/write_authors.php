@@ -6,12 +6,22 @@ use Symfony\Component\Yaml\Yaml;
 $update_authors = $vars['authors'];
 
 // Update author with new values.
-$update_authors[$_POST['edit_key']]['name'] = $_POST['edit_name'];
+if (!empty(trim($_POST['edit_key'])) && !empty(trim($_POST['edit_name']))) {
+  $update_authors[$_POST['edit_key']]['name'] = $_POST['edit_name'];
+}
 
 // This *should* never happen.
 if ($_POST['src_author'] != $_POST['edit_key']) {
   unset($update_authors[$_POST['src_author']]);
 }
+
+// Intentionally remove an author.
+if (!empty(trim($_POST['delete_key'])) &&
+    !empty(trim($_POST['delete_key_confirm'])) &&
+    $_POST['delete_key'] == $_POST['delete_key_confirm']) {
+  unset($update_authors[$_POST['delete_key']]);
+}
+
 
 // Can we write the YAML file?
 $destDataFile = $dataDir . 'authors.yml';

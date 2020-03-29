@@ -20,7 +20,7 @@ All posts have some basic parameters.
 * *title* : The posts title
 * *tagline* : An optional tagline
 * *permalink* : The URL the post will live on.
-* *excerpt_separator* : <!--excerpt-above--> - Any content above this separator will be used where ever the post presents a teaser. Lists of posts, etc.
+* *excerpt_separator* : <--excerpt-above--> - Any content above this separator will be used where ever the post presents a teaser. Lists of posts, etc.
 
 ### Podcast posts
 

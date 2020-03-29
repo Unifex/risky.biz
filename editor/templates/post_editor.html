@@ -123,8 +123,11 @@
         </div>
         <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-heading">Body</div>
+            <div class="panel-heading">Content</div>
             <div class="panel-body">
+              <label>Teaser:</label>
+              <textarea name="teaser" rows="5" class="form-control" id="inputBody" />{{ post.teaser }}</textarea>
+              <label>Body:</label>
               <textarea name="body" rows="17" class="form-control" id="inputBody" />{{ post.body }}</textarea>
             </div>
             <div class="panel-footer">
@@ -139,7 +142,6 @@
         </div>
       </div>
     </div>
-
 
     <div id="post-bulk-show-notes">
       <div class="panel-heading">

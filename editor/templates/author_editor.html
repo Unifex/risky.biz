@@ -30,7 +30,7 @@
     <div class="panel panel-default">
       <div class="input-group">
         <span class="input-group-addon" style="width: 120px;">Key</span>
-        <input 
+        <input
           name="edit_key"
           style="width: 320px;"
           type="text"
@@ -41,13 +41,35 @@
       </div>
       <div class="input-group">
         <span class="input-group-addon" style="width: 120px;">Name</span>
-        <input 
+        <input
           name="edit_name"
           style="width: 320px;"
-          type="text" \
-          value="{{ edit.name }}" \
-          class="form-control" \
+          type="text"
+          value="{{ edit.name }}"
+          class="form-control"
           placeholder="author name">
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Delete author</div>
+      <div class="input-group">
+        <span class="input-group-addon" style="width: 120px;">Key</span>
+        <input
+          name="delete_key"
+          style="width: 320px;"
+          type="text"
+          class="form-control"
+          placeholder="author key"
+          {% if edit.key %}readonly{% endif %}>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" style="width: 120px;">Repeat</span>
+        <input
+          name="delete_key_confirm"
+          style="width: 320px;"
+          type="text"
+          class="form-control"
+          placeholder="Confirm author key">
       </div>
     </div>
     <div class="panel-footer">

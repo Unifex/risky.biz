@@ -5,6 +5,7 @@ _site/
 jekyll_src/_data/*
 jekyll_src/static/img/sponsors/*
 jekyll_src/_posts/20*
+jekyll_src/author/*.md
 editor/tmp
 build_overrides
 

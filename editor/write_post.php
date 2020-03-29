@@ -14,12 +14,12 @@ $build_filename = implode('-', array(
 
 $frontmatter = array(
   'layout' => 'podcast',
-  'excerpt_separator' => '<!--excerpt-above-->',
 );
 $frontmatter['title'] = $_POST['title'];
 $frontmatter['tagline'] = $_POST['tagline'];
 $frontmatter['author'] = $_POST['author'];
 $frontmatter['explicit'] = $_POST['explicit'];
+$frontmatter['teaser'] = $_POST['teaser'];
 $frontmatter['layout'] = $_POST['layout'];
 $frontmatter['permalink'] = $_POST['permalink'];
 $frontmatter['sponsor'] = $_POST['sponsor'];

@@ -41,7 +41,7 @@ h1 {
     font-weight: normal;
     color: #696969;
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 h2 {
@@ -90,6 +90,10 @@ div.content {
     border-top: 1px solid #E6E6E6;
     margin-top: 5px;
     padding-top: 5px;
+}
+
+div.byline {
+    padding-bottom: 10px;
 }
 
 div.content pre {

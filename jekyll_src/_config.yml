@@ -2,6 +2,7 @@ title: Risky Business
 description: "It's a jungle out there"
 author: Patrick Gray
 default_author: patrick-gray
+excerpt_separator: '<--excerpt-above-->'
 urls:
     - text: About
       url: /about
@@ -15,11 +16,8 @@ email:
   contact: patrick@risky.biz
   sales: sales@risky.biz
 itpcurl: "feed://risky.biz"
-whitelist:
-  - jekyll-redirect-from
-gems:
+plugins:
     - jekyll-paginate
-    - jekyll-redirect-from
 paginate: 20
 per_page: 20
 paginate_path: "/page:num/"

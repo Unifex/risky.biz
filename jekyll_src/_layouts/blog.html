@@ -7,9 +7,6 @@ layout: default
 {% endif %}
 <article>
   <div class="content">
-    {% if page.sponsor != '-- none --' %}
-      <div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" width="100%" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This post sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
-    {% endif %}
     <div class="byline">
       <p>By <span class="author">{% if page.author %} {{ site.data.authors[page.author].name }} {% else %} {{ site.data.authors[site.default_author].name }} {% endif %}</span>
         {% if page.organization %}
@@ -18,6 +15,9 @@ layout: default
         &middot; <span class="pub-date">{{ page.date | date: '%B %d, %Y' }}</span>
       </p>
     </div>
+    {% if page.sponsor != '-- none --' %}
+      <div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" width="100%" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This post sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
+    {% endif %}
     <div class="post">{{ content }}</div>
   </div>
 </article>

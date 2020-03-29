@@ -81,7 +81,7 @@ if (!empty($_GET['p'])) {
     'layout' => 'blog',
     'title' => '',
     'tagline' => '',
-    'excerpt_separator' => '<!--excerpt-above-->',
+    'excerpt_separator' => '<--!excerpt-above-->',
     'categories' => array(),
     'sponsor' => '',
     'permalink' => '',
