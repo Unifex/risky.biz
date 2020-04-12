@@ -11,7 +11,7 @@
     <div class="content">
 
     {% if post.teaser %}
-      {{ post.teaser }}
+      {{ post.teaser | markdownify }}
     {% else %}
       {{ post.excerpt }}
     {% endif %}
