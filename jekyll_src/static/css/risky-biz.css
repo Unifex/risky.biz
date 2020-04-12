@@ -34,6 +34,13 @@
   margin-right: auto;
 }
 
+article p {
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
 article a,
 article a:link,
 article a:active,
@@ -44,7 +51,7 @@ article .read-more a,
 article .read-more a:link,
 article .read-more a:active {
   text-decoration: underline;
-  color: black;
+  color: #f89c40;
 }
 
 article audio {

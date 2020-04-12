@@ -38,22 +38,25 @@ span.time, span.categories {
 }
 
 h1 {
+    font-family: "Roboto Condensed", Arial, sans-serif;
     font-weight: normal;
-    color: #696969;
+    color: black;
     margin-bottom: 10px;
     font-size: 30px;
 }
 
 h2 {
+    font-family: "Roboto Condensed", Arial, sans-serif;
     font-weight: normal;
     margin-bottom: 5px;
-    color: #666666;
+    color: black;
 }
         
 h3 {
+    font-family: "Roboto Condensed", Arial, sans-serif;
     font-weight: normal;
     margin-bottom: 5px;
-    color: #666666;
+    color: black;
 }
 
 a, a:link, a:active {
@@ -92,8 +95,17 @@ div.content {
     padding-top: 5px;
 }
 
-div.byline {
+div.tagline {
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-size: 16px;
+}
+
+div.byline p {
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-size: 16px;
     padding-bottom: 10px;
+    /* border-top: 1px solid #E6E6E6; */
+    color: #f89c40;
 }
 
 div.content pre {
