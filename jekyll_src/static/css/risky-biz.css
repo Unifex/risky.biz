@@ -34,11 +34,24 @@
   margin-right: auto;
 }
 
-article p {
+article {
+  padding-bottom: 2rem;
+}
+
+article p,
+article ul {
   font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+article p,
+article ul {
+  margin-bottom: 2rem;
+}
+article p:last-child {
+  margin-bottom: 1rem;
 }
 
 article a,
