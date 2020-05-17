@@ -28,7 +28,21 @@ foreach ($items as $item) {
   $filename = $dataDir . $item['name'];
   $str = file_get_contents($filename);
   $bits = explode('.', $item['name']);
-  $vars[$bits[0]] = Yaml::parse(file_get_contents($filename));
+  switch (end($bits)) {
+    case 'yaml':
+    case 'yml':
+      $vars[$bits[0]] = Yaml::parse(file_get_contents($filename));
+      break;
+
+    case 'csv':
+      $csv = array_map('str_getcsv', file($filename));
+      $csv_header = array_shift($csv);
+      $csv_data = array();
+      foreach ($csv as $row) {
+        $csv_data[] = array_combine($csv_header, $row);
+      }
+      $vars[$bits[0]] = $csv_data;
+  }
 }
 
 # Posts
