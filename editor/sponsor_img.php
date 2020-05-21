@@ -15,6 +15,9 @@ $dataDir = $siteSrc . '_data/';
 $fileList = new FileList;
 $items = $fileList->get($dataDir, FileList::TYPE_FILE);
 foreach ($items as $item) {
+  if ($item['ext'] != 'yml') {
+    continue;
+  }
   $filename = $dataDir . $item['name'];
   $str = file_get_contents($filename);
   $bits = explode('.', $item['name']);
