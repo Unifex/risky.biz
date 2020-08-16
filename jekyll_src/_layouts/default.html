@@ -95,11 +95,11 @@
 					{% for category in site.categories %}
 						{% capture category_slug %}{{ category | first }}{% endcapture %}
 						{% for c_slug in category_slug %}
-							{% if site.data.categories.[c_slug].published %}
+							{% if site.data.categories[c_slug].published %}
 								{% if c_slug == page.categories %}
-									&raquo; <span class="active">{{ site.data.categories.[c_slug].title }}</span><br />
+									&raquo; <span class="active">{{ site.data.categories[c_slug].title }}</span><br />
 								{% else %}
-									&raquo; <a href="/{{ site.data.categories.[c_slug].type-stub }}/{{ c_slug }}">{{ site.data.categories.[c_slug].title }}</a><br />
+									&raquo; <a href="/{{ site.data.categories[c_slug].type-stub }}/{{ c_slug }}">{{ site.data.categories[c_slug].title }}</a><br />
 								{% endif %}
 							{% endif %}
 						{% endfor %}

@@ -4,4 +4,4 @@ categories: others
 title: Others
 permalink: /category/others/
 ---
-> {{ site.data.categories.[page.categories].description }}
+> {{ site.data.categories[page.categories].description }}

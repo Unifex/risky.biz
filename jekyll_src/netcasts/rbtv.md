@@ -4,4 +4,4 @@ categories: rbtv
 title: Risky Business TV
 permalink: /netcasts/rbtv/
 ---
-> {{ site.data.categories.[page.categories].description }}
+> {{ site.data.categories[page.categories].description }}

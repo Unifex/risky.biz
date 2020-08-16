@@ -4,4 +4,4 @@ author: [author_stub]
 title: [author_name]
 permalink: /author/[author_stub]/
 ---
-> {{ site.data.categories.[page.categories].description }}
+> {{ site.data.categories[page.categories].description }}

@@ -4,4 +4,4 @@ categories: serious-business
 title: Serious Business
 permalink: /netcasts/serious-business/
 ---
-> {{ site.data.categories.[page.categories].description }}
+> {{ site.data.categories[page.categories].description }}

@@ -2,6 +2,7 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+jekyll_src/.jekyll-cache
 jekyll_src/_data/*.yml
 jekyll_src/_data/*.csv
 jekyll_src/static/img/sponsors/*
@@ -9,9 +10,16 @@ jekyll_src/_posts/20*
 jekyll_src/author/*.md
 editor/tmp
 build_overrides
+build_site
 
 # For ViM (because why would you need any other editor?)
 *~
+
+# DDev
+.ddev
+
+# Builds
+staging
 
 # Just... no.
 .DS_Store

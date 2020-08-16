@@ -4,4 +4,4 @@ categories: rb2
 title: Risky Business 2
 permalink: /netcasts/rb2/
 ---
-> {{ site.data.categories.[page.categories].description }}
+> {{ site.data.categories[page.categories].description }}

@@ -37,7 +37,7 @@ layout: default
                 {% if post.categories %}
                     (Categories:
                     {% for category in post.categories %}
-                        <a href="/category/{{ category }}">{{ site.data.categories.[category].title }}</a>
+                        <a href="/category/{{ category }}">{{ site.data.categories[category].title }}</a>
                         {% if forloop.last == false %}, {% endif %}
                     {% endfor %})
                 {% endif %}
