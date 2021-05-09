@@ -7,6 +7,7 @@ layout: null
         <title>{{ page.title | xml_escape }}</title>
         <description>{{ site.data.categories[page.category].description | xml_escape }}</description>
         <link>{{ site.url }}/</link>
+        <copyright>Copyright 2007-{{ 'now' | date: "%Y" }} {{ site.data.rss.author }}</copyright>
         <language>en</language>
         <atom:link href="{{ site.url }}/feeds/{{ page.category }}" rel="self" type="application/rss+xml" />
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
