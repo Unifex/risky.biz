@@ -20,7 +20,7 @@ youtube-feed:
 
 ### Newsletter: Seriously Risky Business
 
-[Sign up for the official Risky Business newsletter](https://srslyriskybiz.substack.com/subscribe), prepared by Brett Winterford and Patrick Gray and hosted on Substack. It's your weekly digest and analysis of the big stories shaping cyber policy, prepared a day ahead of the podcast.
+[Sign up for the official Risky Business newsletter](https://srslyriskybiz.substack.com/subscribe), prepared by Tom Uren and Patrick Gray and hosted on Substack. It's your weekly digest and analysis of the big stories shaping cyber policy, prepared a day ahead of the podcast.
 
 ### Risky Business Podcast feeds
 Subscribe to the main Risky Business podcast feed:
