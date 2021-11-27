@@ -55,12 +55,10 @@ layout: null
                         <h3 class="panel-title">Show notes</h3>
                     </div>
                     <div class="panel-body">
-                        <dl>
+                        <ul>
                         {% for show_note in post.show_notes %}
-                          <dt><a href="{{ show_note.link }}">{{ show_note.title | strip_html | xml_escape }}</a></dt>
-                          <dd>{{ show_note.description | strip_html | xml_escape }}</dd>
-                        {% endfor %}
-                        </dl>
+                          <li><a href="{{ show_note.link }}">{{ show_note.title | strip_html | xml_escape }}</a></li>{% endfor %}
+                        </ul>
                     </div>
                 </div>
                 {% endif %}
