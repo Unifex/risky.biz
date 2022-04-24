@@ -17,26 +17,22 @@ youtube-feed:
   - name: Risky Biz Video
     url: https://www.youtube.com/channel/UC-m3DvcXfcRLQgS4jFwXAxQ
 ---
+## The Risky Business News podcast and newsletter:
 
-### Newsletter: Seriously Risky Business
-
-[Sign up for the official Risky Business newsletter](https://srslyriskybiz.substack.com/subscribe), prepared by Tom Uren and Patrick Gray and hosted on Substack. It's your weekly digest and analysis of the big stories shaping cyber policy, prepared a day ahead of the podcast.
-
-### Risky Business Podcast feeds
-Subscribe to the main Risky Business podcast feed:
+### The Risky Business podcast:
+Subscribe to the primary Risky Business podcast feed to listen to the weekly show, plus the Snake Oilers and Soap Box podcasts:
 <ul>
 {% for sub in page.rb-feed %}
   <li><a href="{{ sub.url }}">{{ sub.name }}</a></li>
 {% endfor %}
 </ul>
 
-### The not so regular Risky Business Podcast feeds
-Subscribe to the secondary (occasional) Risky Business podcast feed:
-<ul>
-{% for sub in page.rb2-feed %}
-  <li><a href="{{ sub.url }}">{{ sub.name }}</a></li>
-{% endfor %}
-</ul>
+### The Risky Business News podcast and newsletter:
 
-### Risky Biz Video
-Subscribe to [Risky Biz Video](https://www.youtube.com/channel/UC-m3DvcXfcRLQgS4jFwXAxQ) on YouTube.
+Subscribe to the Risky Business News podcast RSS feed [here](https://risky.biz/feeds/risky-business-news/) (iTunes and Spotify links coming soon.). Prepared by Catalin Cimpanu, Risky Business News is published three times a week and gives listeners a rundown on the latest cybersecurity news stories. Risky Business News is also [available in written form](https://riskybiznews.substack.com/) as a Substack newsletter.
+
+### Risky Biz Product Demos:
+Subscribe to the [Risky Biz product demo channel](https://www.youtube.com/channel/UCZzIaWixWHa96R7K4c40_Dg) on YouTube.
+
+### For the policy crowd:
+[Sign up for the Seriously Risky Business newsletter](https://srslyriskybiz.substack.com/subscribe), prepared by Tom Uren and hosted on Substack. It’s your weekly digest and analysis of the big stories shaping cyber policy.
