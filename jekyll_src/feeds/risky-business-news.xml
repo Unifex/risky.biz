@@ -3,4 +3,5 @@ layout: category_feed
 title: Risky Business News
 category : risky-business-news
 permalink: /feeds/risky-business-news/index.xml
+album-art: "static/img/rb-news.png"
 ---

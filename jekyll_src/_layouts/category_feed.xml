@@ -12,7 +12,7 @@ layout: null
         <atom:link href="{{ site.url }}/feeds/{{ page.category }}" rel="self" type="application/rss+xml" />
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-        <itunes:image href="{{ site.data.rss.image }}" />
+        <itunes:image href="{% if page.album-art %}{{ site.url }}/{{page.album-art}}{% else %}{{ site.data.rss.image }}{% endif %}" />
         <itunes:author>{{ site.data.rss.author }}</itunes:author>
         <itunes:category text="Technology">
           <itunes:category text="{{ site.data.rss.category }}" />
