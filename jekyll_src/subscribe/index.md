@@ -8,6 +8,11 @@ rb-feed:
     url: https://podcasts.apple.com/us/podcast/risky-business/id216478078
   - name: Spotify
     url: https://open.spotify.com/show/2jzD9zn7R2d6erZz2ULLeQ
+rbn-feed:
+  - name: RSS
+    url: https://risky.biz/feeds/risky-business-news
+  - name: iTunes
+    url: https://podcasts.apple.com/au/podcast/risky-business-news/id1621305970
 rb2-feed:
   - name: RSS
     url: https://risky.biz/feeds/rb2
@@ -29,7 +34,13 @@ Subscribe to the primary Risky Business podcast feed to listen to the weekly sho
 
 ### The Risky Business News podcast and newsletter:
 
-Subscribe to the Risky Business News podcast RSS feed [here](https://risky.biz/feeds/risky-business-news/) (iTunes and Spotify links coming soon.). Prepared by Catalin Cimpanu, Risky Business News is published three times a week and gives listeners a rundown on the latest cybersecurity news stories. Risky Business News is also [available in written form](https://riskybiznews.substack.com/) as a Substack newsletter.
+Subscribe to the Risky Business News podcast. Prepared by Catalin Cimpanu, Risky Business News is published three times a week and gives listeners a rundown on the latest cybersecurity news stories. Risky Business News is also [available in written form](https://riskybiznews.substack.com/) as a Substack newsletter.
+<ul>
+{% for sub in page.rbn-feed %}
+  <li><a href="{{ sub.url }}">{{ sub.name }}</a></li>
+{% endfor %}
+  <li>Spotify feed coming soon</li>
+</ul>
 
 ### Risky Biz Product Demos:
 Subscribe to the [Risky Biz product demo channel](https://www.youtube.com/channel/UCZzIaWixWHa96R7K4c40_Dg) on YouTube.
