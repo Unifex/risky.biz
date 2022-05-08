@@ -13,6 +13,8 @@ rbn-feed:
     url: https://risky.biz/feeds/risky-business-news
   - name: iTunes
     url: https://podcasts.apple.com/au/podcast/risky-business-news/id1621305970
+  - name: Spotify
+    url: https://open.spotify.com/show/0BdExoUZqbGsBYjt6QZl4Q
 rb2-feed:
   - name: RSS
     url: https://risky.biz/feeds/rb2
@@ -39,7 +41,6 @@ Subscribe to the Risky Business News podcast. Prepared by Catalin Cimpanu, Risky
 {% for sub in page.rbn-feed %}
   <li><a href="{{ sub.url }}">{{ sub.name }}</a></li>
 {% endfor %}
-  <li>Spotify feed coming soon</li>
 </ul>
 
 ### Risky Biz Product Demos:
