@@ -26,7 +26,7 @@ $fileList = new FileList;
 $items = $fileList->get($dataDir, FileList::TYPE_FILE);
 foreach ($items as $item) {
   if ($item['ext'] == 'yml') {
-    $vars['debug_message'] .= '$item = ' . print_r($item, a) . "<br />\n";
+    // $vars['debug_message'] .= '$item = ' . print_r($item) . "<br />\n";
     $filename = $dataDir . $item['name'];
     $str = file_get_contents($filename);
     $bits = explode('.', $item['name']);

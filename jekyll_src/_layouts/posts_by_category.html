@@ -5,25 +5,20 @@ layout: default
 <header id="post-header">
     <h1 id="post-subtitle">Articles by category: {{ site.data.categories[page.categories].title }}</h1>
 </header>
+    {% if site.data.categories[page.categories].description != null %}
 <div class="panel panel-default">
-  <div class="panel-body">
+    <div class="panel-body">
     {{ site.data.categories[page.categories].description }}
-  </div>
-  <div class="panel-heading text-right">
-    <a href="/feeds/{{ page.categories }}"><img src="/static/img/icons/rss-icon-80.png" width="45" height="45"></a>
-	  <a href="{{ site.itpcurl }}/feeds/{{ page.categories }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="124" height="45"></a><br />
-  </div>
+    </div>
 </div>
-<div id="post-content">    <hr />
+{% endif %}
+<div id="post-content">
+    <hr />
     {% for category in site.categories %}
         {% capture category_slug %}{{ category | first }}{% endcapture %}
         {% for c_slug in category_slug %}
-            {% if site.data.categories[c_slug].published %}
-				{% if c_slug == page.categories %}
-					<button class="btn btn-sm btn-default active">{{ site.data.categories[c_slug].title }}</button>
-				{% else %}
-					<a href="/{{ site.data.categories.[c_slug].type-stub }}/{{ c_slug }}" class="btn btn-sm btn-default">{{ site.data.categories[c_slug].title }}</a>
-				{% endif %}
+            {% if site.categories[c_slug].size > 0 %}
+            <a href="/category/{{ c_slug }}/" class="btn btn-sm btn-default" title="{{ site.data.categories[c_slug].title }} ({{site.categories[c_slug].size}} posts)">{{ site.data.categories[c_slug].title }}</a>
 			{% endif %}
         {% endfor %}
     {% endfor %}

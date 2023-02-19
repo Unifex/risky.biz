@@ -16,9 +16,9 @@ layout: default
     {% if page.sponsor != '-- none --' %}
       <div class="sponsor col-xs-12 col-sm-6 pull-right text-center"><a href="{{ site.data.sponsors[page.sponsor].url }}" title="{{ site.data.sponsors[page.sponsor].name }}"><img src="{{ site.data.sponsors[page.sponsor].banner_url }}" width="100%" class="img-responsive" alt="sponsor banner" title="{{ site.data.sponsors[page.sponsor].name }}"><small>This episode sponsored by {{ site.data.sponsors[page.sponsor].name }}.</small></a></div>
     {% endif %}
-    <div class="post">
-      <p class="pub-date">{{ post.date | date: '%B %d, %Y' }}</p>
-      {{ content }}
+    <div class="container-fluid post">
+    <p class="pub-date">{{ post.date | date: '%B %d, %Y' }}</p>
+    {{ content }}
     </div>
     {% if page.media_url %}
         <div class="well well-sm text-center">
@@ -36,20 +36,6 @@ layout: default
                     <p>The Audio tag isn't supported and neither is flash... You could always download the file and play locally.</p>
                 </object>
             </audio>
-			{% if page.categories %}
-            <div id="service-download-links">
-				{% for category in page.categories %}
-        {% if site.data.categories[category].published %}
-				    <div class="category-{{ category }}">
-						<a href="/feeds/{{ category }}"><img src="/static/img/icons/rss-icon-80.png" width="45" height="45"></a>
-						<a href="{{ site.itpcurl }}/feeds/{{ category }}"><img src="/static/img/icons/link-badge-itunes_2x.png" width="124" height="45"></a><br />
-            {% if site.data.categories[category].play-link %}<a href="{{ site.data.categories[category].play-link }}"><img src="/static/img/icons/google-play-badge.png" height="80"></a>{% endif %}<br />
-						Subscribe to the {{ site.data.categories[category].title }} feed.
-					</div>
-        {% endif %}
-				{% endfor %}
-            </div>
-			{% endif %}
             <div id="download-links">
                 <a href="{{ page.media_url }}"><span class="glyphicon glyphicon-cloud-download"></span> Download mp3 </a>
                 {% if page.media_url_ogg %}
@@ -88,7 +74,7 @@ layout: default
     <ul>
                 {% endif %}
         <li class="relatedPost">
-            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ post.url }}">{{ post.title }}</a>
                 {% if post.categories %}
                     (Categories:
                     {% for category in post.categories %}
