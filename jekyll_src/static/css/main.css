@@ -80,6 +80,15 @@ div#container {
 }
 
 /**
+ * ///////////////////////
+ * Image block formatting
+ * @see /subscribe/
+ */
+div.img-block img {
+    padding:2px;
+}
+
+/**
  * //////////////////////////////////
  * Right aka content column formatting
  * //////////////////////////////////
