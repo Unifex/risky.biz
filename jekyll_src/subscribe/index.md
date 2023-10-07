@@ -9,14 +9,21 @@ Risky Business publishes two Substack newsletters and two podcast feeds. If you'
 **Risky Business main podcast feed:** (Risky Business weekly show, Soap Box and Snake Oilers specials)
 
 <div class="img-block text-center" markdown="1">
-[![Listen on Apple Podcasts](/static/img/subscribe/applepodcasts.png)](https://podcasts.apple.com/au/podcast/risky-business/id216478078)[![Listen on Google Podcasts](/static/img/subscribe/googlepodcasts.png)](https://podcasts.google.com/feed/aHR0cHM6Ly9yaXNreS5iaXovcnNzLnhtbA==)[![Listen on Overcast](/static/img/subscribe/overcast.png)](https://overcast.fm/itunes216478078)<br />
-[![Listen on Pocket Casts](/static/img/subscribe/pocketcasts.png)](https://pca.st/riskybiz)[![Get the RSS Feed](/static/img/subscribe/rss.png)](https://risky.biz/feeds/risky-business)[![Listen on Spotify](/static/img/subscribe/spotify.png)](https://open.spotify.com/show/2jzD9zn7R2d6erZz2ULLeQ)
+[![Listen on Apple Podcasts](/static/img/subscribe/applepodcasts.png)](https://podcasts.apple.com/au/podcast/risky-business/id216478078)
+[![Listen on Overcast](/static/img/subscribe/overcast.png)](https://overcast.fm/itunes216478078)
+[![Listen on Pocket Casts](/static/img/subscribe/pocketcasts.png)](https://pca.st/riskybiz)<br />
+[![Get the RSS Feed](/static/img/subscribe/rss.png)](https://risky.biz/feeds/risky-business)
+[![Listen on Spotify](/static/img/subscribe/spotify.png)](https://open.spotify.com/show/2jzD9zn7R2d6erZz2ULLeQ)
 </div>
 
 **Risky Business News podcast feed:** (3x weekly news bulletins, Seriously Risky Business and Between Two Nerds podcasts)
 
 <div class="img-block text-center" markdown="1">
-[![Listen on Apple Podcasts](/static/img/subscribe/applepodcasts.png)](https://podcasts.apple.com/au/podcast/risky-business-news/id1621305970)[![Listen on Google Podcasts](/static/img/subscribe/googlepodcasts.png)](https://podcasts.google.com/feed/aHR0cHM6Ly9yaXNreS5iaXovcnNzLnhtbA==)[![Listen on Overcast](/static/img/subscribe/overcast.png)](https://overcast.fm/itunes216478078)<br />[![Listen on Pocket Casts](/static/img/subscribe/pocketcasts.png)](https://pca.st/yicebxgl)[![Get the RSS Feed](/static/img/subscribe/rss.png)](https://risky.biz/feeds/risky-business-news)[![Listen on Spotify](/static/img/subscribe/spotify.png)](https://open.spotify.com/show/0BdExoUZqbGsBYjt6QZl4Q)
+[![Listen on Apple Podcasts](/static/img/subscribe/applepodcasts.png)](https://podcasts.apple.com/au/podcast/risky-business-news/id1621305970)
+[![Listen on Overcast](/static/img/subscribe/overcast.png)](https://overcast.fm/itunes216478078)
+[![Listen on Pocket Casts](/static/img/subscribe/pocketcasts.png)](https://pca.st/yicebxgl)<br />
+[![Get the RSS Feed](/static/img/subscribe/rss.png)](https://risky.biz/feeds/risky-business-news)
+[![Listen on Spotify](/static/img/subscribe/spotify.png)](https://open.spotify.com/show/0BdExoUZqbGsBYjt6QZl4Q)
 </div>
 
 **PLEASE NOTE**: For some reason Google Podcasts just aggregates everything we publish into the same feed.
