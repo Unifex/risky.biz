@@ -3,4 +3,5 @@ layout: category_feed
 title: Risky Business
 category : risky-business
 permalink: /feeds/risky-business/index.xml
+items_in_feed: 100
 ---

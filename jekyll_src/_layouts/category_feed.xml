@@ -26,7 +26,7 @@ layout: null
         
         
         {% if site.categories[page.category] %}
-            {% for post in site.categories[page.category] limit:20 %}
+            {% for post in site.categories[page.category] limit:page.items_in_feed %}
         
         <item>
             <title>{{ post.title }}</title>

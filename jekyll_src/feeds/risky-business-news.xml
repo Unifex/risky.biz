@@ -4,5 +4,6 @@ title: Risky Business News
 category : risky-business-news
 author: risky.biz
 permalink: /feeds/risky-business-news/index.xml
+items_in_feed: 100
 album-art: "static/img/rb-news.png"
 ---
